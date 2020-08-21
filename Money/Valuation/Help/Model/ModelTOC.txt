@@ -1,0 +1,63 @@
+Overall Model Definition	1
+COCOMO II Models for the Software Marketplace Sectors	1
+COCOMO II Model Rationale and Elaboration	2
+Development Effort Estimates	4
+Software Economies and Diseconomies of Scale	4
+Previous Approaches	5
+Scaling Drivers	6
+Precedentedness (PREC) and Development Flexibility (FLEX)	7
+Architecture / Risk Resolution (RESL)	7
+Team Cohesion (TEAM)	8
+Process Maturity (PMAT)	9
+Overall Maturity Level	9
+Key Process Areas	9
+Adjusting Nominal Effort	11
+Early Design Model	11
+Post-Architecture Model	11
+Development Schedule Estimation	12
+
+Using COCOMO II	2
+Determining Size	2
+Lines of Code	2
+Function Points	3
+Counting Procedure for Unadjusted Function Points	4
+Converting Function Points to Lines of Code	5
+Breakage	6
+Adjusting for Reuse	6
+Nonlinear Reuse Effects	7
+A Reuse Model	8
+Adjusting for Re-engineering or Conversion	11
+Applications Maintenance	12
+Effort Multipliers	13
+Early Design	13
+Overall Approach: Personnel Capability (PERS) Example	14
+Product Reliability and Complexity (RCPX)	15
+Required Reuse (RUSE)	16
+Platform Difficulty (PDIF)	16
+Personnel Experience (PREX)	17
+Facilities (FCIL)	17
+Schedule (SCED)	18
+Post-Architecture	18
+Product Factors	18
+Required Software Reliability (RELY)	18
+Data Base Size (DATA)	19
+Product Complexity (CPLX)	19
+Required Reusability (RUSE)	21
+Documentation match to life-cycle needs (DOCU)	21
+Platform Factors	21
+Execution Time Constraint (TIME)	21
+Main Storage Constraint (STOR)	22
+Platform Volatility (PVOL)	22
+Personnel Factors	22
+Analyst Capability (ACAP)	23
+Programmer Capability (PCAP)	23
+Applications Experience (AEXP)	23
+Platform Experience (PEXP)	23
+Language and Tool Experience (LTEX)	24
+Personnel Continuity (PCON)	24
+Project Factors	24
+Use of Software Tools (TOOL)	24
+Multisite Development (SITE)	25
+Required Development Schedule (SCED)	25
+
+

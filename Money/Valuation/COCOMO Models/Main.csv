@@ -1,0 +1,41 @@
+Module Name,Source Lines of Code,Effort Adjustment Factor,Nominal Person-Months,Estimated Person-Months,Productivity,Labor Rate,Cost,Cost per Instruction,Full Time Software Personnel,Risk,Module Breakage,Sizing Method,Function-Points,,Inputs,,,Outputs,,,Files,,,Interfaces,,,Queries,,,Equivalent  Source Lines of Code,Initial Source Lines of Code,Design Modified,Code Modified,Integration Modified,Software Understanding,Assessment and Assimilation,Unfamiliarity with Software,Component Automatically Translated,Automatic Translation Productivity,Computed Adaptation Adjustment Factor,Adapted Source Lines of Code,RELY,,,DATA,,,DOCU,,,CPLX,,,RUSE,,,TIME,,,STOR,,,PVOL,,,ACAP,,,APEX,,,PCAP,,,PLEX,,,LTEX,,,PCON,,,TOOL,,,SCED,,,SITE,,,USR1,,,USR2,,,PREC,FLEX,RESL,TEAM,PMAT
+,Module Size,EAF,NOM Effort DEV,EST Effort DEV,PROD,$/month,COST,INST COST,Staff,RISK,REVL,,Language,Low,Average,High,Low,Average,High,Low,Average,High,Low,Average,High,Low,Average,High,Total Unadjusted Function,ESLOC,INITSLOC,DM,CM,IM,SU,AA,UNFM,AT,ATPROD,AAF,ASLOC,Base,Incr,Value,Base,Incr,Value,Base,Incr,Value,Base,Incr,Value,Base,Incr,Value,Base,Incr,Value,Base,Incr,Value,Base,Incr,Value,Base,Incr,Value,Base,Incr,Value,Base,Incr,Value,Base,Incr,Value,Base,Incr,Value,Base,Incr,Value,Base,Incr,Value,Base,Incr,Value,Base,Incr,Value,Base,Incr,Value,Base,Incr,Value
+"TestVST",13132,1.000000,75.933423,75.933423,172.940971,8400.000000,637840.756828,48.571486,1.369903,0.000000,0.000000,SLOC,,,,,,,,,,,,,,,,,,,13132,,,,,,,,,,,N,0%,1.000000,N,0%,1.000000,N,0%,1.000000,N,0%,1.000000,N,0%,1.000000,N,0%,1.000000,N,0%,1.000000,N,0%,1.000000,N,0%,1.000000,N,0%,1.000000,N,0%,1.000000,N,0%,1.000000,N,0%,1.000000,N,0%,1.000000,N,0%,1.000000,N,0%,1.000000,N,0%,1.000000,N,0%,1.000000,N,0%,1.000000,N,N,N,N,N
+"sc-max",833693,1.000000,4820.679529,4820.679529,172.940971,8400.000000,40493708.047712,48.571486,86.969144,0.000000,0.000000,SLOC,,,,,,,,,,,,,,,,,,,833693,,,,,,,,,,,N,0%,1.000000,N,0%,1.000000,N,0%,1.000000,N,0%,1.000000,N,0%,1.000000,N,0%,1.000000,N,0%,1.000000,N,0%,1.000000,N,0%,1.000000,N,0%,1.000000,N,0%,1.000000,N,0%,1.000000,N,0%,1.000000,N,0%,1.000000,N,0%,1.000000,N,0%,1.000000,N,0%,1.000000,N,0%,1.000000,N,0%,1.000000,N,N,N,N,N
+"moogVST",37042,1.000000,214.188690,214.188690,172.940971,8400.000000,1799184.991961,48.571486,3.864145,0.000000,0.000000,SLOC,,,,,,,,,,,,,,,,,,,37042,,,,,,,,,,,N,0%,1.000000,N,0%,1.000000,N,0%,1.000000,N,0%,1.000000,N,0%,1.000000,N,0%,1.000000,N,0%,1.000000,N,0%,1.000000,N,0%,1.000000,N,0%,1.000000,N,0%,1.000000,N,0%,1.000000,N,0%,1.000000,N,0%,1.000000,N,0%,1.000000,N,0%,1.000000,N,0%,1.000000,N,0%,1.000000,N,0%,1.000000,N,N,N,N,N
+"Ableton User G",Total SLOC,Schedule,Total Nominal Person-Months,Total Estimated Person-Months,Total Estimated Productivity,,Total Estimated Cost,Total Estimated Cost per Instruction,Total Estimated Full Time Software Personnel,Risk
+Optimistic,,51.633492,4088.641314,4088.641314,216.176214,,34344587.037201,38.857189,79.185838
+Most Likely,883867,55.429769,5110.801642,5110.801642,172.940971,,42930733.796502,48.571486,92.203193,0.000000
+Pessimistic,,59.505161,6388.502053,6388.502053,138.352777,,53663417.245627,60.714358,107.360470
+
+Cost Driver,Rating,VL,L,N,H,VH,XH
+Product
+Required Software Reliability,RELY,0.820000,0.920000,1.000000,1.100000,1.260000
+Database Size,DATA,,0.900000,1.000000,1.140000,1.280000
+Documentation Match to Lifecycle Needs,DOCU,0.810000,0.910000,1.000000,1.110000,1.230000
+Product Complexity,CPLX,0.730000,0.870000,1.000000,1.170000,1.340000,1.740000
+Required Reusibility,RUSE,,0.950000,1.000000,1.070000,1.150000,1.240000
+Platform
+Execution Time Constraint,TIME,,,1.000000,1.110000,1.290000,1.630000
+Main Storage Constraint,STOR,,,1.000000,1.050000,1.170000,1.460000
+Platform Volatility,PVOL,,0.870000,1.000000,1.150000,1.300000
+Personnel
+Analyst Capability,ACAP,1.420000,1.190000,1.000000,0.850000,0.710000
+Applications Experience,APEX,1.220000,1.100000,1.000000,0.880000,0.810000
+Programmer Capability,PCAP,1.340000,1.150000,1.000000,0.880000,0.760000
+Platform Experience,PLEX,1.190000,1.090000,1.000000,0.910000,0.850000
+Language and Tool Experience,LTEX,1.200000,1.090000,1.000000,0.910000,0.840000
+Personnel Continuity,PCON,1.290000,1.120000,1.000000,0.900000,0.810000
+Project
+Use of Software Tools,TOOL,1.170000,1.090000,1.000000,0.900000,0.780000
+Required Development Schedule,SCED,1.430000,1.140000,1.000000,1.000000,1.000000
+Multisite Development,SITE,1.220000,1.090000,1.000000,0.930000,0.860000,0.800000
+User
+User-Defined 1,USR1,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000
+User-Defined 2,USR2,1.000000,1.000000,1.000000,1.000000,1.000000,1.000000
+
+Precedentedness,PREC,6.200000,4.960000,3.720000,2.480000,1.240000,0.000000
+Development Flexibility,FLEX,5.070000,4.050000,3.040000,2.030000,1.010000,0.000000
+Architecture/Risk Resolution,RESL,7.070000,5.650000,4.240000,2.830000,1.410000,0.000000
+Team Cohesion,TEAM,5.480000,4.380000,3.290000,2.190000,1.100000,0.000000
+Process Maturity,PMAT,7.800000,6.240000,4.680000,3.120000,1.560000,0.000000

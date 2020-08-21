@@ -1,0 +1,3639 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="Generator" CONTENT="Microsoft Word 97">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.05 [en] (WinNT; I) [Netscape]">
+   <TITLE>Using COCOMO II</TITLE>
+</HEAD>
+<BODY LINK="#0000FF">
+<A NAME="UsingCOCOMOII"></A><B><FONT FACE="Arial"><FONT SIZE=+1>Using
+COCOMO II</FONT></FONT></B>
+
+<P><B><I><FONT FACE="Arial">&nbsp;</FONT></I></B>
+
+<P><A NAME="DeterminingSize"></A><B><I><FONT FACE="Arial">Determining Size</FONT></I></B>
+
+<P><A NAME="LinesofCode"></A><FONT FACE="Arial">Lines of Code</FONT>
+
+<P><FONT SIZE=-1>In COCOMO II, the logical source statement has been chosen
+as the standard line of code. Defining a line of code is difficult due
+to conceptual differences involved in accounting for executable statements
+and data declarations in different languages. The goal is to measure the
+amount of intellectual work put into program development, but difficulties
+arise when trying to define consistent measures across different languages.
+To minimize these problems, the Software Engineering Institute (SEI) definition
+checklist for a logical source statement is used in defining the line of
+code measure. The Software Engineering Institute (SEI) has developed this
+checklist as part of a system of definition checklists, report forms and
+supplemental forms to support measurement definitions [Park 1992, Goethert
+et al. 1992].</FONT>
+
+<P><FONT SIZE=-1>Figure II-1 shows a portion of the definition checklist
+as it is being applied to support the development of the COCOMO II model.
+Each checkmark in the "Includes" column identifies a particular statement
+type or attribute included in the definition, and vice-versa for the excludes.
+Other sections in the definition clarify statement attributes for usage,
+delivery, functionality, replications and development status. There are
+also clarifications for language specific statements for ADA, C, C++, CMS-2,
+COBOL, FORTRAN, JOVIAL and Pascal.</FONT>
+
+<P><FONT SIZE=-1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT>
+
+<P><IMG SRC="figII-1.jpg" HEIGHT=863 WIDTH=605>
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<FONT SIZE=-1>Figure II-1:&nbsp; Definition Checklist for Source Statements
+Counts</FONT>
+
+<P><FONT SIZE=-1>Some changes were made to the line-of-code definition
+that depart from the default definition provided in [Park 1992]. These
+changes eliminate categories of software which are generally small sources
+of project effort. Not included in the definition are commercial-off-the-shelf
+software (COTS), government furnished software (GFS), other products, language
+support libraries and operating systems, or other commercial libraries.
+Code generated with source code generators is not included though measurements
+will be taken with and without generated code to support analysis.</FONT>
+
+<P><FONT SIZE=-1>The "COCOMO II line-of-code definition" is calculated
+directly by the Amadeus automated metrics collection tool [Amadeus 1994]
+[Selby et al. 1991], which is being used to ensure uniformly collected
+data in the COCOMO II data collection and analysis project. We have developed
+a set of Amadeus measurement templates that support the COCOMO II data
+definitions for use by the organizations collecting data, in order to facilitate
+standard definitions and consistent data across participating sites.</FONT>
+
+<P><FONT SIZE=-1>To support further data analysis, Amadeus will automatically
+collect additional measures including total source lines, comments, executable
+statements, declarations, structure, component interfaces, nesting, and
+others. The tool will provide various size measures, including some of
+the object sizing metrics in [Chidamber and Kemerer 1994], and the COCOMO
+sizing formulation will adapt as further data is collected and analyzed.</FONT>
+
+<P><A NAME="FunctionPoints"></A><FONT FACE="Arial">Function Points</FONT>
+
+<P><FONT SIZE=-1>The function point cost estimation approach is based on
+the amount of functionality in a software project and a set of individual
+project factors [Behrens 1983] [Kunkler 1985] [IFPUG 1994]. Function points
+are useful estimators since they are based on information that is available
+early in the project life cycle. A brief summary of function points and
+their calculation in support of COCOMO II is as follows.</FONT>
+
+<P><FONT SIZE=-1>Function points measure a software project by quantifying
+the information processing functionality associated with major external
+data or control input, output, or file types. Five user function types
+should be identified as defined in Table II-1.</FONT>
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-1>Table&nbsp; II-1</FONT></FONT>:&nbsp;<A NAME="UserFunctionTypes"></A>User
+Function Types</B></CENTER>
+
+<CENTER><TABLE BORDER WIDTH="499" >
+<TR>
+<TD VALIGN=TOP WIDTH="26%"><FONT SIZE=-2>External Input (Inputs)</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="74%"><FONT SIZE=-2>Count each unique user data or
+user control input type that (i) enters the external boundary of the software
+system being measured and (ii) adds or changes data in a logical internal
+file.</FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="26%"><FONT SIZE=-2>External Output (Outputs)</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="74%"><FONT SIZE=-2>Count each unique user data or
+control output type that leaves the external boundary of the software system
+being measured.</FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="26%"><FONT SIZE=-2>Internal Logical File (Files)</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="74%"><FONT SIZE=-2>Count each major logical group
+of user data or control information in the software system as a logical
+internal file type. Include each logical file (e.g., each logical group
+of data) that is generated, used, or maintained by the software system.</FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="26%"><FONT SIZE=-2>External Interface Files (Interfaces)</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="74%"><FONT SIZE=-2>Files passed or shared between
+software systems should be counted as external interface file types within
+each system.</FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="26%"><FONT SIZE=-2>External Inquiry (Queries)</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="74%"><FONT SIZE=-2>Count each unique input-output
+combination, where an input causes and generates an immediate output, as
+an external inquiry type.</FONT></TD>
+</TR>
+</TABLE></CENTER>
+<FONT SIZE=-1>Each instance of these function types is then classified
+by complexity level. The complexity levels determine a set of weights,
+which are applied to their corresponding function counts to determine the
+Unadjusted Function Points quantity. This is the Function Point sizing
+metric used by COCOMO II. The usual Function Point procedure involves assessing
+the degree of influence (DI) of fourteen application characteristics on
+the software project determined according to a rating scale of 0.0 to 0.05
+for each characteristic. The 14 ratings are added together, and added to
+a base level of 0.65 to produce a general characteristics adjustment factor
+that ranges from 0.65 to 1.35.</FONT>
+
+<P><FONT SIZE=-1>Each of these fourteen characteristics, such as distributed
+functions, performance, and reusability, thus have a maximum of 5% contribution
+to estimated effort. This is inconsistent with COCOMO experience; thus
+COCOMO II uses Unadjusted Function Points for sizing, and applies its reuse
+factors, cost driver effort multipliers, and exponent scale factors to
+this sizing quantity.</FONT>
+
+<P><A NAME="CountingProcedure"></A><B><FONT FACE="Arial"><FONT SIZE=-1>Counting
+Procedure for Unadjusted Function Points</FONT></FONT></B>
+
+<P><FONT SIZE=-1>The COCOMO II procedure for determining Unadjusted Function
+Points is described here. This procedure is used in both the Early Design
+and the Post-Architecture models.</FONT>
+<DIR><FONT SIZE=-1>1. <U>Determine function counts by type.</U> The unadjusted
+function counts should be counted by a lead technical person based on information
+in the software requirements and design documents. The number of each of
+the five user function types should be counted (Internal Logical File (ILF),
+External Interface File (EIF), External Input (EI), External Output</FONT>
+<BR><FONT SIZE=-1>(EO), and External Inquiry (EQ)).</FONT></DIR>
+
+<OL START=2>
+<LI>
+<FONT SIZE=-1><U>Determine complexity-level function counts.</U> Classify
+each function count into Low, Average and High complexity levels depending
+on the number of data element types contained and the number of file types
+referenced. Use the following scheme:</FONT></LI>
+</OL>
+
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-1>Table&nbsp; II-2</FONT></FONT></B></CENTER>
+
+<CENTER><TABLE BORDER WIDTH="628" >
+<TR>
+<TD VALIGN=TOP COLSPAN="4" WIDTH="34%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>For ILF and EIF</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP COLSPAN="4" WIDTH="33%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>For EO and EQ</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP COLSPAN="4" WIDTH="33%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>For EI</FONT></FONT></B></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="10%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Record Element s</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP COLSPAN="3" WIDTH="25%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Data Elements</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="8%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>File Types</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP COLSPAN="3" WIDTH="25%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Data Elements</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="8%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>File Types</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP COLSPAN="3" WIDTH="25%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Data Elements</FONT></FONT></B></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="10%">&nbsp;</TD>
+
+<TD VALIGN=TOP WIDTH="8%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>1 - 19</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="8%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>20 - 50</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="8%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>51+</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="8%">&nbsp;</TD>
+
+<TD VALIGN=TOP WIDTH="8%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>1 - 5</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="8%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>6 - 19</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="8%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>20+</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="8%">&nbsp;</TD>
+
+<TD VALIGN=TOP WIDTH="8%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>1 - 4</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="8%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>5 - 15</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="8%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>16+</FONT></FONT></B></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="10%">
+<CENTER><FONT SIZE=-2>1</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="8%">
+<CENTER><FONT SIZE=-2>Low</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="8%">
+<CENTER><FONT SIZE=-2>Low</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="8%"><FONT SIZE=-2>Avg</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="8%"><FONT SIZE=-2>0 or 1</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="8%"><FONT SIZE=-2>Low</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="8%"><FONT SIZE=-2>Low</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="8%"><FONT SIZE=-2>Avg</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="8%"><FONT SIZE=-2>0 or 1</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="8%"><FONT SIZE=-2>Low</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="8%"><FONT SIZE=-2>Low</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="8%"><FONT SIZE=-2>Avg</FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="10%"><FONT SIZE=-2>2 - 5</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="8%"><FONT SIZE=-2>Low</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="8%"><FONT SIZE=-2>Avg</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="8%"><FONT SIZE=-2>High</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="8%"><FONT SIZE=-2>2 - 3</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="8%"><FONT SIZE=-2>Low</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="8%"><FONT SIZE=-2>Avg</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="8%"><FONT SIZE=-2>High</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="8%"><FONT SIZE=-2>2 - 3</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="8%"><FONT SIZE=-2>Low</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="8%"><FONT SIZE=-2>Avg</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="8%"><FONT SIZE=-2>High</FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="10%"><FONT SIZE=-2>6+</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="8%"><FONT SIZE=-2>Avg</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="8%"><FONT SIZE=-2>High</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="8%"><FONT SIZE=-2>High</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="8%"><FONT SIZE=-2>4+</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="8%"><FONT SIZE=-2>Avg</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="8%"><FONT SIZE=-2>High</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="8%"><FONT SIZE=-2>High</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="8%"><FONT SIZE=-2>3+</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="8%"><FONT SIZE=-2>Avg</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="8%"><FONT SIZE=-2>High</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="8%"><FONT SIZE=-2>High</FONT></TD>
+</TR>
+</TABLE></CENTER>
+&nbsp;
+<OL>
+<LI>
+<FONT SIZE=-1><U>Apply complexity weights.</U> Weight the number in each
+cell using the following scheme. The weights reflect the relative value
+of the function to the user.</FONT></LI>
+</OL>
+
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-1>Table&nbsp; II-3</FONT></FONT></B></CENTER>
+
+<CENTER><TABLE BORDER WIDTH="435" >
+<TR>
+<TD VALIGN=TOP WIDTH="32%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Function Type</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP COLSPAN="3" WIDTH="68%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Complexity-Weight</FONT></FONT></B></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="32%">&nbsp;</TD>
+
+<TD VALIGN=TOP WIDTH="23%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="23%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Average</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="23%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>High</FONT></FONT></B></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="32%"><FONT SIZE=-2>Internal Logical Files</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="23%">
+<CENTER><FONT SIZE=-2>7</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="23%">
+<CENTER><FONT SIZE=-2>10</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="23%">
+<CENTER><FONT SIZE=-2>15</FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="32%"><FONT SIZE=-2>External Interfaces Files</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="23%">
+<CENTER><FONT SIZE=-2>5</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="23%">
+<CENTER><FONT SIZE=-2>7</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="23%">
+<CENTER><FONT SIZE=-2>10</FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="32%"><FONT SIZE=-2>External Inputs</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="23%">
+<CENTER><FONT SIZE=-2>3</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="23%">
+<CENTER><FONT SIZE=-2>4</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="23%">
+<CENTER><FONT SIZE=-2>6</FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="32%"><FONT SIZE=-2>External Outputs</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="23%">
+<CENTER><FONT SIZE=-2>4</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="23%">
+<CENTER><FONT SIZE=-2>5</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="23%">
+<CENTER><FONT SIZE=-2>7</FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="32%"><FONT SIZE=-2>External Inquiries</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="23%">
+<CENTER><FONT SIZE=-2>3</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="23%">
+<CENTER><FONT SIZE=-2>4</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="23%">
+<CENTER><FONT SIZE=-2>6</FONT></CENTER>
+</TD>
+</TR>
+</TABLE></CENTER>
+&nbsp;
+<OL START=2>
+<LI>
+<FONT SIZE=-1><U>Compute Unadjusted Function Points.</U> Add all the weighted
+functions counts to get one number, the Unadjusted Function Points.</FONT></LI>
+</OL>
+<A NAME="ConvertingFunctionPoints"></A><B><FONT FACE="Arial"><FONT SIZE=-1>Converting
+Function Points to Lines of Code</FONT></FONT></B>
+
+<P><FONT SIZE=-1>To determine the nominal person months for the Early Design
+model, the unadjusted function points have to be converted to source lines
+of code in the implementation language (assembly, higher order language,
+fourth-generation language, etc.) in order to assess the relative conciseness
+of implementation per function point. COCOMO II does this for both the
+Early Design and Post-Architecture models by using tables such as those
+found in [Jones 1991] to translate Unadjusted Function Points into equivalent
+SLOC.</FONT>
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-1>Table&nbsp; II-4 </FONT></FONT>:
+Converting Function Points to Lines of Code</B></CENTER>
+
+<CENTER><TABLE BORDER WIDTH="209" >
+<TR>
+<TD VALIGN=TOP WIDTH="76%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Language</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="24%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>SLOC / UFP</FONT></FONT></B></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="76%"><FONT SIZE=-2>Ada</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="24%">
+<CENTER><FONT SIZE=-2>71</FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="76%"><FONT SIZE=-2>AI Shell</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="24%">
+<CENTER><FONT SIZE=-2>49</FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="76%"><FONT SIZE=-2>APL</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="24%">
+<CENTER><FONT SIZE=-2>32</FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="76%"><FONT SIZE=-2>Assembly&nbsp;</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="24%">
+<CENTER><FONT SIZE=-2>320</FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="76%"><FONT SIZE=-2>Assembly (Macro)</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="24%">
+<CENTER><FONT SIZE=-2>213</FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="76%"><FONT SIZE=-2>ANSI/Quick/Turbo Basic</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="24%">
+<CENTER><FONT SIZE=-2>64</FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="76%"><FONT SIZE=-2>Basic - Compiled</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="24%">
+<CENTER><FONT SIZE=-2>91</FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="76%"><FONT SIZE=-2>Basic - Interpreted</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="24%">
+<CENTER><FONT SIZE=-2>128</FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="76%"><FONT SIZE=-2>C</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="24%">
+<CENTER><FONT SIZE=-2>128</FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="76%"><FONT SIZE=-2>C++</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="24%">
+<CENTER><FONT SIZE=-2>29</FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="76%"><FONT SIZE=-2>ANSI Cobol 85</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="24%">
+<CENTER><FONT SIZE=-2>91</FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="76%"><FONT SIZE=-2>Fortan 77</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="24%">
+<CENTER><FONT SIZE=-2>105</FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="76%"><FONT SIZE=-2>Forth</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="24%">
+<CENTER><FONT SIZE=-2>64</FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="76%"><FONT SIZE=-2>Jovial</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="24%">
+<CENTER><FONT SIZE=-2>105</FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="76%"><FONT SIZE=-2>Lisp</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="24%">
+<CENTER><FONT SIZE=-2>64</FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="76%"><FONT SIZE=-2>Modula 2</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="24%">
+<CENTER><FONT SIZE=-2>80</FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="76%"><FONT SIZE=-2>Pascal</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="24%">
+<CENTER><FONT SIZE=-2>91</FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="76%"><FONT SIZE=-2>Prolog</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="24%">
+<CENTER><FONT SIZE=-2>64</FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="76%"><FONT SIZE=-2>Report Generator</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="24%">
+<CENTER><FONT SIZE=-2>80</FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="76%"><FONT SIZE=-2>Spreadsheet</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="24%">
+<CENTER><FONT SIZE=-2>6</FONT></CENTER>
+</TD>
+</TR>
+</TABLE></CENTER>
+<A NAME="Breakage"></A><B><I><FONT FACE="Arial">Breakage</FONT></I></B>
+
+<P><FONT SIZE=-1>COCOMO II uses a breakage percentage,&nbsp;<A NAME="BRAK"></A>BRAK,
+to adjust the effective size of the product. Breakage reflects the requirements
+volatility in a project. It is the percentage of code thrown away due to
+requirements volatility. For example, a project which delivers 100,000
+instructions but discards the equivalent of an additional 20,000 instructions
+has a BRAK value of 20. This would be used to adjust the project’s effective
+size to 120,000 instructions for a COCOMO II estimation. The BRAK factor
+is not used in the <I>Applications Composition</I> model, where a certain
+degree of product iteration is expected, and included in the data calibration.</FONT>
+
+<P><A NAME="AdjustingforReuse"></A><B><I><FONT FACE="Arial">Adjusting for
+Reuse</FONT></I></B>
+
+<P><FONT SIZE=-1>COCOMO adjusts for the reuse by modifying the size of
+the module or project. The model treats reuse with function points and
+source lines of code the same in either the Early Design model or the Post-Architecture
+model.</FONT>
+
+<P><A NAME="NonlinearReuseEffects"></A><FONT FACE="Arial">Nonlinear Reuse
+Effects</FONT>
+
+<P><FONT SIZE=-1>Analysis in [Selby 1988] of reuse costs across nearly
+3000 reused modules in the NASA Software Engineering Laboratory indicates
+that the reuse cost function is nonlinear in two significant ways (see
+Figure II-2):</FONT>
+<UL>
+<LI>
+<FONT SIZE=-1>It does not go through the origin. There is generally a cost
+of about 5% for assessing, selecting, and assimilating the reusable component.</FONT></LI>
+
+<LI>
+<FONT SIZE=-1>Small modifications generate disproportionately large costs.
+This is primarily due to two factors: the cost of understanding the software
+to be modified, and the relative cost of interface checking.</FONT></LI>
+</UL>
+
+<DIR><IMG SRC="figII-2.jpg" HEIGHT=308 WIDTH=622>
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<FONT FACE="Times New Roman,Times"><FONT SIZE=-1>Figure I-2: Nonlinear
+Reuse Effects</FONT></FONT></DIR>
+<FONT SIZE=-1>[Parikh and Zvegintzov 1983] contains data indicating that
+47% of the effort in software maintenance involves understanding the software
+to be modified. Thus, as soon as one goes from unmodified (black-box) reuse
+to modified-software (white-box) reuse, one encounters this software understanding
+penalty. Also, [Gerlich and Denskat 1994] shows that, if one modifies <I>k</I>
+out of <I>m</I> software modules, the number <I>N</I> of module interface
+checks required is <I>N = k * (m-k) + k * (k-1)/2</I>.</FONT>
+
+<P><FONT SIZE=-1>Figure II-3 shows this relation between the number of
+modules modified <I>k</I> and the resulting number of module interface
+checks required.</FONT>
+
+<P><IMG SRC="Imag20.jpg" HEIGHT=218 WIDTH=421>
+
+<P><FONT SIZE=-1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Figure II-3:&nbsp; Number of Module Interface Checks vs. Fraction Modified</FONT>
+
+<P><FONT SIZE=-1>The shape of this curve is similar for other values of
+<I>m</I>. It indicates that there are nonlinear effects involved in the
+module interface checking which occurs during the design, code, integration,
+and test of modified software.</FONT>
+
+<P><FONT SIZE=-1>The size of both the software understanding penalty and
+the module interface checking penalty can be reduced by good software stucturing.
+Modular, hierarchical structuring can reduce the number of interfaces which
+need checking [Gerlich and Denskat 1994], and software which is well structured,
+explained, and related to its mission will be easier to understand. COCOMO
+II reflects this in its allocation of estimated effort for modifying reusable
+software.</FONT>
+
+<P><A NAME="AReuseModel"></A><FONT FACE="Arial">A Reuse Model</FONT>
+
+<P><FONT SIZE=-1>The COCOMO II treatment of software reuse uses a nonlinear
+estimation model, Equation II-1. This involves estimating the amount of
+software to be adapted, ASLOC, and three degree- of-modification parameters:
+the percentage of design modified (DM), the percentage of code modified
+(CM), and the percentage of modification to the original integration effort
+required for integrating the reused software (IM).</FONT>
+
+<P><FONT SIZE=-1>The <I>Software Understanding</I> increment (SU) is obtained
+from Table II-5. SU is expressed quantitatively as a percentage. If the
+software is rated very high on structure, applications clarity, and self-descriptiveness,
+the software understanding and interface checking penalty is 10%. If the
+software is rated very low on these factors, the penalty is 50%. SU is
+determined by taking the subjective average of the three categories.</FONT>
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-1>Table&nbsp; II-5</FONT></FONT>:
+Rating Scale for Software Understanding Increment SU</B></CENTER>
+
+<CENTER><TABLE BORDER WIDTH="598" >
+<TR>
+<TD VALIGN=TOP WIDTH="18%">&nbsp;</TD>
+
+<TD VALIGN=TOP WIDTH="18%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Very Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="16%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="16%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Nom</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="16%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>High</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="16%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Very High</FONT></FONT></B></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="18%"><FONT SIZE=-2>Structure</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="18%"><FONT SIZE=-2>Very low cohesion, high coupling,
+spaghetti code.</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>Moderately low cohesion, high
+coupling.</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>Reasonably well- structured; some
+weak areas.</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>High cohesion, low coupling.</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>Strong modularity, information
+hiding in data / control structures.</FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="18%"><FONT SIZE=-2>Application</FONT>&nbsp;
+<BR><FONT SIZE=-2>Clarity</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="18%"><FONT SIZE=-2>No match between program and application
+world views.</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>Some correlation between program
+and application.</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>Moderate correlation between program
+and application.</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>Good correlation between program
+and application.</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>Clear match between program and
+application world-views.</FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="18%"><FONT SIZE=-2>Self- Descriptiveness</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="18%"><FONT SIZE=-2>Obscure code; documentation missing,
+obscure or obsolete</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>Some code commentary and headers;
+some useful documentation.</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>Moderate level of code commentary,
+headers, documentations.</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>Good code commentary and headers;
+useful documentation; some weak areas.</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>Self-descriptive code; documentation
+up-to-date, well-organized, with design rationale.</FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="18%"><FONT SIZE=-2>SU Increment to ESLOC</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="18%"><FONT SIZE=-2>50</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>40</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>30</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>20</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>10</FONT></TD>
+</TR>
+</TABLE></CENTER>
+<FONT SIZE=-1>I</FONT>
+
+<P><FONT SIZE=-1>The other nonlinear reuse increment deals with the degree
+of <I>Assessment and Assimilation </I>(AA)<I> </I>needed to determine whether
+a fully-reused software module is appropriate to the application, and to
+integrate its description into the overall product description. Table II-6
+provides the rating scale and values for the assessment and assimilation<I>
+</I>increment. AA is a percentage.</FONT>
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-1>Table&nbsp; II-6 </FONT></FONT>:
+Rating Scale for Assessment and Assimilation Increment (AA)</B></CENTER>
+
+<CENTER><TABLE BORDER WIDTH="516" >
+<TR>
+<TD VALIGN=TOP WIDTH="25%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>AA Increment</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="75%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Level of AA Effort</FONT></FONT></B></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="25%">
+<CENTER><FONT SIZE=-2>0</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="75%"><FONT SIZE=-2>None</FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="25%">
+<CENTER><FONT SIZE=-2>2</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="75%"><FONT SIZE=-2>Basic module search and documentation</FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="25%">
+<CENTER><FONT SIZE=-2>4</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="75%"><FONT SIZE=-2>Some module Test and Evaluation
+(T&amp;E), documentation</FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="25%">
+<CENTER><FONT SIZE=-2>6</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="75%"><FONT SIZE=-2>Considerable module T&amp;E, documentation</FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="25%">
+<CENTER><FONT SIZE=-2>8</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="75%"><FONT SIZE=-2>Extensive module T&amp;E, documentation</FONT></TD>
+</TR>
+</TABLE></CENTER>
+<FONT SIZE=-1>The amount of effort required to modify existing software
+is a function not only of the amount of modification (AAF) and understandability
+of the existing software (SU), but also of the programmer’s relative unfamiliarity
+with the software (UNFM). The UNFM parameter is applied multiplicatively
+to the software understanding effort increment. If the programmer works
+with the software every day, the 0.0 multiplier for UNFM will add no software
+understanding increment. If the programmer has never seen the software
+before, the 1.0 multiplier will add the full software understanding effort
+increment. The rating of UNFM is in Table II-7.</FONT>
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-1>Table II-7</FONT></FONT>: Rating
+Scale for Programmer Unfamiliarity (UNFM)</B></CENTER>
+
+<CENTER><TABLE BORDER WIDTH="295" >
+<TR>
+<TD VALIGN=TOP WIDTH="43%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>UNFM Increment</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="57%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Level of Unfamiliarity</FONT></FONT></B></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="43%">
+<CENTER><FONT SIZE=-2>0.0</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="57%"><FONT SIZE=-2>Completely familiar</FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="43%">
+<CENTER><FONT SIZE=-2>0.2</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="57%"><FONT SIZE=-2>Mostly familiar</FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="43%">
+<CENTER><FONT SIZE=-2>0.4</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="57%"><FONT SIZE=-2>Somewhat familiar</FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="43%">
+<CENTER><FONT SIZE=-2>0.6</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="57%"><FONT SIZE=-2>Considerably familiar</FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="43%">
+<CENTER><FONT SIZE=-2>0.8</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="57%"><FONT SIZE=-2>Mostly unfamiliar</FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="43%">
+<CENTER><FONT SIZE=-2>1.0</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="57%"><FONT SIZE=-2>Completely unfamiliar</FONT></TD>
+</TR>
+</TABLE></CENTER>
+<FONT SIZE=-1>&nbsp;</FONT>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<B><FONT FACE="Times New Roman,Times"><FONT SIZE=-2>(EQ II-1)&nbsp;</FONT></FONT></B>
+<CENTER><B><FONT FACE="HELVETICA"><FONT SIZE=-2>&nbsp;</FONT></FONT></B></CENTER>
+<IMG SRC="Imag21.jpg" HEIGHT=126 WIDTH=456>
+
+<P><FONT SIZE=-1>Equation II-1 is used to determine an equivalent number
+of new instructions, equivalent source lines of code (ESLOC). ESLOC is
+divided by one thousand to derive KESLOC which is used as the COCOMO size
+parameter. The calculation of ESLOC is based on an intermediate quantity,
+the Adaptation Adjustment Factor (AAF). The adaptation quantities, DM,
+CM, IM are used to calculate AAF where :</FONT>
+<UL>
+<LI>
+<FONT SIZE=-1>DM: Percent Design Modified. The percentage of the adapted
+software’s design which is modified in order to adapt it to the new objectives
+and environment. (This is necessarily a subjective quantity.)</FONT></LI>
+</UL>
+
+<UL>
+<LI>
+<FONT SIZE=-1>CM: Percent Code Modified. The percentage of the adapted
+software’s code which is modified in order to adapt it to the new objectives
+and environment.</FONT></LI>
+</UL>
+
+<UL>
+<LI>
+<FONT SIZE=-1>IM: Percent of Integration Required for Modified Software.
+The percentage of effort required to integrate the adapted software into
+an overall product and to test the resulting product as compared to the
+normal amount of integration and test effort for software of comparable
+size.</FONT></LI>
+</UL>
+<FONT SIZE=-1>If there is no DM or CM (the component is being used unmodified)
+then there is no need for SU. If the code is being modified then SU applies.</FONT>
+
+<P><FONT SIZE=-1>&nbsp;</FONT>
+
+<P><A NAME="AdjustingforReengineering"></A><B><I><FONT FACE="Arial">Adjusting
+for Re-engineering or Conversion</FONT></I></B>
+
+<P><FONT SIZE=-1>The COCOMO II reuse model needs additional refinement
+to estimate the costs of software re-engineering and conversion. The major
+difference in re-engineering and conversion is the efficiency of automated
+tools for software restructuring. These can lead to very high values for
+the percentage of code modified (CM in the COCOMO II reuse model), but
+with very little corresponding effort. For example, in the NIST re-engineering
+case study [Ruhl and Gunn 1991], 80% of the code (13,131 COBOL source statements)
+was re-engineered by automatic translation, and the actual re-engineering
+effort, 35 person months, was a factor of over 4 lower than the COCOMO
+estimate of 152 person months.</FONT>
+
+<P><FONT SIZE=-1>The COCOMO II re-engineering and conversion estimation
+approach involves estimation of an additional parameter, AT, the percentage
+of the code that is re-engineered by automatic translation. Based on an
+analysis of the project data above, the productivity for automated translation
+is 2400 source statements / person month. This value could vary with different
+technologies and will be designated in the COCOMO II model as ATPROD. In
+the NIST case study <I>ATPROD = 2400</I>. Equation II-2 shows how automated
+translation affects the estimated nominal effort, <I>PM</I>.</FONT>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT FACE="Times New Roman,Times"><FONT SIZE=-2>
+<B>(EQ II-2)</B></FONT></FONT>
+
+<P><IMG SRC="Imag22.jpg" HEIGHT=90 WIDTH=345>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR><B><FONT FACE="HELVETICA"><FONT SIZE=-2>&nbsp;</FONT></FONT></B></DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+<FONT SIZE=-1>The NIST case study also provides useful guidance on estimating
+the AT factor, which is a strong function of the difference between the
+boundary conditions (e.g., use of COTS packages, change from batch to interactive
+operation) of the old code and the re-engineered code. The NIST data on
+percentage of automated translation (from an original batch processing
+application without COTS utilities) are given in Table II-8 [Ruhl and Gunn
+1991].</FONT>
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-1>Table&nbsp; II-8</FONT></FONT>:
+Variation in Percentage of Automated Re-engineering</B></CENTER>
+
+<CENTER><TABLE BORDER WIDTH="413" >
+<TR>
+<TD VALIGN=TOP WIDTH="48%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Re-engineering Target</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="52%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>AT (% automated translation)</FONT></FONT></B></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="48%"><FONT SIZE=-2>Batch processing</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="52%">
+<CENTER><FONT SIZE=-2>96%</FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="48%"><FONT SIZE=-2>Batch with SORT</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="52%">
+<CENTER><FONT SIZE=-2>90%</FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="48%"><FONT SIZE=-2>Batch with DBMS</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="52%">
+<CENTER><FONT SIZE=-2>88%</FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="48%"><FONT SIZE=-2>Batch, SORT, DBMS</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="52%">
+<CENTER><FONT SIZE=-2>82%</FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="48%"><FONT SIZE=-2>Interactive</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="52%">
+<CENTER><FONT SIZE=-2>50%</FONT></CENTER>
+</TD>
+</TR>
+</TABLE></CENTER>
+<A NAME="ApplicationsMaintenance"></A><B><I><FONT FACE="Arial">Applications
+Maintenance</FONT></I></B>
+
+<P><FONT SIZE=-1>COCOMO II uses the reuse model for maintenance when the
+amount of added or changed base source code is less than or equal to 20%
+or the new code being developed. Base code is source code that already
+exists and is being changed for use in the current project. For maintenance
+projects that involve more than 20% change in the existing base code (relative
+to new code being developed) COCOMO II uses maintenance size. An initial
+maintenance size is obtained in one to two ways, Equation II-3 or Equation
+II-5. Equation II-3 is used when the base code size is known and the percentage
+of change to the base code is known.</FONT>
+<BLOCKQUOTE>
+<BLOCKQUOTE>
+<BLOCKQUOTE>
+<BLOCKQUOTE>
+<BLOCKQUOTE>
+<BLOCKQUOTE>
+<BLOCKQUOTE>
+<BLOCKQUOTE>
+<BLOCKQUOTE><B><FONT FACE="Times New Roman,Times"><FONT SIZE=-2>(EQ II-3)</FONT></FONT></B></BLOCKQUOTE>
+</BLOCKQUOTE>
+</BLOCKQUOTE>
+</BLOCKQUOTE>
+</BLOCKQUOTE>
+</BLOCKQUOTE>
+</BLOCKQUOTE>
+</BLOCKQUOTE>
+</BLOCKQUOTE>
+<IMG SRC="Imag23.jpg" HEIGHT=40 WIDTH=323>
+
+<P><FONT SIZE=-1>The percentage of change to the base code is called the&nbsp;<A NAME="MaintenanceChangeFactor"></A>Maintenance
+Change Factor (MCF). The MCF is similar to the Annual Change Traffic in
+COCOMO 81, except that maintenance periods other than a year can be used.
+Conceptually the MCF represents the ratio in Equation II-4:</FONT>
+<BR>&nbsp;
+<BLOCKQUOTE>
+<BLOCKQUOTE>
+<BLOCKQUOTE>
+<BLOCKQUOTE>
+<BLOCKQUOTE>
+<BLOCKQUOTE>
+<BLOCKQUOTE>
+<BLOCKQUOTE>
+<BLOCKQUOTE><B><FONT FACE="Times New Roman,Times"><FONT SIZE=-2>(EQ II-4)</FONT></FONT></B></BLOCKQUOTE>
+</BLOCKQUOTE>
+</BLOCKQUOTE>
+</BLOCKQUOTE>
+</BLOCKQUOTE>
+</BLOCKQUOTE>
+</BLOCKQUOTE>
+</BLOCKQUOTE>
+</BLOCKQUOTE>
+<IMG SRC="Imag24.jpg" HEIGHT=45 WIDTH=266>
+
+<P><FONT SIZE=-1>Equation II-5 is used when the fraction of code added
+or modified to the existing base code during the maintenance period is
+known. Deleted code is not counted.</FONT>
+<BR>&nbsp;
+<BR><B><FONT FACE="Times New Roman,Times"><FONT SIZE=-2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(EQ II-5)</FONT></FONT></B>
+<BR><IMG SRC="Imag25.jpg" HEIGHT=29 WIDTH=341>
+
+<P><FONT SIZE=-1>The size can refer to thousands of source lines of code
+(KSLOC), Function Points, or Object Points. When using Function Points
+or Object Points, it is better to estimate MCF in terms of the fraction
+of the overall application being changed, rather than the fraction of inputs,
+outputs, screens, reports, etc. touched by the changes. Our experience
+indicates that counting the items touched can lead to significant over
+estimates, as relatively small changes can touch a relatively large number
+of items.</FONT>
+
+<P><FONT SIZE=-1>The initial maintenance size estimate (described above)
+is adjusted with a Maintenance Adjustment Factor (MAF), Equation II-6.
+COCOMO 81 used different multipliers for the effects of Required Reliability
+(RELY) and Modern Programming Practices (MODP) on maintenance versus development
+effort. COCOMO II instead used the Software Understanding (SU) and Programmer
+Unfamiliarity (UNFM) factors from its reuse model to model the effects
+of well or poorly structured/understandable software on maintenance effort.</FONT>
+<BR>&nbsp;
+<BLOCKQUOTE>
+<BLOCKQUOTE>
+<BLOCKQUOTE>
+<BLOCKQUOTE>
+<BLOCKQUOTE>
+<BLOCKQUOTE><B><FONT FACE="Times New Roman,Times"><FONT SIZE=-2>(EQ II-6)</FONT></FONT></B></BLOCKQUOTE>
+</BLOCKQUOTE>
+</BLOCKQUOTE>
+</BLOCKQUOTE>
+</BLOCKQUOTE>
+</BLOCKQUOTE>
+<IMG SRC="Imag26.jpg" HEIGHT=53 WIDTH=204>
+
+<P><FONT SIZE=-1>The resulting maintenance effort estimation formula is
+the same as the COCOMO II Post- Architecture development model:</FONT>
+<BLOCKQUOTE>
+<BLOCKQUOTE>
+<BLOCKQUOTE>
+<BLOCKQUOTE>
+<BLOCKQUOTE>
+<BLOCKQUOTE><B><FONT FACE="Times New Roman,Times"><FONT SIZE=-2>&nbsp;(EQ
+II-7)</FONT></FONT></B></BLOCKQUOTE>
+</BLOCKQUOTE>
+</BLOCKQUOTE>
+</BLOCKQUOTE>
+</BLOCKQUOTE>
+</BLOCKQUOTE>
+<IMG SRC="Imag27.jpg" HEIGHT=79 WIDTH=224>
+
+<P><FONT SIZE=-1>The COCOMO II approach to estimating either the maintenance
+activity duration, T<I><SUB>M</SUB></I>, or the average maintenance staffing
+level, FSP<I><SUB>M</SUB></I>, is via the relationship:</FONT>
+<BR>&nbsp;
+<BLOCKQUOTE>
+<BLOCKQUOTE>
+<BLOCKQUOTE>
+<BLOCKQUOTE>
+<BLOCKQUOTE>
+<BLOCKQUOTE><B><FONT FACE="Times New Roman,Times"><FONT SIZE=-2>(EQ II-8)</FONT></FONT></B></BLOCKQUOTE>
+</BLOCKQUOTE>
+</BLOCKQUOTE>
+</BLOCKQUOTE>
+</BLOCKQUOTE>
+</BLOCKQUOTE>
+<IMG SRC="Imag28.jpg" HEIGHT=37 WIDTH=150>
+
+<P><FONT SIZE=-1>Most maintenance is done as a level of effort activity.
+This relationship can estimate the level of effort, FSP<I><SUB>M</SUB></I>,
+given T<I><SUB>M</SUB></I> (as in annual maintenance estimates, where T<I><SUB>M</SUB></I>
+= 12 months), or vice-versa (given a fixed maintenance staff level, FSP<I><SUB>M</SUB></I>,
+determine the necessary time, T<I><SUB>M</SUB></I>, to complete the effort).</FONT>
+
+<P><A NAME="EffortMultipliers"></A><B><I><FONT FACE="Arial">Effort Multipliers</FONT></I></B>
+
+<P><A NAME="EarlyDesign"></A><B>Early Design</B>
+
+<P><FONT SIZE=-1>The Early Design model uses KSLOC for size. Unadjusted
+function points are converted to the equivalent SLOC and then to KSLOC.
+The application of project scale factors is the same for Early Design and
+the Post-Architecture models. In the Early Design model a reduced set of
+cost drivers are used. The Early Design cost drivers are obtained by combining
+the Post-Architecture model cost drivers from Table II-9. Whenever an assessment
+of a cost driver is between the rating levels always round to the Nominal
+rating, e.g. if a cost driver rating is between Very Low and Low, then
+select Low.</FONT>
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-1>Table&nbsp; II-9</FONT></FONT>:&nbsp;<A NAME="EarlyDesignandPostArchitecture"></A>Early
+Design and Post-Architecture Effort Multipliers</B></CENTER>
+
+<CENTER><TABLE BORDER WIDTH="395" >
+<TR>
+<TD VALIGN=TOP WIDTH="50%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Early Design Cost Driver</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="50%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Counterpart Combined</FONT></FONT></B></CENTER>
+
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Post-Architecture Cost Drivers</FONT></FONT></B></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="50%">
+<CENTER><FONT SIZE=-2>RCPX</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="50%"><FONT SIZE=-2>RELY, DATA, CPLX, DOCU</FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="50%">
+<CENTER><FONT SIZE=-2>RUSE</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="50%"><FONT SIZE=-2>RUSE</FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="50%">
+<CENTER><FONT SIZE=-2>PDIF</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="50%"><FONT SIZE=-2>TIME, STOR, PVOL</FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="50%">
+<CENTER><FONT SIZE=-2>PERS</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="50%"><FONT SIZE=-2>ACAP, PCAP, PCON</FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="50%">
+<CENTER><FONT SIZE=-2>PREX</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="50%"><FONT SIZE=-2>AEXP, PEXP, LTEX</FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="50%">
+<CENTER><FONT SIZE=-2>FCIL</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="50%"><FONT SIZE=-2>TOOL, SITE</FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="50%">
+<CENTER><FONT SIZE=-2>SCED</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="50%"><FONT SIZE=-2>SCED</FONT></TD>
+</TR>
+</TABLE></CENTER>
+<A NAME="OverallApproach"></A><B><FONT FACE="Arial"><FONT SIZE=-1>Overall
+Approach: Personnel Capability (PERS) Example</FONT></FONT></B>
+
+<P><FONT SIZE=-1>The following approach is used for mapping the full set
+of Post-Architecture cost drivers and rating scales onto their Early Design
+model counterparts. It involves the use and combination of numerical equivalents
+of the rating levels. Specifically, a Very Low Post-Architecture cost driver
+rating corresponds to a numerical rating of 1, Low is 2, Nominal is 3,
+High is 4, Very High is 5, and Extra High is 6. For the combined Early
+Design cost drivers, the numerical values of the contributing Post-Architecture
+cost drivers, Table II-9, are summed, and the resulting totals are allocated
+to an expanded Early Design model rating scale going from Extra Low to
+Extra High. The Early Design model rating scales always have a Nominal
+total equal to the sum of the Nominal ratings of its contributing Post-Architecture
+elements.</FONT>
+
+<P><FONT SIZE=-1>An example will illustrate this approach. The Early Design
+PERS cost driver combines the Post-Architecture cost drivers analyst capability
+(ACAP), programmer capability (PCAP), and personnel continuity (PCON).
+Each of these has a rating scale from Very Low (=1) to Very High (=5).
+Adding up their numerical ratings produces values ranging from 3 to 15.
+These are laid out on a scale, and the Early Design PERS rating levels
+assigned to them, as shown in Table II-16.</FONT>
+<BR><FONT FACE="Arial">&nbsp;</FONT>
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-1>Table&nbsp; II-10</FONT></FONT>:&nbsp;<A NAME="PERSRatingLevels"></A>PERS
+Rating Levels</B></CENTER>
+
+<CENTER><TABLE BORDER WIDTH="514" >
+<TR>
+<TD VALIGN=TOP WIDTH="23%">&nbsp;</TD>
+
+<TD VALIGN=TOP WIDTH="11%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Extra Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="11%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Very Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="11%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="11%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Nominal</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="11%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>High</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="11%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Very High</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="10%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Extra High</FONT></FONT></B></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="23%"><FONT SIZE=-2>Sum of ACAP, PCAP, PCON Ratings</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="11%">
+<CENTER><FONT SIZE=-2>3, 4</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="11%">
+<CENTER><FONT SIZE=-2>5, 6</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="11%">
+<CENTER><FONT SIZE=-2>7, 8</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="11%">
+<CENTER><FONT SIZE=-2>9</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="11%">
+<CENTER><FONT SIZE=-2>10, 11</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="11%">
+<CENTER><FONT SIZE=-2>12, 13</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="10%">
+<CENTER><FONT SIZE=-2>14, 15</FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="23%"><FONT SIZE=-2>Combined ACAP and PCAP Percentile</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="11%">
+<CENTER><FONT SIZE=-2>20%</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="11%">
+<CENTER><FONT SIZE=-2>39%</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="11%">
+<CENTER><FONT SIZE=-2>45%</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="11%">
+<CENTER><FONT SIZE=-2>55%</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="11%">
+<CENTER><FONT SIZE=-2>65%</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="11%">
+<CENTER><FONT SIZE=-2>75%</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="10%">
+<CENTER><FONT SIZE=-2>85%</FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="23%"><FONT SIZE=-2>Annual Personnel Turnover</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="11%">
+<CENTER><FONT SIZE=-2>45%</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="11%">
+<CENTER><FONT SIZE=-2>30%</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="11%">
+<CENTER><FONT SIZE=-2>20%</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="11%">
+<CENTER><FONT SIZE=-2>12%</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="11%">
+<CENTER><FONT SIZE=-2>9%</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="11%">
+<CENTER><FONT SIZE=-2>5%</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="10%">
+<CENTER><FONT SIZE=-2>4%</FONT></CENTER>
+</TD>
+</TR>
+</TABLE></CENTER>
+<FONT SIZE=-1>The Nominal PERS rating of 9 corresponds to the sum (3 +
+3 + 3) of the Nominal ratings for ACAP, PCAP, and PCON, and its corresponding
+effort multiplier is 1.0. Note, however that the Nominal PERS rating of
+9 can result from a number of other combinations, e.g. 1 + 3 + 5 = 9 for
+ACAP = Very Low, PCAP = Nominal, and PCON = Very High.</FONT>
+
+<P><FONT SIZE=-1>The rating scales and effort multipliers for PCAP and
+the other Early Design cost drivers maintain consistent relationships with
+their Post-Architecture counterparts. For example, the PERS Extra Low rating
+levels (20% combined ACAP and PCAP percentile; 45% personnel turnover)
+represent averages of the ACAP, PCAP, and PCON rating levels adding up
+to 3 or 4.</FONT>
+
+<P><FONT SIZE=-1>Maintaining these consistency relationships between the
+Early Design and Post-Architecture rating levels ensures consistency of
+Early Design and Post-Architecture cost estimates. It also enables the
+rating scales for the individual Post-Architecture cost drivers, Table
+II-16, to be used as detailed backups for the top-level Early Design rating
+scales given below.</FONT>
+
+<P><A NAME="ProductReliabilityandComplexity"></A><B><FONT FACE="Arial"><FONT SIZE=-1>Product
+Reliability and Complexity (RCPX)</FONT></FONT></B>
+
+<P><FONT SIZE=-1>This Early Design cost driver combines the four Post-Architecture
+cost drivers Required Software Reliability (RELY), Database size (DATA),
+Product complexity (CPLX), and Documentation match to life-cycle needs
+(DOCU). Unlike the PERS components, the RCPX components have rating scales
+with differing width. RELY and DOCU range from Very Low to Very High; DATA
+ranges from Low to Very High, and CPLX ranges from Very Low to Extra High.
+The numerical sum of their ratings thus ranges from 5 (VL, L, VL, VL) to
+21 (VH, VH, EH, VH).</FONT>
+
+<P><FONT SIZE=-1>Table II-16 assigns RCPX ratings across this range, and
+associates appropriate rating scales to each of the RCPX ratings from Extra
+Low to Extra High. As with PERS, the Post- Architecture RELY, DATA CPLX,
+and DOCU rating scales in Table II-16 provide detailed backup for interpreting
+the Early Design RCPX rating levels.</FONT>
+<BR><FONT FACE="Arial">&nbsp;</FONT>
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-1>Table&nbsp; II-11</FONT></FONT>:&nbsp;<A NAME="RCPXRatingLevels"></A>RCPX
+Rating Levels</B></CENTER>
+
+<CENTER><TABLE BORDER WIDTH="509" >
+<TR>
+<TD VALIGN=TOP WIDTH="27%">&nbsp;</TD>
+
+<TD VALIGN=TOP WIDTH="10%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Extra Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="10%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Very Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="10%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="10%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Nomina l</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="10%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>High</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="10%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Very High</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="11%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Extra High</FONT></FONT></B></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="27%"><FONT SIZE=-2>Sum of RELY, DATA, CPLX, DOCU
+Ratings</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="10%"><FONT SIZE=-2>5, 6</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="10%"><FONT SIZE=-2>7, 8</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="10%"><FONT SIZE=-2>9 - 11</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="10%"><FONT SIZE=-2>12</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="10%"><FONT SIZE=-2>13 - 15</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="10%"><FONT SIZE=-2>16 - 18</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="11%"><FONT SIZE=-2>19 - 21</FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="27%"><FONT SIZE=-2>Emphasis on reliability,</FONT>&nbsp;
+<BR><FONT SIZE=-2>documentation</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="10%"><FONT SIZE=-2>Very&nbsp;</FONT>&nbsp;
+<BR><FONT SIZE=-2>little</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="10%"><FONT SIZE=-2>Little</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="10%"><FONT SIZE=-2>Some</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="10%"><FONT SIZE=-2>Basic</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="10%"><FONT SIZE=-2>Strong</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="10%"><FONT SIZE=-2>Very</FONT>&nbsp;
+<BR><FONT SIZE=-2>Strong</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="11%"><FONT SIZE=-2>Extreme</FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="27%"><FONT SIZE=-2>Product complexity</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="10%"><FONT SIZE=-2>Very simple</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="10%"><FONT SIZE=-2>Simple</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="10%"><FONT SIZE=-2>Some</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="10%"><FONT SIZE=-2>Moderate</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="10%"><FONT SIZE=-2>Complex</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="10%"><FONT SIZE=-2>Very complex</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="11%"><FONT SIZE=-2>Extremely complex</FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="27%"><FONT SIZE=-2>Database size</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="10%"><FONT SIZE=-2>Small</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="10%"><FONT SIZE=-2>Small</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="10%"><FONT SIZE=-2>Small</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="10%"><FONT SIZE=-2>Moderate</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="10%"><FONT SIZE=-2>Large</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="10%"><FONT SIZE=-2>Very Large</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="11%"><FONT SIZE=-2>Very Large</FONT></TD>
+</TR>
+</TABLE></CENTER>
+<A NAME="RequiredReuse"></A><B><FONT FACE="Arial"><FONT SIZE=-1>Required
+Reuse (RUSE)</FONT></FONT></B>
+
+<P><FONT SIZE=-1>This Early Design model cost driver is the same as its
+Post-Architecture counterpart, which is covered in the chapter on the Post-Architecture
+model. A summary of its rating levels is given below and in Table II-16.</FONT>
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-1>Table&nbsp; II-12</FONT></FONT>:&nbsp;<A NAME="RUSERatingLevelSummary"></A>RUSE
+Rating Level Summary</B></CENTER>
+
+<CENTER><TABLE BORDER WIDTH="508" >
+<TR>
+<TD VALIGN=TOP WIDTH="17%"></TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Very Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Nominal</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>High</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Very High</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="13%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Extra High</FONT></FONT></B></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="17%">
+<CENTER><FONT SIZE=-2>RUSE</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">&nbsp;</TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>None</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>across project</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>across program</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>across product line</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="13%"><FONT SIZE=-2>across multiple product lines</FONT></TD>
+</TR>
+</TABLE></CENTER>
+<A NAME="PlatformDifficulty"></A><B><FONT FACE="Arial"><FONT SIZE=-1>Platform
+Difficulty (PDIF)</FONT></FONT></B>
+
+<P><FONT SIZE=-1>This Early Design cost driver combines the three Post-
+Architecture cost drivers execution time (TIME), main storage constraint
+(STOR), and platform volatility (PVOL). TIME and STOR range from Nominal
+to Extra High; PVOL ranges from Low to Very High. The numerical sum of
+their ratings thus ranges from 8 (N, N, L) to 17 (EH, EH, VH).</FONT>
+
+<P><FONT SIZE=-1>Table II-16 assigns PDIF ratings across this range, and
+associates the appropriate rating scales to each of the PDIF rating levels.
+The Post-Architecture rating scales in Table II-16 provide additional backup
+definition for the PDIF ratings levels.</FONT>
+<BR><FONT SIZE=-1>&nbsp;</FONT>
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-1>Table&nbsp; II-13</FONT></FONT>:&nbsp;<A NAME="PDIFRatingLevels"></A>PDIF
+Rating Levels</B></CENTER>
+
+<CENTER><TABLE BORDER WIDTH="502" >
+<TR>
+<TD VALIGN=TOP WIDTH="32%">&nbsp;</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Nominal</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>High</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Very High</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Extra High</FONT></FONT></B></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="32%"><FONT SIZE=-2>Sum of TIME, STOR, and PVOL ratings</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><FONT SIZE=-2>8</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><FONT SIZE=-2>9</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><FONT SIZE=-2>10 - 12</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><FONT SIZE=-2>13 - 15</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><FONT SIZE=-2>16, 17</FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="32%"><FONT SIZE=-2>Time and storage constraint</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><FONT SIZE=-2>50%</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><FONT SIZE=-2>50%</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><FONT SIZE=-2>65%</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><FONT SIZE=-2>80%</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><FONT SIZE=-2>90%</FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="32%"><FONT SIZE=-2>Platform volatility</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><FONT SIZE=-2>Very stable</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><FONT SIZE=-2>Stable</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><FONT SIZE=-2>Somewhat volatile</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><FONT SIZE=-2>Volatile</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><FONT SIZE=-2>Highly volatile</FONT></CENTER>
+</TD>
+</TR>
+</TABLE></CENTER>
+<A NAME="PersonnelExperience"></A><B><FONT FACE="Arial"><FONT SIZE=-1>Personnel
+Experience (PREX)</FONT></FONT></B>
+
+<P><FONT SIZE=-1>This Early Design cost driver combines the three Post-Architecture
+cost drivers application experience (AEXP), platform experience (PEXP),
+and language and tool experience (LTEX). Each of these range from Very
+Low to Very High; as with PERS, the numerical sum of their ratings ranges
+from 3 to 15.</FONT>
+
+<P><FONT SIZE=-1>Table II-16 assigns PREX ratings across this range, and
+associates appropriate effort multipliers and rating scales to each of
+the rating levels.</FONT>
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-1>Table&nbsp; II-14</FONT></FONT>:&nbsp;<A NAME="PREXRatingLevels"></A>PREX
+Rating Levels</B></CENTER>
+
+<CENTER><TABLE BORDER WIDTH="509" >
+<TR>
+<TD VALIGN=TOP WIDTH="28%"></TD>
+
+<TD VALIGN=TOP WIDTH="10%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Extra Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="10%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Very Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="10%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="10%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Nomina l</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="10%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>High</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="10%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Very High</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Extra High</FONT></FONT></B></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="28%"><FONT SIZE=-2>Sum of AEXP, PEXP, and LTEX ratings</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="10%"><FONT SIZE=-2>3, 4</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="10%"><FONT SIZE=-2>5, 6</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="10%"><FONT SIZE=-2>7, 8</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="10%"><FONT SIZE=-2>9</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="10%"><FONT SIZE=-2>10, 11</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="10%"><FONT SIZE=-2>12, 13</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="9%"><FONT SIZE=-2>14, 15</FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="28%"><FONT SIZE=-2>Applications, Platform, Language
+and Tool Experience</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="10%"><FONT SIZE=-2><FONT FACE="Symbol">&pound; </FONT>3
+mo.</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="10%"><FONT SIZE=-2>5 months</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="10%"><FONT SIZE=-2>9 months</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="10%"><FONT SIZE=-2>1 year</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="10%"><FONT SIZE=-2>2 years</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="10%"><FONT SIZE=-2>4 years</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="9%"><FONT SIZE=-2>6 years</FONT></TD>
+</TR>
+</TABLE></CENTER>
+<A NAME="Facilities"></A><B><FONT FACE="Arial"><FONT SIZE=-1>Facilities
+(FCIL)</FONT></FONT></B>
+
+<P><FONT SIZE=-1>This Early Design cost driver combines the two Post-Architecture
+cost drivers: use of software tools (TOOL) and multisite development (SITE).
+TOOL ranges from Very Low to Very High; SITE ranges from Very Low to Extra
+High. Thus, the numerical sum of their ratings ranges from 2 (VL, VL) to
+11 (VH, EH).</FONT>
+
+<P><FONT SIZE=-1>Table II-16 assigns FCIL ratings across this range, and
+associates appropriate rating scales to each of the FCIL rating levels.
+The individual Post-Architecture TOOL and SITE rating scales in Table II-16
+again provide additional backup definition for the FCIL rating levels.</FONT>
+
+<P><FONT SIZE=-1>&nbsp;</FONT>
+<CENTER><A NAME="FCILRatingLevels"></A><B><FONT SIZE=-1>FCIL Rating Levels</FONT></B></CENTER>
+
+<CENTER><TABLE BORDER WIDTH="523" >
+<TR>
+<TD VALIGN=TOP WIDTH="18%">&nbsp;</TD>
+
+<TD VALIGN=TOP WIDTH="11%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Extra Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="11%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Very Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="11%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="11%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Nominal</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="11%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>High</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="11%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Very High</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="13%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Extra High</FONT></FONT></B></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="18%"><FONT SIZE=-2>Sum of TOOL and&nbsp;</FONT>&nbsp;
+<BR><FONT SIZE=-2>SITE ratings</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="11%">
+<CENTER><FONT SIZE=-2>2</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="11%">
+<CENTER><FONT SIZE=-2>3</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="11%">
+<CENTER><FONT SIZE=-2>4, 5</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="11%">
+<CENTER><FONT SIZE=-2>6</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="11%">
+<CENTER><FONT SIZE=-2>7, 8</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="11%">
+<CENTER><FONT SIZE=-2>9, 10</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="13%">
+<CENTER><FONT SIZE=-2>11</FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="18%"><FONT SIZE=-2>TOOL support</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="11%"><FONT SIZE=-2>Minimal</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="11%"><FONT SIZE=-2>Some</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="11%"><FONT SIZE=-2>Simple CASE tool collection</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="11%"><FONT SIZE=-2>Basic life- cycle tools</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="11%"><FONT SIZE=-2>Good; moderately integrated</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="11%"><FONT SIZE=-2>Strong; moderately integrated</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="13%"><FONT SIZE=-2>Strong; well integrated</FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="18%"><FONT SIZE=-2>Multisite conditions</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="11%"><FONT SIZE=-2>Weak support of complex multisite
+development</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="11%"><FONT SIZE=-2>Some support of complex M/S devel.</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="11%"><FONT SIZE=-2>Some support of moderately complex
+M/S devel.</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="11%"><FONT SIZE=-2>Basic support of moderately complex
+M/S devel.</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="11%"><FONT SIZE=-2>Strong support of moderately complex
+M/S devel.</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="11%"><FONT SIZE=-2>Strong support of simple M/ S
+devel.</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="13%"><FONT SIZE=-2>Very strong support of collocated
+or simple M/S devel.</FONT></TD>
+</TR>
+</TABLE></CENTER>
+<A NAME="Schedule"></A><B><FONT FACE="Arial"><FONT SIZE=-1>Schedule (SCED)</FONT></FONT></B>
+
+<P><FONT SIZE=-1>The Early Design cost driver is the same as its Post-Architecture
+counterpart. A summary of its rating levels is given in Table II-16 below.</FONT>
+<CENTER><A NAME="SCEDRatingLevelSummary"></A><B><FONT SIZE=-1>SCED Rating
+Level Summary</FONT></B></CENTER>
+
+<CENTER><TABLE BORDER WIDTH="515" >
+<TR>
+<TD VALIGN=TOP WIDTH="17%">&nbsp;</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Very Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Nominal</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>High</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Very High</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="13%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Extra High</FONT></FONT></B></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="17%">
+<CENTER><FONT SIZE=-2>SCED</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><FONT SIZE=-2>75% of nominal</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><FONT SIZE=-2>85%</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><FONT SIZE=-2>100%</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><FONT SIZE=-2>130%</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><FONT SIZE=-2>160%</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="13%">&nbsp;</TD>
+</TR>
+</TABLE></CENTER>
+<A NAME="PostArchitecture"></A><FONT FACE="Arial">Post-Architecture</FONT>
+
+<P><FONT SIZE=-1>These are the 17 effort multipliers used in COCOMO II
+Post-Architecture model to adjust the nominal effort, Person Months, to
+reflect the software product under development. They are grouped into four
+categories: product, platform, personnel, and project. Table II-16 lists
+the different cost drivers with their rating criterion (found at the end
+of this section). Whenever an assessment of a cost driver is between the
+rating levels always round to the Nominal rating, e.g. if a cost driver
+rating is between High and Very High, then select High. The counterpart
+7 effort multipliers for the Early Design model are discussed in the chapter
+explaining that model</FONT>
+
+<P><A NAME="ProductFactors"></A><B><FONT FACE="Arial"><FONT SIZE=-1>Product
+Factors</FONT></FONT></B>
+
+<P><A NAME="RequiredSoftwareReliability"></A><FONT FACE="Arial"><FONT SIZE=-1>Required
+Software Reliability (RELY)</FONT></FONT>
+
+<P><FONT SIZE=-1>This is the measure of the extent to which the software
+must perform its intended function over a period of time. If the effect
+of a software failure is only slight inconvenience then RELY is low. If
+a failure would risk human life then RELY is very high.</FONT>
+<CENTER><TABLE BORDER WIDTH="508" >
+<TR>
+<TD VALIGN=TOP WIDTH="17%"><B>&nbsp;</B></TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Very Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Nominal</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>High</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Very High</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="13%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Extra High</FONT></FONT></B></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="17%"><FONT SIZE=-2>RELY</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>slight incon venience</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>low, easily recoverable losses</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>moderate, easily recov erable
+losses</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>high finan cial loss</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>risk to human life</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="13%">&nbsp;</TD>
+</TR>
+</TABLE></CENTER>
+<A NAME="DataBaseSize"></A><FONT FACE="Arial"><FONT SIZE=-1>Data Base Size
+(DATA)</FONT></FONT>
+
+<P><FONT SIZE=-1>This measure attempts to capture the affect large data
+requirements have on product development. The rating is determined by calculating
+D/P. The reason the size of the database is important to consider it because
+of the effort required to generate the test data that will be used to exercise
+the program.</FONT>
+
+<P><B><FONT FACE="HELVETICA"><FONT SIZE=-2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(EQ II-9)</FONT></FONT></B>
+<BR><IMG SRC="Imag29.jpg" HEIGHT=57 WIDTH=221>
+
+<P><FONT SIZE=-1>DATA is rated as low if D/P is less than 10 and it is
+very high if it is greater than 1000.</FONT>
+<BR>&nbsp;
+<CENTER><TABLE BORDER WIDTH="515" >
+<TR>
+<TD VALIGN=TOP WIDTH="17%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>&nbsp;</FONT></FONT></B></CENTER>
+
+
+<P><B>&nbsp;</B></TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Very Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Nominal</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>High</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Very High</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="13%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Extra High</FONT></FONT></B></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="17%"><FONT SIZE=-2>DATA</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%">&nbsp;</TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>DB bytes/ Pgm SLOC &lt; 10</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>10 <FONT FACE="Symbol">&pound;</FONT>
+D/P &lt; 100</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>100 <FONT FACE="Symbol">&pound;</FONT>
+D/P &lt; 1000</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>D/P <FONT FACE="Symbol">&sup3;</FONT>
+1000</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="13%">&nbsp;</TD>
+</TR>
+</TABLE></CENTER>
+<A NAME="ProductComplexity"></A><FONT FACE="Arial"><FONT SIZE=-1>Product
+Complexity (CPLX)</FONT></FONT>
+
+<P><FONT SIZE=-1>Table II-15 (found at the end of this section) provides
+the new COCOMO II CPLX rating scale. Complexity is divided into five areas:
+control operations, computational operations, device-dependent operations,
+data management operations, and user interface management operations. Select
+the area or combination of areas that characterize the product or a sub-system
+of the product. The complexity rating is the subjective weighted average
+of these areas.</FONT>
+<BR><FONT SIZE=-1>&nbsp;</FONT>
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-1>Table&nbsp; II-15</FONT></FONT>:
+Module Complexity Ratings versus Type of Module</B></CENTER>
+
+<CENTER><TABLE BORDER WIDTH="577" >
+<TR>
+<TD VALIGN=TOP WIDTH="7%">&nbsp;</TD>
+
+<TD VALIGN=TOP WIDTH="21%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Control Operations</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="17%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Computational Operations</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="17%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Device- dependent Operations</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="17%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Data Management Operations</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="22%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>User Interface Managemen t
+Operations</FONT></FONT></B></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="7%">
+<CENTER><FONT SIZE=-2>Very Low</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="21%"><FONT SIZE=-2>Straight-line code with a few
+non-nested structured programming operators: DOs, CASEs, IFTHENELSEs. Simple
+module composition via procedure calls or simple scripts.</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="17%"><FONT SIZE=-2>Evaluation of simple expressions:
+e.g., <I>A=B+C*(D-E)</I></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="17%"><FONT SIZE=-2>Simple read, write statements
+with simple formats.</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="17%"><FONT SIZE=-2>Simple arrays in main memory.
+Simple COTS-DB queries, updates.</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="22%"><FONT SIZE=-2>Simple input forms, report generators.</FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="7%">
+<CENTER><FONT SIZE=-2>Low</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="21%"><FONT SIZE=-2>Straightforward nesting of structured
+programming operators. Mostly simple predicates</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="17%"><FONT SIZE=-2>Evaluation of moderate-level expressions:
+e.g., <I>D=SQRT(B**2- 4.*A*C)</I></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="17%"><FONT SIZE=-2>No cognizance needed of particular
+processor or I/ O device characteristics. I/O done at GET/PUT level.</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="17%"><FONT SIZE=-2>Single file subsetting with no
+data structure changes, no edits, no intermediate files. Moderately complex
+COTS-DB queries, updates.</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="22%"><FONT SIZE=-2>Use of simple graphic user interface
+(GUI) builders.</FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="7%">
+<CENTER><FONT SIZE=-2>Nominal</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="21%"><FONT SIZE=-2>Mostly simple nesting. Some intermodule
+control. Decision tables. Simple callbacks or message passing, including
+middleware- supported distributed processing</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="17%"><FONT SIZE=-2>Use of standard math and statistical
+routines. Basic matrix/vector operations.</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="17%"><FONT SIZE=-2>I/O processing includes device
+selection, status checking and error processing.&nbsp;</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="17%"><FONT SIZE=-2>Multi-file input and single file
+output. Simple structural changes, simple edits. Complex COTS-DB queries,
+updates.</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="22%"><FONT SIZE=-2>Simple use of widget set.</FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="7%">
+<CENTER><FONT SIZE=-2>High</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="21%"><FONT SIZE=-2>Highly nested structured programming
+operators with many compound predicates. Queue and stack control. Homogeneous,
+distributed processing. Single processor soft real-time control.</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="17%"><FONT SIZE=-2>Basic numerical analysis: multivariate
+interpolation, ordinary differential equations. Basic truncation, roundoff
+concerns.</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="17%"><FONT SIZE=-2>Operations at physical I/O level
+(physical storage address translations; seeks, reads, etc.). Optimized
+I/O overlap.</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="17%"><FONT SIZE=-2>Simple triggers activated by data
+stream contents. Complex data restructuring.</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="22%"><FONT SIZE=-2>Widget set development and extension.
+Simple voice I/O, multimedia.</FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="7%">
+<CENTER><FONT SIZE=-1>Very High</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="21%"><FONT SIZE=-2>Reentrant and recursive coding.
+Fixed-priority interrupt handling. Task synchronization, complex callbacks,
+heterogeneous distributed processing. Single-processor hard real-time control.</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="17%"><FONT SIZE=-2>Difficult but structured numerical
+analysis: near-singular matrix equations, partial differential equations.
+Simple parallelization.</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="17%"><FONT SIZE=-2>Routines for interrupt diagnosis,
+servicing, masking. Communication line handling. Performance- intensive
+embedded systems.</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="17%"><FONT SIZE=-2>Distributed database coordination.
+Complex triggers. Search optimization.</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="22%"><FONT SIZE=-1>Moderately complex 2D/ 3D, dynamic
+graphics, multimedia</FONT><FONT SIZE=-2>.</FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="7%">
+<CENTER><FONT SIZE=-2>Extra High</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="21%"><FONT SIZE=-2>Multiple resource scheduling with
+dynamically changing priorities. Microcode-level control. Distributed hard
+real-time control.</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="17%"><FONT SIZE=-2>Difficult and unstructured numerical
+analysis: highly accurate analysis of noisy, stochastic data. Complex parallelization.</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="17%"><FONT SIZE=-2>Device timing- dependent coding,
+micro-programmed operations. Performance-critical embedded systems.</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="17%"><FONT SIZE=-2>Highly coupled, dynamic relational
+and object structures. Natural language data management.</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="22%"><FONT SIZE=-2>Complex multimedia, virtual reality.</FONT></TD>
+</TR>
+</TABLE></CENTER>
+<A NAME="RequiredReusability"></A><FONT FACE="Arial"><FONT SIZE=-1>Required
+Reusability (RUSE)</FONT></FONT>
+
+<P><FONT SIZE=-1>This cost driver accounts for the additional effort needed
+to construct components intended for reuse on the current or future projects.
+This effort is consumed with creating more generic design of software,
+more elaborate documentation, and more extensive testing to ensure components
+are ready for use in other applications.</FONT>
+<BR>&nbsp;
+<CENTER><TABLE BORDER WIDTH="511" >
+<TR>
+<TD VALIGN=TOP WIDTH="17%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>&nbsp;</FONT></FONT></B></CENTER>
+
+
+<P><B>&nbsp;</B></TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Very Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Nominal</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>High</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Very High</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="13%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Extra High</FONT></FONT></B></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="17%"><FONT SIZE=-2>RUSE</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%">&nbsp;</TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>none</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>across project</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>across pro gram</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>across prod uct line</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="13%"><FONT SIZE=-2>across mul tiple prod uct lines</FONT></TD>
+</TR>
+</TABLE></CENTER>
+<A NAME="Documentationmatch"></A><FONT FACE="Arial"><FONT SIZE=-1>Documentation
+match to life-cycle needs (DOCU)</FONT></FONT>
+
+<P><FONT SIZE=-1>Several software cost models have a cost driver for the
+level of required documentation. In COCOMO II, the rating scale for the
+DOCU cost driver is evaluated in terms of the suitability of the project’s
+documentation to its life-cycle needs. The rating scale goes from Very
+Low (many life-cycle needs uncovered) to Very High (very excessive for
+life-cycle needs).</FONT>
+<BR>&nbsp;
+<CENTER><TABLE BORDER WIDTH="515" >
+<TR>
+<TD VALIGN=TOP WIDTH="17%"><B>&nbsp;</B></TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Very Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Nominal</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>High</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Very High</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="13%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Extra High</FONT></FONT></B></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="17%"><FONT SIZE=-2>DOCU</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>Many life- cycle needs uncovered</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>Some life- cycle needs uncovered.</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>Right-sized to life-cycle needs</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>Excessive for life-cycle needs</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>Very exces sive for life- cycle
+needs</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="13%">&nbsp;</TD>
+</TR>
+</TABLE></CENTER>
+<A NAME="PlatformFactors"></A><B><FONT FACE="Arial"><FONT SIZE=-1>Platform
+Factors</FONT></FONT></B>
+
+<P><FONT SIZE=-1>The platform refers to the target-machine complex of hardware
+and infrastructure software (previously called the virtual machine). The
+factors have been revised to reflect this as described in this section.
+Some additional platform factors were considered, such as distribution,
+parallelism, embeddedness, and real-time operations. These considerations
+have been accommodated by the expansion of the Module Complexity ratings
+in Equation II-15.</FONT>
+
+<P><A NAME="ExecutionTimeConstraint"></A><FONT FACE="Arial"><FONT SIZE=-1>Execution
+Time Constraint (TIME)</FONT></FONT>
+
+<P><FONT SIZE=-1>This is a measure of the execution time constraint imposed
+upon a software system. The rating is expressed in terms of the percentage
+of available execution time expected to be used by the system or subsystem
+consuming the execution time resource. The rating ranges from nominal,
+less than 50% of the execution time resource used, to extra high, 95% of
+the execution time resource is consumed.</FONT>
+<BR>&nbsp;
+<CENTER><TABLE BORDER WIDTH="511" >
+<TR>
+<TD VALIGN=TOP WIDTH="17%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>&nbsp;</FONT></FONT></B></CENTER>
+
+
+<P><B>&nbsp;</B></TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Very Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Nominal</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>High</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Very High</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="13%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Extra High</FONT></FONT></B></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="17%"><FONT SIZE=-2>TIME</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%">&nbsp;</TD>
+
+<TD VALIGN=TOP WIDTH="14%">&nbsp;</TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2><FONT FACE="Symbol">&pound; </FONT>50%
+use of available execution time</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>&nbsp;</FONT>&nbsp;
+
+<P><FONT SIZE=-2>70%</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>&nbsp;</FONT>&nbsp;
+
+<P><FONT SIZE=-2>85%</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="13%"><FONT SIZE=-2>&nbsp;</FONT>&nbsp;
+
+<P><FONT SIZE=-2>95%</FONT></TD>
+</TR>
+</TABLE></CENTER>
+<A NAME="MainStorageConstraint"></A><FONT FACE="Arial"><FONT SIZE=-1>Main
+Storage Constraint (STOR)</FONT></FONT>
+
+<P><FONT SIZE=-1>This rating represents the degree of main storage constraint
+imposed on a software system or subsystem. Given the remarkable increase
+in available processor execution time and main storage, one can question
+whether these constraint variables are still relevant. However, many applications
+continue to expand to consume whatever resources are available, making
+these cost drivers still relevant. The rating ranges from nominal, less
+that 50%, to extra high, 95%.</FONT>
+<CENTER><TABLE BORDER WIDTH="515" >
+<TR>
+<TD VALIGN=TOP WIDTH="17%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>&nbsp;</FONT></FONT></B></CENTER>
+
+
+<P><B>&nbsp;</B></TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Very Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Nominal</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>High</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Very High</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="13%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Extra High</FONT></FONT></B></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="17%">
+<CENTER><FONT SIZE=-2>STOR</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">&nbsp;</TD>
+
+<TD VALIGN=TOP WIDTH="14%">&nbsp;</TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2><FONT FACE="Symbol">&pound; </FONT>50%
+use of available storage</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>&nbsp;</FONT>&nbsp;
+
+<P><FONT SIZE=-2>70%</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>&nbsp;</FONT>&nbsp;
+
+<P><FONT SIZE=-2>85%</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="13%"><FONT SIZE=-2>&nbsp;</FONT>&nbsp;
+
+<P><FONT SIZE=-2>95%</FONT></TD>
+</TR>
+</TABLE></CENTER>
+<A NAME="PlatformVolatility"></A><FONT FACE="Arial"><FONT SIZE=-1>Platform
+Volatility (PVOL)</FONT></FONT>
+
+<P><FONT SIZE=-1>"Platform" is used here to mean the complex of hardware
+and software (OS, DBMS, etc.) the software product calls on to perform
+its tasks. If the software to be developed is an operating system then
+the platform is the computer hardware. If a database management system
+is to be developed then the platform is the hardware and the operating
+system. If a network text browser is to be developed then the platform
+is the network, computer hardware, the operating system, and the distributed
+information repositories. The platform includes any compilers or assemblers
+supporting the development of the software system. This rating ranges from
+low, where there is a major change every 12 months, to very high, where
+there is a major change every two weeks.</FONT>
+<CENTER><TABLE BORDER WIDTH="515" >
+<TR>
+<TD VALIGN=TOP WIDTH="17%" HEIGHT="23"></TD>
+
+<TD VALIGN=TOP WIDTH="14%" HEIGHT="23">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Very Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%" HEIGHT="23">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%" HEIGHT="23">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Nominal</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%" HEIGHT="23">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>High</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%" HEIGHT="23">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Very High</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="13%" HEIGHT="23">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Extra High</FONT></FONT></B></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="17%" HEIGHT="60"><FONT SIZE=-2>PVOL</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%" HEIGHT="60"></TD>
+
+<TD VALIGN=TOP WIDTH="14%" HEIGHT="60"><FONT SIZE=-2>major change every
+12 mo.; minor change every 1 mo.</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%" HEIGHT="60"><FONT SIZE=-2>major: 6 mo.; minor:
+2 wk.</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%" HEIGHT="60"><FONT SIZE=-2>major: 2 mo.;</FONT>&nbsp;
+
+<P><FONT SIZE=-2>minor: 1 wk.</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%" HEIGHT="60"><FONT SIZE=-2>major: 2 wk.;</FONT>&nbsp;
+
+<P><FONT SIZE=-2>minor: 2 days</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="13%" HEIGHT="60"></TD>
+</TR>
+</TABLE></CENTER>
+<A NAME="PersonnelFactors"></A><B><FONT FACE="Arial"><FONT SIZE=-1>Personnel
+Factors</FONT></FONT></B>
+
+<P><A NAME="AnalystCapability"></A><B>Analyst Capability (ACAP)</B>
+
+<P><FONT SIZE=-1>Analysts are personnel that work on requirements, high
+level design and detailed design. The major attributes that should be considered
+in this rating are Analysis and Design ability, efficiency and thoroughness,
+and the ability to communicate and cooperate. The rating should not consider
+the level of experience of the analyst; that is rated with AEXP. Analysts
+that fall in the 15th percentile are rated very low and those that fall
+in the 95th percentile are rated as very high.</FONT>
+<BR>&nbsp;
+<CENTER><TABLE BORDER WIDTH="518" >
+<TR>
+<TD VALIGN=TOP WIDTH="17%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>&nbsp;</FONT></FONT></B></CENTER>
+
+
+<P><B>&nbsp;</B></TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Very Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Nominal</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>High</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Very High</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="13%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Extra High</FONT></FONT></B></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="17%">
+<CENTER><FONT SIZE=-2>ACAP</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>15th percentile</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>35th percentile</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>55th percentile</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>75th percentile</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>90th percentile</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="13%">&nbsp;</TD>
+</TR>
+</TABLE></CENTER>
+<A NAME="ProgrammerCapability"></A><FONT FACE="Arial"><FONT SIZE=-1>Programmer
+Capability (PCAP)</FONT></FONT>
+
+<P><FONT SIZE=-1>Current trends continue to emphasize the importance of
+highly capable analysts. However the increasing role of complex COTS packages,
+and the significant productivity leverage associated with programmers’
+ability to deal with these COTS packages, indicates a trend toward higher
+importance of programmer capability as well.</FONT>
+
+<P><FONT SIZE=-1>Evaluation should be based on the capability of the programmers
+as a team rather than as individuals. Major factors which should be considered
+in the rating are ability, efficiency and thoroughness, and the ability
+to communicate and cooperate. The experience of the programmer should not
+be considered here; it is rated with AEXP. A very low rated programmer
+team is in the 15th percentile and a very high rated programmer team is
+in the 95th percentile.</FONT>
+<CENTER><TABLE BORDER WIDTH="515" >
+<TR>
+<TD VALIGN=TOP WIDTH="17%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>&nbsp;</FONT></FONT></B></CENTER>
+
+
+<P><B>&nbsp;</B></TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Very Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Nominal</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>High</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Very High</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="13%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Extra High</FONT></FONT></B></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="17%">
+<CENTER><FONT SIZE=-2>PCAP</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>15th percentile</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>35<SUP>th</SUP> percentile</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>55th percentile</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>75th percentile</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>90th percentile</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="13%">&nbsp;</TD>
+</TR>
+</TABLE></CENTER>
+<A NAME="ApplicationsExperience"></A><FONT FACE="Arial"><FONT SIZE=-1>Applications
+Experience (AEXP)</FONT></FONT>
+
+<P><FONT SIZE=-1>This rating is dependent on the level of applications
+experience of the project team developing the software system or subsystem.
+The ratings are defined in terms of the project team’s equivalent level
+of experience with this type of application. A very low rating is for application
+experience of less than 2 months. A very high rating is for experience
+of 6 years or more.</FONT>
+<BR>&nbsp;
+<CENTER><TABLE BORDER WIDTH="511" >
+<TR>
+<TD VALIGN=TOP WIDTH="17%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>&nbsp;</FONT></FONT></B></CENTER>
+
+
+<P><B>&nbsp;</B></TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Very Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Nominal</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>High</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Very High</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="13%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Extra High</FONT></FONT></B></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="17%"><FONT SIZE=-2>AEXP</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>2 months</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>6 months</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>1 year</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>3 years</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>6 years</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="13%">&nbsp;</TD>
+</TR>
+</TABLE></CENTER>
+<A NAME="PlatformExperience"></A><FONT FACE="Arial"><FONT SIZE=-1>Platform
+Experience (PEXP)</FONT></FONT>
+
+<P><FONT SIZE=-1>The Post-Architecture model broadens the productivity
+influence of PEXP, recognizing the importance of understanding the use
+of more powerful platforms, including more graphic user interface, database,
+networking, and distributed middleware capabilities.</FONT>
+<CENTER><TABLE BORDER WIDTH="511" >
+<TR>
+<TD VALIGN=TOP WIDTH="17%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>&nbsp;</FONT></FONT></B></CENTER>
+
+
+<P><B>&nbsp;</B></TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Very Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Nominal</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>High</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Very High</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="13%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Extra High</FONT></FONT></B></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="17%"><FONT SIZE=-2>PEXP</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>2 months</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>6 months</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>1 year</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>3 years</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>6 year</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="13%">&nbsp;</TD>
+</TR>
+</TABLE></CENTER>
+<A NAME="LanguageandToolExperience"></A><FONT FACE="Arial"><FONT SIZE=-1>Language
+and Tool Experience (LTEX)</FONT></FONT>
+
+<P><FONT SIZE=-1>This is a measure of the level of programming language
+and software tool experience of the project team developing the software
+system or subsystem. Software development includes the use of tools that
+perform requirements and design representation and analysis, configuration
+management, document extraction, library management, program style and
+formatting, consistency checking, etc. In addition to experience in programming
+with a specific language the supporting tool set also effects development
+time. A low rating given for experience of less than 2 months. A very high
+rating is given for experience of 6 or more years.</FONT>
+<CENTER><TABLE BORDER WIDTH="515" >
+<TR>
+<TD VALIGN=TOP WIDTH="17%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>&nbsp;</FONT></FONT></B></CENTER>
+
+
+<P><B>&nbsp;</B></TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Very Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Nominal</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>High</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Very High</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="13%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Extra High</FONT></FONT></B></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="17%"><FONT SIZE=-2>LTEX</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>2 months</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>6 months</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>1 year</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>3 years</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>6 year</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="13%">&nbsp;</TD>
+</TR>
+</TABLE></CENTER>
+<A NAME="PersonnelContinuity"></A><FONT FACE="Arial"><FONT SIZE=-1>Personnel
+Continuity (PCON)</FONT></FONT>
+
+<P><FONT SIZE=-1>The rating scale for PCON is in terms of the project’s
+annual personnel turnover: from 3%, very high, to 48%, very low.</FONT>
+<BR>&nbsp;
+<CENTER><TABLE BORDER WIDTH="518" >
+<TR>
+<TD VALIGN=TOP WIDTH="17%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>&nbsp;</FONT></FONT></B></CENTER>
+
+
+<P><B>&nbsp;</B></TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Very Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Nominal</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>High</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Very High</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="13%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Extra High</FONT></FONT></B></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="17%" HEIGHT="4"><FONT SIZE=-2>PCON</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%" HEIGHT="4"><FONT SIZE=-2>48% / year</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%" HEIGHT="4"><FONT SIZE=-2>24% / year</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%" HEIGHT="4"><FONT SIZE=-2>12% / year</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%" HEIGHT="4"><FONT SIZE=-2>6% / year</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%" HEIGHT="4"><FONT SIZE=-2>3% / year</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="13%" HEIGHT="4"></TD>
+</TR>
+</TABLE></CENTER>
+<B><FONT FACE="Arial"><FONT SIZE=-1>&nbsp;</FONT></FONT></B>
+
+<P><B><FONT FACE="Arial"><FONT SIZE=-1>&nbsp;</FONT></FONT></B>
+
+<P><A NAME="ProjectFactors"></A><B><FONT FACE="Arial"><FONT SIZE=-1>Project
+Factors</FONT></FONT></B>
+
+<P><A NAME="UseofSoftwareTools"></A><B>Use of Software Tools (TOOL)</B>
+
+<P><FONT SIZE=-1>Software tools have improved significantly since the 1970’s
+projects used to calibrate COCOMO. The tool rating ranges from simple edit
+and code, very low, to integrated lifecycle management tools, very high.</FONT>
+<BR>&nbsp;
+<CENTER><TABLE BORDER WIDTH="516" >
+<TR>
+<TD VALIGN=TOP WIDTH="17%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>&nbsp;</FONT></FONT></B></CENTER>
+
+
+<P><B>&nbsp;</B></TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Very Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Nominal</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>High</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Very High</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="13%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Extra High</FONT></FONT></B></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="17%"><FONT SIZE=-2>TOOL</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>edit, code, debug</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>simple, fron tend, back end CASE,
+little integra tion</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>basic lifecy cle tools, moderately
+integrated</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>strong, mature life cycle tools,
+moderately integrated</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>strong, mature, pro active lifecy
+cle tools, well inte grated with processes, methods, reuse</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="13%">&nbsp;</TD>
+</TR>
+</TABLE></CENTER>
+<A NAME="MultisiteDevelopment"></A><FONT FACE="Arial"><FONT SIZE=-1>Multisite
+Development (SITE)</FONT></FONT>
+
+<P><FONT SIZE=-1>Given the increasing frequency of multisite developments,
+and indications that multisite development effects are significant, the
+SITE cost driver has been added in COCOMO II. Determining its cost driver
+rating involves the assessment and averaging of two factors: site collocation
+(from fully collocated to international distribution) and communication
+support (from surface mail and some phone access to full interactive multimedia).</FONT>
+<CENTER><TABLE BORDER WIDTH="515" >
+<TR>
+<TD VALIGN=TOP WIDTH="17%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>&nbsp;</FONT></FONT></B></CENTER>
+
+
+<P><B>&nbsp;</B></TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Very Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Nominal</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>High</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Very High</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="13%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Extra High</FONT></FONT></B></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="17%"><FONT SIZE=-2>SITE:&nbsp;</FONT>&nbsp;
+<BR><FONT SIZE=-2>Communica tions</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>Some phone, mail</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>Individual phone, FAX</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>Narrowband email</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>Wideband electronic communica
+tion.</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>Wideband elect. comm, occasional
+video conf.</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="13%"><FONT SIZE=-2>Interactive multimedia</FONT></TD>
+</TR>
+</TABLE></CENTER>
+<A NAME="RequiredDevelopmentSchedule"></A><FONT FACE="Arial"><FONT SIZE=-1>Required
+Development Schedule (SCED)</FONT></FONT>
+
+<P><FONT SIZE=-1>This rating measures the schedule constraint imposed on
+the project team developing the software. The ratings are defined in terms
+of the percentage of schedule stretch-out or acceleration with respect
+to a nominal schedule for a project requiring a given amount of effort.
+Accelerated schedules tend to produce more effort in the later phases of
+development because more issues are left to be determined due to lack of
+time to resolve them earlier. A schedule compress of 74% is rated very
+low. A stretch-out of a schedule produces more effort in the earlier phases
+of development where there is more time for thorough planning, specification
+and validation. A stretch-out of 160% is rated very high.</FONT>
+
+<P><FONT SIZE=-1>&nbsp;</FONT>
+<CENTER><TABLE BORDER WIDTH="511" >
+<TR>
+<TD VALIGN=TOP WIDTH="17%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>&nbsp;</FONT></FONT></B></CENTER>
+
+
+<P><B>&nbsp;</B></TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Very Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Nominal</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>High</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Very High</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="13%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Extra High</FONT></FONT></B></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="17%"><FONT SIZE=-2>SCED</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>75% of nom inal</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>85%</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>100%</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>130%</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>160%</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="13%">&nbsp;</TD>
+</TR>
+</TABLE></CENTER>
+
+<CENTER>&nbsp;</CENTER>
+
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-1>Table&nbsp; II-16</FONT></FONT>:&nbsp;<A NAME="PostArchitectureCostDriverRating"></A>Post-Architecture
+Cost Driver Rating Level Summary</B></CENTER>
+
+<CENTER><TABLE BORDER WIDTH="516" >
+<TR>
+<TD VALIGN=TOP WIDTH="8%">&nbsp;</TD>
+
+<TD VALIGN=TOP WIDTH="16%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Very Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="16%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="16%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Nominal</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="16%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>High</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="16%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Very High</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Extra High</FONT></FONT></B></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="8%"><A NAME="RELY"></A><FONT SIZE=-2>RELY</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>slight inconvenience</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>low, easily recoverable losses</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>Moderate, easily recoverable losses</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>high financial loss</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>risk to human life</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%">&nbsp;</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="8%"><A NAME="DATA"></A><FONT SIZE=-2>DATA</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%">&nbsp;</TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>DB bytes/Pgm SLOC &lt; 10</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>10 <FONT FACE="Symbol">&pound;</FONT>
+D/P &lt; 100</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>100 <FONT FACE="Symbol">&pound;</FONT>
+D/P &lt; 1000</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>D/P <FONT FACE="Symbol">&sup3;</FONT>
+1000</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%">&nbsp;</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="8%"><A NAME="CPLX"></A><FONT SIZE=-2>CPLX</FONT></TD>
+
+<TD VALIGN=TOP COLSPAN="6" WIDTH="92%"><FONT SIZE=-2>see Table II-15</FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="8%"><A NAME="RUSE"></A><FONT SIZE=-2>RUSE</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%">&nbsp;</TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>none</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>Across project</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>across program</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>across product line</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>across multiple product lines</FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="8%"><A NAME="DOCU"></A><FONT SIZE=-2>DOCU</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>Many life-cycle needs uncovered</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>Some life-cycle needs uncovered.</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>Right-sized to life-cycle needs</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>Excessive for life-cycle needs</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>Very exces sive for life-cycle
+needs</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%">&nbsp;</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="8%"><A NAME="TIME"></A><FONT SIZE=-2>TIME</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%">&nbsp;</TD>
+
+<TD VALIGN=TOP WIDTH="16%">&nbsp;</TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>50% use of available exe cution
+time</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>&nbsp;</FONT>&nbsp;
+
+<P><FONT SIZE=-2>70%</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>&nbsp;</FONT>&nbsp;
+
+<P><FONT SIZE=-2>85%</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>&nbsp;</FONT>&nbsp;
+
+<P><FONT SIZE=-2>95%</FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="8%"><A NAME="STOR"></A><FONT SIZE=-2>STOR</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%">&nbsp;</TD>
+
+<TD VALIGN=TOP WIDTH="16%">&nbsp;</TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>50% use of available stor age</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>&nbsp;</FONT>&nbsp;
+
+<P><FONT SIZE=-2>70%</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>&nbsp;</FONT>&nbsp;
+
+<P><FONT SIZE=-2>85%</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>&nbsp;</FONT>&nbsp;
+
+<P><FONT SIZE=-2>95%</FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="8%"><A NAME="PVOL"></A><FONT SIZE=-2>PVOL</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%">&nbsp;</TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>major change every 12 mo.; minor
+change every 1 mo.</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>major: 6 mo.; minor: 2 wk.</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>major: 2 mo.;</FONT>&nbsp;
+
+<P><FONT SIZE=-2>minor: 1 wk.</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>major: 2 wk.;</FONT>&nbsp;
+
+<P><FONT SIZE=-2>minor: 2 days</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%">&nbsp;</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="8%"><A NAME="ACAP"></A><FONT SIZE=-2>ACAP</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>15th percentile</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>35th percentile</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>55th percentile</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>75th percentile</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>90th percentile</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%">&nbsp;</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="8%"><A NAME="PCAP"></A><FONT SIZE=-2>PCAP</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>15th percentile</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>35th percentile</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>55th percentile</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>75th percentile</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>90th percentile</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%">&nbsp;</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="8%"><A NAME="PCON"></A><FONT SIZE=-2>PCON</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>48% / year</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>24% / year</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>12% / year</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>6% / year</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>3% / year</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%">&nbsp;</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="8%"><A NAME="AEXP"></A><FONT SIZE=-2>AEXP</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2><FONT FACE="Symbol">&pound; </FONT>2
+months</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>6 months</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>1 year</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>3 years</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>6 years</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%">&nbsp;</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="8%"><A NAME="PEXP"></A><FONT SIZE=-2>PEXP</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2><FONT FACE="Symbol">&pound; </FONT>2
+months</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>6 months</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>1 year</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>3 years</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>6 year</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%">&nbsp;</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="8%"><A NAME="LTEX"></A><FONT SIZE=-2>LTEX</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2><FONT FACE="Symbol">&pound; </FONT>2
+months</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>6 months</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>1 year</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>3 years</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>6 year</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%">&nbsp;</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="8%"><A NAME="TOOL"></A><FONT SIZE=-2>TOOL</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>edit, code, debug</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>simple, fron tend, backend CASE,
+little integration</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>basic lifecycle tools, moder ately
+inte grated</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>strong, mature lifecycle tools,
+moderately integrated</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>strong, mature, proactive life
+cycle tools, well inte grated with processes, methods, reuse</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%">&nbsp;</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="8%"><A NAME="SITECollocation"></A><FONT SIZE=-2>SITE:
+Colloc ation</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>International</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>Multi-city and Multi-com pany</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>Multi-city or Multi-com pany</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>Same city or metro. area</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>Same building or complex</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>Fully collo cated</FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="8%"><A NAME="SITECommunications"></A><FONT SIZE=-2>SITE:
+Comm unicati ons</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>Some phone, mail</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>Individual phone, FAX</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>Narrowband email</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>Wideband electronic communica
+tion.</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>Wideband elect. comm, occasional
+video conf.</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>Interactive multimedia</FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="8%"><A NAME="SCED"></A><FONT SIZE=-2>SCED</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>75% of nomi nal</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>85%</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>100%</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>130%</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="16%"><FONT SIZE=-2>160%</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%">&nbsp;</TD>
+</TR>
+</TABLE></CENTER>
+&nbsp;
+<DIR>
+<DIR>
+<DIR>
+<DIR><FONT SIZE=-1>&nbsp;</FONT></DIR>
+</DIR>
+</DIR>
+</DIR>
+
+</BODY>
+</HTML>

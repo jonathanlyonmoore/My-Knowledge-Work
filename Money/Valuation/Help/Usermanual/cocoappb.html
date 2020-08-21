@@ -1,0 +1,541 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="Generator" CONTENT="Microsoft Word 97">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.05 [en] (WinNT; I) [Netscape]">
+   <TITLE>Appendix B: Java COCOMOII Protocol</TITLE>
+</HEAD>
+<BODY>
+<A NAME="_Toc424722032"></A><B><FONT FACE="Arial"><FONT SIZE=+1>Appendix
+B:&nbsp;<A NAME="JavaCOCOMOIIProtocol"></A>Java COCOMOII Protocol</FONT></FONT></B>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>&nbsp;</FONT></FONT>
+<BR><FONT FACE="TIMES"><FONT SIZE=-1>Java COCOMO has two components, a
+Java Applet user interface and a "virtual" COCOMOII as shown below. The
+former executes on the client side and the latter executes on the server
+side.</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>Once a user activates the virtual COCOMOII
+by accessing the cocomo home page, a TCP/IP connection is established.
+All commands are generated on the Client side according to the user’s action.
+Here is an example of the sequence of protocol messages that are exchanged
+when the user:</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>1. Starts Java Cocomo</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>2. Adds a new module</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>3. Sets its SLOC to 10000</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>4. Sets the RELY EAF to High</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>5. Saves the result</FONT></FONT>
+
+<P><B><FONT FACE="TIMES"><FONT SIZE=+1>1. Starts Java Cocomo</FONT></FONT></B>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>When a user visits Java COCOMOII home
+page, all Java classes are loaded from the server to the client. Then the
+client side sends the virtual server name, the client’s IP and port number
+for the exchange of commands and responses between the server and client.</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>../cgi-bin/run-cocomo-server1?128.125.3.9+6211</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>../cgi-bin/run-cocomo-server1 starts
+the virtual COCOMOII server. 128.125.3.9 is the client’s IP address and
+6211 is the port number for the client.</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>Once a TCP/IP connection is established,
+the client side generates the following commands for the initialization
+and sends them to the server one by one.</FONT></FONT>
+
+<P><B><FONT FACE="TIMES"><FONT SIZE=-1>1. COCOMO_DO_INIT</FONT></FONT></B>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>Command: 101!#%0@$^</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>101 is the numerical equivalent of
+COCOMO_DO_INIT. The 3 characters !#% act as a CD (COCOMO_DELIMINATER).
+0 is the number of arguments. The last 3 characters @$^ specify the end
+of a command. After the server receives this command, the server executes
+the initialization process then sends a response to the client.</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>All commands consist of three parts.
+The first part specifies the numerical equivalent of a command. The second
+part contains the number of arguments. If the number of arguments is not
+zero, the third part contains the list of arguments.</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>Response: 0!#%0@$^</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>The first 0 represents the error status
+of the command (0: Success, 1: General Error, 2: Format Error). The second
+0 is the number of arguments. All responses have the same format. If the
+number of arguments is not zero, the list of arguments is shown after the
+second part.</FONT></FONT>
+
+<P><B><FONT FACE="TIMES"><FONT SIZE=-1>2. COCOMO_GET_MOD_EDSI_FP_LANG</FONT></FONT></B>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>Command: 327!#%0@$^</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>Response:</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>0!#%28!#%ADA!#%AI_SHELL!#%APL!#%ASM_BASIC!#%ASM_MACRO!#%BASIC_ANSI!#%BASIC_COMP!#%BASIC_INTR!#%C!#%COBOL_ANSI_85!#%FIRST_GENERATION!#%FORTH!#%FORTRAN_77!#%FOURTH_GENERATION!#%FIFTH_GENERATION!#%HIGH_LEVEL!#%LISP!#%MODULA_2!#%OBJECT_ORIENTED!#%PASCAL!#%PROCEDURAL!#%PROGRAM_GENERATOR!#%PROLOG!#%QUERY_LANGUAGE!#%REPORT_GENERATOR!#%SECOND_GENERATION!#%SPREADSHEET!#%THIRD_GENERATION@$^</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>This response contains the error status,
+number of arguments, and list of arguments. It has 28 arguments, which
+are the list of languages used by EDSI input in the Function Points.</FONT></FONT>
+
+<P><B><FONT FACE="TIMES"><FONT SIZE=-1>3. COCOMO_GET_CAL_PRJ_NUM</FONT></FONT></B>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>Command: 308!#%0@$^</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>This command is used to get the number
+of available projects used by the projects menu on Calibrate pulldown menu.</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>Response: 0!#%1!#%0@$^</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>As explained above, the first 0 is
+the error status, which means that the requested process is successfully
+done on the server side. 1 is the number of arguments. 0 is the number
+of projects for the calibration of the equation parameters.</FONT></FONT>
+
+<P><B><FONT FACE="TIMES"><FONT SIZE=-1>4. COCOMO_GET_PRJ_NAME</FONT></FONT></B>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>Command: 303!#%0@$^</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>This command is sent to get the project’s
+name displayed on the CLEF.</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>Response: 0!#%1!#%&lt;none>@$^</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>The string &lt;none> is the default
+name of a new project.</FONT></FONT>
+
+<P><B><FONT FACE="TIMES"><FONT SIZE=-1>5. COCOMO_GET_PROJECT_TOTALS</FONT></FONT></B>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>Command: 333!#%0@$^</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>Response:</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>0!#%24!#%0!#%0.00!#%0.00!#%0.00!#%0.00!#%0.00!#%0.00!#%0.00!#%0.00!#%0.00!#%0.00!#%0.00!#%0.00!#%0.00!#%0.00!#%0.00!#%0.00!#%0.00!#%0.00!#%0.00!#%0.00!#%0.00!#%0.00!#%0.00@$^</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>This response contains total optimistic,
+most likely, and pessimistic PM, Schedule, Productivity, Cost, Instruction
+cost, FSWP, and Risk which are to be displayed on the total area of the
+CLEF.</FONT></FONT>
+
+<P><B><FONT FACE="TIMES"><FONT SIZE=+1>2. Add a New Module</FONT></FONT></B>
+
+<P><B><FONT FACE="TIMES"><FONT SIZE=-1>1. COCOMO_DO_ADD_MOD</FONT></FONT></B>
+
+<P><FONT FACE="Times New Roman,Times"><FONT SIZE=-1>Command: 119!#%0@$^</FONT></FONT>
+
+<P><FONT FACE="Times New Roman,Times"><FONT SIZE=-1>This command requests
+that the server add a new module to the module linked list of the project.</FONT></FONT>
+
+<P><FONT FACE="Times New Roman,Times"><FONT SIZE=-1>Response: 0!#%0@$^</FONT></FONT>
+
+<P><B><FONT FACE="Times New Roman,Times"><FONT SIZE=-1>2. COCOMO_GET_MOD_LINE</FONT></FONT></B>
+
+<P><FONT FACE="Times New Roman,Times"><FONT SIZE=-1>Command: 322!#%1!#%0@$^</FONT></FONT>
+
+<P><FONT FACE="Times New Roman,Times"><FONT SIZE=-1>This command contains
+the module index which is used to search the specified module (Modules
+are indexed as 0, 1, 2, ..........).</FONT></FONT>
+<BR><FONT FACE="Times New Roman,Times"><FONT SIZE=-1>Response:</FONT></FONT>
+
+<P><FONT FACE="Times New Roman,Times"><FONT SIZE=-1>0!#%11!#%&lt;none>!#%S:0!#%0.00!#%1.00!#%0.00!#%0.00!#%0.00!#%0.00!#%0.00!#%0.00!#%0.00@$^</FONT></FONT>
+
+<P><FONT FACE="Times New Roman,Times"><FONT SIZE=-1>This response contains
+11 arguments. They are Module name, ESDI, Rate, EAF, NOM PM, EST PM, Productivity,
+Cost, Instruction Cost, FSWP and Total Risk level for the specified module.</FONT></FONT>
+
+<P><B><FONT FACE="TIMES"><FONT SIZE=+1>3. Set the SLOC of a Module to 10000</FONT></FONT></B>
+
+<P><B><FONT FACE="TIMES"><FONT SIZE=-1>1. COCOMO_GET_MOD_EDSI_BRAK</FONT></FONT></B>
+
+<P><FONT FACE="Times New Roman,Times"><FONT SIZE=-1>Command: 324!#%1!#%0@$^</FONT></FONT>
+
+<P><FONT FACE="Times New Roman,Times"><FONT SIZE=-1>This command is used
+to get the Breakage of the SLOC for the specified module. 0 is the index
+of the module.</FONT></FONT>
+
+<P><FONT FACE="Times New Roman,Times"><FONT SIZE=-1>Respond: 0!#%1!#%0.00@$^</FONT></FONT>
+
+<P><FONT FACE="Times New Roman,Times"><FONT SIZE=-1>After the server gets
+the parameter of the Breakage for the specified module, this respond message
+is sent to the client. 0.00 is the Breakage for the SLOC of the module.</FONT></FONT>
+
+<P><B><FONT SIZE=-1>2. COCOMO_GET_MOD_EDSI_FLAG</FONT></B>
+
+<P><FONT SIZE=-1>Command: 325!#%1!#%0@$^</FONT>
+
+<P><FONT SIZE=-1>As described in Chapter 1, there are three ways of the
+input for EDSI (Source Lines of Code, Function Points, and Adaptation Adjustment
+Factor). This command gets the flag to set the EDSI screen.</FONT>
+
+<P><FONT SIZE=-1>Response: 0!#%1!#%1@$^</FONT>
+
+<P><FONT SIZE=-1>The second 1 is a flag for EDSI. The flag is set to one
+of the following options.</FONT>
+
+<P><FONT SIZE=-1>1: Source Lines of Code</FONT>
+
+<P><FONT SIZE=-1>2: Function Points</FONT>
+
+<P><FONT SIZE=-1>3: Adaptation Adjustment Factor</FONT>
+
+<P><B><FONT SIZE=-1>3. COCOMO_GET_MOD_EDSI_SLOC</FONT></B>
+
+<P><FONT SIZE=-1>Command: 326!#%1!#%0@$^</FONT>
+
+<P><FONT SIZE=-1>0 is the module index</FONT>
+
+<P><FONT SIZE=-1>Respond: 0!#%1!#%0@$^</FONT>
+
+<P><FONT SIZE=-1>This response has one argument which is the SLOC for the
+module(0).</FONT>
+
+<P><FONT SIZE=-1>After the client and sever exchange the above messages,
+the EDSI dialog appears. Java COCOMOII waits until the user inputs the
+values of Breakage and SLOC. When Ok button is clicked after he or she
+inputs the values, the following commands and responses are exchanged.</FONT>
+
+<P><B><FONT SIZE=-1>4. COCOMO_SET_MOD_EDSI_FLAG</FONT></B>
+
+<P><FONT SIZE=-1>Command: 217!#%2!#%0!#%1@$^</FONT>
+
+<P><FONT SIZE=-1>This command sets the EDSI flag to one of SLOC, FP, and
+Adaptation. It contains two arguments, module index(0) and EDSI flag(1).</FONT>
+
+<P><FONT SIZE=-1>Response: 0!#%0@$^</FONT>
+
+<P><B><FONT SIZE=-1>5. COCOMO_SET_MOD_EDSI_BRAK</FONT></B>
+
+<P><FONT SIZE=-1>Command: 216!#%2!#%0!#%0.00@$^</FONT>
+
+<P><FONT SIZE=-1>This command requests that the server set the Breakage
+of the specified module(0) to 0.00.</FONT>
+
+<P><FONT SIZE=-1>Response: 0!#%0@$^</FONT>
+
+<P><B><FONT SIZE=-1>6. COCOMO_SET_MOD_EDSI_SLOC</FONT></B>
+
+<P><FONT SIZE=-1>Command: 218!#%2!#%0!#%10000@$^</FONT>
+
+<P><FONT SIZE=-1>This command requests that the server set the SLOC of
+the specified module(0) to 10000.</FONT>
+
+<P><FONT SIZE=-1>Response: 0!#%0@$^</FONT>
+
+<P><B><FONT SIZE=-1>7. COCOMO_GET_MOD_LINE</FONT></B>
+
+<P><FONT SIZE=-1>Command: 322!#%1!#%0@$^</FONT>
+
+<P><FONT SIZE=-1>Response:</FONT>
+
+<P><FONT SIZE=-1>0!#%11!#%&lt;none>!#%S:10000!#%0.00!#%1.00!#%34.85!#%34.85!#%286.97!#%0.00!#%0.00!#%3.67!#%0.00@$^</FONT>
+
+<P><FONT SIZE=-1>These command and response are described above.</FONT>
+
+<P><B><FONT SIZE=-1>8. COCOMO_GET_PROJECT_TOTALS</FONT></B>
+
+<P><FONT SIZE=-1>Command: 333!#%0@$^</FONT>
+
+<P><FONT SIZE=-1>Response:</FONT>
+
+<P><FONT SIZE=-1>0!#%24!#%10000!#%34.85!#%286.97!#%34.85!#%286.97!#%0.00!#%0.00!#%3.67!#%0.00!#%9.50!#%27.88!#%229.57!#%0.00!#%0.00!#%3.18!#%0.00!#%8.77!#%43.56!#%358.71!#%0.00!#%0.00!#%4.23!#%0.00!#%10.30@$^</FONT>
+
+<P><FONT SIZE=-1>These command and response are described above.</FONT>
+
+<P><B><FONT FACE="TIMES"><FONT SIZE=+1>4. Set the RELY EAF to High</FONT></FONT></B>
+
+<P><B><FONT FACE="TIMES"><FONT SIZE=-1>1. COCOMO_GET_MOD_EAF</FONT></FONT></B>
+
+<P><FONT SIZE=-1>Command: 331!#%1!#%0@$^</FONT>
+
+<P><FONT SIZE=-1>Response:</FONT>
+
+<P><FONT SIZE=-1>0!#%38!#%2!#%2!#%2!#%2!#%2!#%2!#%2!#%2!#%2!#%2!#%2!#%2!#%2!#%2!#%2!#%2!#%2!#%2!#%2!#%0!#%0!#%0!#%0!#%0!#%0!#%0!#%0!#%0!#%0!#%0!#%0!#%0!#%0!#%0!#%0!#%0!#%0!#%0@$^</FONT>
+
+<P><FONT SIZE=-1>This response contains 38 arguments. The first 19 arguments
+are EAF multipliers. They are set to one of these values (0: Very Low,
+1: Low, 2: Nominal, 3: High, 4: Very High). The rest 19 arguments are interpolation
+rate. They are set to one of these values (0: 0%, 1: 25%, 2: 50%, 3: 75%).
+Those arguments are displayed on the EAF dialog.</FONT>
+
+<P><B><FONT SIZE=-1>2. COCOMO_DO_CALC_EAF</FONT></B>
+
+<P><FONT SIZE=-1>Command:</FONT>
+
+<P><FONT SIZE=-1>126!#%38!#%2!#%2!#%2!#%2!#%2!#%2!#%2!#%2!#%2!#%2!#%2!#%2!#%2!#%2!#%2!#%2!#%2!#%2!#%2!#%0!#%0!#%0!#%0!#%0!#%0!#%0!#%0!#%0!#%0!#%0!#%0!#%0!#%0!#%0!#%0!#%0!#%0!#%0@$^</FONT>
+
+<P><FONT SIZE=-1>This command requests that the server calculate the current
+EAF value. This command is generated whenever any button is pressed on
+the EAF dialog.</FONT>
+
+<P><FONT SIZE=-1>Response: 0!#%1!#%1.00@$^</FONT>
+
+<P><B><FONT SIZE=-1>3. COCOMO_DO_CALC_EAF</FONT></B>
+
+<P><FONT SIZE=-1>Command:</FONT>
+
+<P><FONT SIZE=-1>126!#%38!#%3!#%2!#%2!#%2!#%2!#%2!#%2!#%2!#%2!#%2!#%2!#%2!#%2!#%2!#%2!#%2!#%2!#%2!#%2!#%0!#%0!#%0!#%0!#%0!#%0!#%0!#%0!#%0!#%0!#%0!#%0!#%0!#%0!#%0!#%0!#%0!#%0!#%0@$^</FONT>
+
+<P><FONT SIZE=-1>After RELY button is clicked, this command is sent to
+have the server calculate the current EAF. The first argument is set to
+Very High.</FONT>
+
+<P><FONT SIZE=-1>Response: 0!#%1!#%1.15@$^</FONT>
+
+<P><FONT SIZE=-1>This response contains the calculated current EAF value
+for the module.</FONT>
+
+<P><FONT SIZE=-1>When OK button is clicked after RELY EAF value is changed,
+the following commands are executed sequentially.</FONT>
+
+<P><B><FONT SIZE=-1>4. COCOMO_SET_MOD_EAF</FONT></B>
+
+<P><FONT SIZE=-1>Command:</FONT>
+
+<P><FONT SIZE=-1>222!#%39!#%0!#%3!#%2!#%2!#%2!#%2!#%2!#%2!#%2!#%2!#%2!#%2!#%2!#%2!#%2!#%2!#%2!#%2!#%2!#%2!#%0!#%0!#%0!#%0!#%0!#%0!#%0!#%0!#%0!#%0!#%0!#%0!#%0!#%0!#%0!#%0!#%0!#%0!#%0@$^</FONT>
+
+<P><FONT SIZE=-1>All EAF mutipliers and interpolation rates are sent to
+the server so that it set the current values on EAF dialog for the module
+which is specified in the first argument(0).</FONT>
+
+<P><FONT SIZE=-1>Response: 0!#%0@$^</FONT>
+
+<P><B><FONT SIZE=-1>5. COCOMO_DO_CAL_RISK</FONT></B>
+
+<P><FONT SIZE=-1>Command: 130!#%1!#%0@$^</FONT>
+
+<P><FONT SIZE=-1>This command requests that the server calculate the risk
+level for the module, which is displayed on the last column of the module
+line on the CLEF.</FONT>
+
+<P><FONT SIZE=-1>Response: 0!#%2!#%0!#%</FONT>
+
+<P><B><FONT SIZE=-1>6. COCOMO_GET_MOD_LINE</FONT></B>
+
+<P><FONT SIZE=-1>Command: 322!#%1!#%0@$^</FONT>
+
+<P><FONT SIZE=-1>Response:</FONT>
+
+<P><FONT SIZE=-1>0!#%11!#%&lt;none>!#%S:10000!#%0.00!#%1.15!#%34.85!#%40.07!#%249.54!#%0.00!#%0.00!#%4.01!#%0.00@$^</FONT>
+
+<P><FONT SIZE=-1>These command and response are described above.</FONT>
+
+<P><B><FONT SIZE=-1>7. COCOMO_GET_PROJECT_TOTALS</FONT></B>
+
+<P><FONT SIZE=-1>Command: 333!#%0@$^</FONT>
+
+<P><FONT SIZE=-1>Response:</FONT>
+
+<P><FONT SIZE=-1>0!#%24!#%10000!#%34.85!#%286.97!#%40.07!#%249.54!#%0.00!#%0.00!#%4.01!#%0.00!#%9.99!#%32.06!#%199.63!#%0.00!#%0.00!#%3.48!#%0.00!#%9.22!#%50.09!#%311.92!#%0.00!#%0.00!#%4.63!#%0.00!#%10.82@$^</FONT>
+
+<P><FONT SIZE=-1>These command and response are described above.</FONT>
+
+<P><B><FONT FACE="TIMES"><FONT SIZE=+1>5. Save the Result</FONT></FONT></B>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>When the user clicks the Save button
+on File pulldown menu, the Applet requests that the user enter his/her
+user_id and passwd. If he/she does not have an account, the server creates
+a new account by user’s clicking New button. Otherwise, the server sends
+available project file names in the user’s account.</FONT></FONT>
+
+<P><B><FONT FACE="TIMES"><FONT SIZE=-1>1. COCOMO_DO_CREATE_USR_ACCT</FONT></FONT></B>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>Command: 102!#%2!#%Test!#%test@$^</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>This command requests that the server
+create a new account for the user. The user_id(Test) and passwd(test) is
+saved in the file(pawdfile).</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>Response: 0!#%0@$^</FONT></FONT>
+
+<P><B><FONT FACE="TIMES"><FONT SIZE=-1>2. COCOMO_SET_PRJ_NAME</FONT></FONT></B>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>Command: 201!#%1!#%&lt;none>@$^</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>&lt;none> is the default project name.
+This command requests that the sever set the project name as the default.</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>Response: 0!#%0@$^</FONT></FONT>
+
+<P><B><FONT FACE="TIMES"><FONT SIZE=-1>3. COCOMO_SET_MOD_NAME</FONT></FONT></B>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>Command: 215!#%2!#%0!#%&lt;none>@$^</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>This command requests that the server
+set all module’s names. If the module name is not changed, the default
+name, &lt;none> is sent.</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>Response: 0!#%0@$^</FONT></FONT>
+
+<P><B><FONT FACE="TIMES"><FONT SIZE=-1>4. COCOMO_SET_MOD_RATE</FONT></FONT></B>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>Command: 221!#%2!#%0!#%0.00@$^</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>This command requests that the server
+set each module’s rate.</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>Response: 0!#%0@$^</FONT></FONT>
+
+<P><B><FONT FACE="TIMES"><FONT SIZE=-1>5. COCOMO_GET_PROJECT_TOTALS</FONT></FONT></B>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>Command: 333!#%0@$^</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>Response:</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>0!#%24!#%10000!#%34.85!#%286.97!#%40.07!#%249.54!#%0.00!#%0.00!#%4.01!#%0.00!#%9.99!#%32.06!#%199.63!#%0.00!#%0.00!#%3.48!#%0.00!#%9.22!#%50.09!#%311.92!#%0.00!#%0.00!#%4.63!#%0.00!#%10.82@$^</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>These command and response are described
+above.</FONT></FONT>
+
+<P><B><FONT FACE="TIMES"><FONT SIZE=-1>6. COCOMO_GET_PRJ_AVAILABLE</FONT></FONT></B>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>Command: 301!#%0@$^</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>This command requests that the server
+send the available project files’ names in the account.</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>Response: 0!#%0@$^</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>When OK button is clicked after the
+user inputs the name of the project file, the client sends this command.</FONT></FONT>
+
+<P><B><FONT FACE="TIMES"><FONT SIZE=-1>7. COCOMO_SAVE_AS_PROJECT</FONT></FONT></B>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>Command: 106!#%1!#%test@$^</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>This command request that the server
+save the project in the specified file(test.est).</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>Response: 0!#%0@$^</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>Below is the complete set of protocol
+commands used by virtual COCOMOII. Extensions to Java COCOMOII are possible
+by using this protocol.</FONT></FONT>
+
+<P><B><FONT FACE="TIMES"><FONT SIZE=+1>1. Request Message</FONT></FONT></B>
+
+<P><B><FONT FACE="TIMES"><FONT SIZE=-1>Request</FONT></FONT> =</B>
+
+<P><FONT SIZE=-1>Request-Header CD Request-Argument CEL</FONT>
+
+<P><B><FONT SIZE=-1>Request-Header </FONT>=</B>
+
+<P><FONT SIZE=-1>(DO | SET | GET) CD #_of_Args</FONT>
+
+<P><B><FONT SIZE=-1>Request-Argument</FONT> =</B>
+
+<P><FONT SIZE=-1>do-args | get-args | set-args</FONT>
+
+<P><B><FONT SIZE=-1>do-args</FONT> =</B>
+
+<P><FONT SIZE=-1>INIT | NEW | COMPUTE | ACCEPT | RESET | ADD</FONT>
+
+<P><FONT SIZE=-1>| CREATE CD user_name CD passwd</FONT>
+
+<P><FONT SIZE=-1>| CHECK CD user_name CD passwd</FONT>
+
+<P><FONT SIZE=-1>| LOAD CD &lt;proj_name|model_name|calib_name></FONT>
+
+<P><FONT SIZE=-1>| SAVE CD &lt;proj_name|model_name|calib|name></FONT>
+
+<P><FONT SIZE=-1>| DELETE CD &lt;mod_index|proj_index></FONT>
+
+<P><FONT SIZE=-1>| CALCULATE (CD &lt;arg>)<SUP>*</SUP></FONT>
+
+<P><FONT SIZE=-1>| (COPY|PASTE) CD mod_index</FONT>
+
+<P><B>set-args =</B>
+
+<P><FONT SIZE=-1>PROJ_NAME CD proj_name</FONT>
+
+<P><FONT SIZE=-1>| PROJ_EFFORT CD proj_index CD proj_effort</FONT>
+
+<P><FONT SIZE=-1>| PROJ_SCHEDULE CD proj_index CD proj_schedule</FONT>
+
+<P><FONT SIZE=-1>| SCALE_FACTOR (CD &lt;arg>)<SUP>*</SUP></FONT>
+
+<P><FONT SIZE=-1>| SCED CD sced_val CD inter_sced</FONT>
+
+<P><FONT SIZE=-1>|(PRODUCT|PLATFORM|PERSONNEL|PROJECT|UDF)(CD&lt;dirver_value>
+CD &lt;inter_value>)<SUP>*</SUP></FONT>
+
+<P><FONT SIZE=-1>| SCALEFACTOR (CD &lt;dirver_value> CD &lt;inter_value>)<SUP>*</SUP></FONT>
+
+<P><FONT SIZE=-1>| EQUATION CD effort-entry-value CD schedule-entry-value</FONT>
+
+<P><FONT SIZE=-1>| MOD_LINE CD mod_index (CD &lt;arg>)<SUP>*</SUP></FONT>
+
+<P><FONT SIZE=-1>| MOD_EDSI_BRAK CD mod_index CD brak</FONT>
+
+<P><FONT SIZE=-1>| MOD_EDSI_FLAG CD mod_index CD flag</FONT>
+
+<P><FONT SIZE=-1>| MOD_EDSI_FP (CD &lt;arg>)<SUP>*</SUP></FONT>
+
+<P><FONT SIZE=-1>| MOD_RATE CD mod_index CD rate</FONT>
+
+<P><FONT SIZE=-1>| MOD_EAF (CD &lt;arg>)<SUP>*</SUP></FONT>
+
+<P><B><FONT SIZE=-1>get-args</FONT> =</B>
+
+<P><FONT SIZE=-1>PROJECTS | PRJ_MOD_NUM | MODELS | CALIBRATIONS | SCALEFACTOR</FONT>
+
+<P><FONT SIZE=-1>| EQUATION |PROJ_REPORT | PROJ_TOTAL | HELPS</FONT>
+
+<P><FONT SIZE=-1>| RISK_LEVEL CD mod_index</FONT>
+
+<P><FONT SIZE=-1>| (MOD_LINE | MOD_EAF | MOD_EDSI_FLAG) CD mod_index</FONT>
+
+<P><FONT SIZE=-1>| (MOD_FP_LANG | MOD_EDSI_AAF | MOD_EDSI_FP) CD mod_index</FONT>
+
+<P><FONT SIZE=-1>| PROJ_LINE CD proj_index</FONT>
+
+<P><FONT SIZE=-1>|(MOD_OVERALL| MOD_PLAN_RPT|MOD_DESIGN_RPT|MOD_INTE_RPT)
+CD mod_index</FONT>
+
+<P><FONT SIZE=-1>|(PRJ_OVERALL|PRJ_PLAN_RPT |PRJ_DESIGN_RPT |PRJ_INTE_RPT)
+CD proj_index</FONT>
+
+<P><FONT SIZE=-1>| (CAL_NEME| CAL_DATE| CAL_EFF| CAL_SCED) CD proj_index</FONT>
+
+<P><B><FONT FACE="TIMES"><FONT SIZE=+1>2. Response Message</FONT></FONT></B>
+
+<P><B><FONT FACE="TIMES"><FONT SIZE=-1>Response</FONT></FONT> =</B>
+
+<P><FONT SIZE=-1>Response-Header Response-Argument</FONT>
+
+<P><B><FONT SIZE=-1>Response-Header =</FONT></B>
+
+<P><FONT SIZE=-1>Error_Status CD No_of_Args</FONT>
+
+<P><B><FONT SIZE=-1>Error_Status =</FONT></B>
+
+<P><FONT SIZE=-1>0 | 1 | 2</FONT>
+
+<P><FONT SIZE=-1>0: Success</FONT>
+
+<P><FONT SIZE=-1>1: General Error</FONT>
+
+<P><FONT SIZE=-1>2: Format Error</FONT>
+
+<P><B><FONT SIZE=-1>Response-Argument =</FONT></B>
+
+<P><FONT SIZE=-1>PROJ_NAME| MOD_LINE| PROJ_TOTAL| MOD_EAF| MOD_EDSI_FLAG|
+MOD_FP_LANG</FONT>
+
+<P><FONT SIZE=-1>| MOD_RISK| EQUATION| CAL_NAME| CAL_PROJ_LINE| DEL_MOD|
+DEL_PROJ</FONT>
+
+<P><FONT SIZE=-1>| PROJECTS | MODELS | CALIBRATIONS | OPEN_PROJ| PARAMETERS</FONT>
+
+<P><B><FONT FACE="TIMES"><FONT SIZE=+1>3. Miscellaneous</FONT></FONT></B>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>CD(COCOMO_DELIMINATER) = "!#%"</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>CEL(COCOMO_END_LINE) = "@$^"</FONT></FONT>
+<BR><FONT FACE="TIMES"><FONT SIZE=-1>&nbsp;</FONT></FONT>
+</BODY>
+</HTML>

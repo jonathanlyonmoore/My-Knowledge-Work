@@ -1,0 +1,65 @@
+{\rtf1\ansi\ansicpg1252\uc1 \deff0\deflang1033\deflangfe1033{\fonttbl{\f0\froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman{\*\falt Times};}{\f1\fswiss\fcharset0\fprq2{\*\panose 020b0604020202020204}Arial;}{\f11\fswiss\fcharset0\fprq2{\*\panose 00000000000000000000}MS Sans Serif;}{\f118\froman\fcharset238\fprq2 Times New Roman CE{\*\falt Times};}{\f119\froman\fcharset204\fprq2 Times New Roman Cyr{\*\falt Times};}{\f121\froman\fcharset161\fprq2 Times New Roman Greek{\*\falt Times};}{\f122\froman\fcharset162\fprq2 Times New Roman Tur{\*\falt Times};}{\f123\froman\fcharset186\fprq2 Times New Roman Baltic{\*\falt Times};}{\f124\fswiss\fcharset238\fprq2 Arial CE;}{\f125\fswiss\fcharset204\fprq2 Arial Cyr;}{\f127\fswiss\fcharset161\fprq2 Arial Greek;}{\f128\fswiss\fcharset162\fprq2 Arial Tur;}{\f129\fswiss\fcharset186\fprq2 Arial Baltic;}}{\colortbl;\red0\green0\blue0;\red0\green0\blue255;\red0\green255\blue255;\red0\green255\blue0;\red255\green0\blue255;\red255\green0\blue0;\red255\green255\blue0;\red255\green255\blue255;\red0\green0\blue128;\red0\green128\blue128;\red0\green128\blue0;\red128\green0\blue128;\red128\green0\blue0;\red128\green128\blue0;\red128\green128\blue128;\red192\green192\blue192;}{\stylesheet{\nowidctlpar\widctlpar\adjustright \f11\fs20\cgrid \snext0 Normal;}{\*\cs10 \additive Default Paragraph Font;}{\s15\nowidctlpar\widctlpar\tqc\tx4320\tqr\tx8640\adjustright \f11\fs20\cgrid \sbasedon0 \snext15 header;}{\s16\nowidctlpar\widctlpar\tqc\tx4320\tqr\tx8640\adjustright \f11\fs20\cgrid \sbasedon0 \snext16 footer;}}{\info{\operator CF}{\creatim\yr1998\mo9\dy6\hr13\min31}{\revtim\yr1998\mo9\dy6\hr13\min34}{\version2}{\edmins3}{\nofpages2}{\nofwords273}{\nofchars1559}{\*\company USC-CSE}{\nofcharsws1914}{\vern71}}\endnotes\aendnotes\aftnstart0\hyphhotz0\aftnnar\lytprtmet\hyphcaps0\viewkind1\viewscale100\pgbrdrhead\pgbrdrfoot \fet0\sectd \linex0\endnhere\sectdefaultcl {\header \pard\plain \s15\qc\nowidctlpar\widctlpar\tqc\tx4320\tqr\tx8640\adjustright \f11\fs20\cgrid {\f0 Table of Contents
+\par }}{\*\pnseclvl1\pnucrm\pnstart1\pnindent720\pnhang{\pntxta .}}{\*\pnseclvl2\pnucltr\pnstart1\pnindent720\pnhang{\pntxta .}}{\*\pnseclvl3\pndec\pnstart1\pnindent720\pnhang{\pntxta .}}{\*\pnseclvl4\pnlcltr\pnstart1\pnindent720\pnhang{\pntxta )}}{\*\pnseclvl5\pndec\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}{\*\pnseclvl6\pnlcltr\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}{\*\pnseclvl7\pnlcrm\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}{\*\pnseclvl8\pnlcltr\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}{\*\pnseclvl9\pnlcrm\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}\pard\plain \nowidctlpar\widctlpar\tx9350\adjustright \f11\fs20\cgrid {\b\f1\lang1024 Overall Model Definition}{\f0\lang1024   }{\f0\lang1024 1
+\par }\pard \li200\nowidctlpar\widctlpar\tx9350\adjustright {\f0\lang1024 COCOMO II Models for the Software Marketplace Sectors}{\f0\lang1024   }{\f0\lang1024 1
+\par }\pard \li400\nowidctlpar\widctlpar\tx9350\adjustright {\f0\lang1024 COCOMO II Model Rationale and Elaboration}{\f0\lang1024   }{\f0\lang1024 1
+\par }\pard \li200\nowidctlpar\widctlpar\tx9350\adjustright {\f0\lang1024 Development Effort Estimates}{\f0\lang1024   }{\f0\lang1024 4
+\par Software Economies and Diseconomies of Scale}{\f0\lang1024   }{\f0\lang1024 4
+\par }\pard \li400\nowidctlpar\widctlpar\tx9350\adjustright {\f0\lang1024 Previous Approaches }{\f0\lang1024   }{\f0\lang1024 4
+\par Scaling Drivers}{\f0\lang1024   }{\f0\lang1024 5
+\par Precedentedness (PREC) and Development Flexibility (FLEX)}{\f0\lang1024   }{\f0\lang1024 6
+\par Architecture / Risk Resolution (RESL)}{\f0\lang1024   }{\f0\lang1024 6
+\par Team Cohesion (TEAM)}{\f0\lang1024   }{\f0\lang1024 7
+\par Process Maturity (PMAT)}{\f0\lang1024   }{\f0\lang1024 8
+\par }\pard \li600\nowidctlpar\widctlpar\tx9350\adjustright {\f0\lang1024 Overall Maturity Level}{\f0\lang1024   }{\f0\lang1024 8
+\par Key Process Areas}{\f0\lang1024   }{\f0\lang1024 8
+\par }\pard \li200\nowidctlpar\widctlpar\tx9350\adjustright {\f0\lang1024 Adjusting Nominal Effort}{\f0\lang1024   }{\f0\lang1024 9
+\par }\pard \li400\nowidctlpar\widctlpar\tx9350\adjustright {\f0\lang1024 Early Design Model}{\f0\lang1024   }{\f0\lang1024 10
+\par Post-Architecture Model}{\f0\lang1024   }{\f0\lang1024 10
+\par }\pard \li200\nowidctlpar\widctlpar\tx9350\adjustright {\f0\lang1024 Development Schedule Estimation}{\f0\lang1024   }{\f0\lang1024 10
+\par }\pard \li200\nowidctlpar\widctlpar\tx9350\adjustright {\f0\lang1024 
+\par }\pard \nowidctlpar\widctlpar\tx9595\adjustright {\b\f1\lang1024 Using COCOMO II}{\f0\lang1024   }{\f0\lang1024 11
+\par }\pard \li200\nowidctlpar\widctlpar\tx9595\adjustright {\f0\lang1024 Determining Size}{\f0\lang1024   }{\f0\lang1024 11
+\par }\pard \li400\nowidctlpar\widctlpar\tx9595\adjustright {\f0\lang1024 Lines of Code}{\f0\lang1024   }{\f0\lang1024 11
+\par Function Points}{\f0\lang1024   }{\f0\lang1024 14
+\par }\pard \li600\nowidctlpar\widctlpar\tx9595\adjustright {\f0\lang1024 Counting Procedure for Unadjusted Function Points}{\f0\lang1024   }{\f0\lang1024 15
+\par Converting Function Points to Lines of Code}{\f0\lang1024   }{\f0\lang1024 15
+\par }\pard \li200\nowidctlpar\widctlpar\tx9595\adjustright {\f0\lang1024 Breakage}{\f0\lang1024   }{\f0\lang1024 16
+\par Adjusting for Reuse}{\f0\lang1024   }{\f0\lang1024 16
+\par }\pard \li400\nowidctlpar\widctlpar\tx9595\adjustright {\f0\lang1024 Nonlinear Reuse Effects}{\f0\lang1024   }{\f0\lang1024 16
+\par A Reuse Model}{\f0\lang1024   }{\f0\lang1024 18
+\par }\pard \li200\nowidctlpar\widctlpar\tx9595\adjustright {\f0\lang1024 Adjusting for Re-engineering or Conversion}{\f0\lang1024   }{\f0\lang1024 19
+\par Applications Maintenance}{\f0\lang1024   }{\f0\lang1024 20
+\par Effort Multipliers}{\f0\lang1024   }{\f0\lang1024 21
+\par }\pard \li400\nowidctlpar\widctlpar\tx9595\adjustright {\f0\lang1024 Early Design}{\f0\lang1024   }{\f0\lang1024 21
+\par }\pard \li600\nowidctlpar\widctlpar\tx9595\adjustright {\f0\lang1024 Overall Approach: Personnel Capability (PERS) Example}{\f0\lang1024   }{\f0\lang1024 22
+\par }\pard \li600\nowidctlpar\widctlpar\tx9595\adjustright {\f0\lang1024 Product Reliability and Complexity (RCPX)}{\f0\lang1024   }{\f0\lang1024 23
+\par Required Reuse (RUSE)}{\f0\lang1024   }{\f0\lang1024 23
+\par Platform Difficulty (PDIF)}{\f0\lang1024   }{\f0\lang1024 23
+\par Personnel Experience (PREX)}{\f0\lang1024   }{\f0\lang1024 24
+\par Facilities (FCIL)}{\f0\lang1024   }{\f0\lang1024 24
+\par Schedule (SCED)}{\f0\lang1024   }{\f0\lang1024 24
+\par }\pard \li400\nowidctlpar\widctlpar\tx9595\adjustright {\f0\lang1024 Post-Architecture}{\f0\lang1024   }{\f0\lang1024 25
+\par }\pard \li600\nowidctlpar\widctlpar\tx9595\adjustright {\f0\lang1024 Product Factors}{\f0\lang1024   }{\f0\lang1024 25
+\par }\pard \li800\nowidctlpar\widctlpar\tx9595\adjustright {\f0\lang1024 Required Software Reliability (RELY)}{\f0\lang1024   }{\f0\lang1024 25
+\par Data Base Size (DATA)}{\f0\lang1024   }{\f0\lang1024 25
+\par Product Complexity (CPLX)}{\f0\lang1024   }{\f0\lang1024 25
+\par Required Reusability (RUSE)}{\f0\lang1024   }{\f0\lang1024 27
+\par Documentation match to life-cycle needs (DOCU)}{\f0\lang1024   }{\f0\lang1024 27
+\par }\pard \li600\nowidctlpar\widctlpar\tx9595\adjustright {\f0\lang1024 Platform Factors}{\f0\lang1024   }{\f0\lang1024 27
+\par }\pard \li800\nowidctlpar\widctlpar\tx9595\adjustright {\f0\lang1024 Execution Time Constraint (TIME)}{\f0\lang1024   }{\f0\lang1024 27
+\par }\pard \li800\nowidctlpar\widctlpar\tx9595\adjustright {\f0\lang1024 Main Storage Constraint (STOR)}{\f0\lang1024   }{\f0\lang1024 27
+\par }\pard \li800\nowidctlpar\widctlpar\tx9595\adjustright {\f0\lang1024 Platform Volatility (PVOL)}{\f0\lang1024   }{\f0\lang1024 28
+\par }\pard \li600\nowidctlpar\widctlpar\tx9595\adjustright {\f0\lang1024 Personnel Factors}{\f0\lang1024   }{\f0\lang1024 28
+\par }\pard \li800\nowidctlpar\widctlpar\tx9595\adjustright {\f0\lang1024 Analyst Capability (ACAP)}{\f0\lang1024   }{\f0\lang1024 28
+\par Programmer Capability (PCAP)}{\f0\lang1024   }{\f0\lang1024 28
+\par Applications Experience (AEXP)}{\f0\lang1024   }{\f0\lang1024 28
+\par Platform Experience (PEXP)}{\f0\lang1024   }{\f0\lang1024 29
+\par Language and Tool Experience (LTEX)}{\f0\lang1024   }{\f0\lang1024 29
+\par Personnel Continuity (PCON)}{\f0\lang1024   }{\f0\lang1024 29
+\par }\pard \li600\nowidctlpar\widctlpar\tx9595\adjustright {\f0\lang1024 Project Factors}{\f0\lang1024   }{\f0\lang1024 29
+\par }\pard \li800\nowidctlpar\widctlpar\tx9595\adjustright {\f0\lang1024 Use of Software Tools (TOOL)}{\f0\lang1024   }{\f0\lang1024 29
+\par Multisite Development (SITE)}{\f0\lang1024   }{\f0\lang1024 29
+\par Required Development Schedule (SCED)}{\f0\lang1024   }{\f0\lang1024 30
+\par }\pard \li200\nowidctlpar\widctlpar\tx9350\adjustright {\f0 
+\par }\pard \li200\nowidctlpar\widctlpar\tx9350\adjustright {\b\f1\lang1024 Index}{\f0\lang1024   }{\f0\lang1024 3}{\f0\lang1024 1}{\f0 
+\par }}

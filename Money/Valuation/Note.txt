@@ -1,0 +1,4 @@
+Statistical Quality Control & Operations Research
+
+Optimal service level formula for inventory optimization
+

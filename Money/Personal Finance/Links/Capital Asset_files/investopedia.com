@@ -1,0 +1,1 @@
+PARSELY.pInit({"apikey":"investopedia.com","settings":{"debug":false,"widget":false,"tracker":true},"customizations":null,"track_ip_addresses":true,"bundle":"/code/ptrack-v1.0.0-engagedtime.js","track_third_party_cookies":true,"uuid":"a2bbcfba-c1d7-4886-846f-18289b435ceb","network_uuid":"81e5efca-1079-4bb2-ae98-d039231204e3","apikey_uuid":"a2bbcfba-c1d7-4886-846f-18289b435ceb"});

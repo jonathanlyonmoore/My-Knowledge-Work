@@ -1,0 +1,1128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="Generator" CONTENT="Microsoft Word 97">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.06 [en] (WinNT; I) [Netscape]">
+   <TITLE>Chapter 1: Introduction</TITLE>
+</HEAD>
+<BODY LINK="#0000FF" VLINK="#800080">
+<A NAME="_Toc424805799"></A><B><FONT FACE="Arial"><FONT SIZE=+1>Chapter
+1:<A NAME="Introduction"></A>Introduction</FONT></FONT></B>
+<P><A NAME="_Toc424805800"></A><I><FONT FACE="Arial"><FONT SIZE=+1>1.1&nbsp;<A NAME="whatiscocomo"></A>What
+is COCOMO?</FONT></FONT></I>
+<P><FONT FACE="TIMES"><FONT SIZE=-1>COCOMO (COnstructive COst MOdel) is
+a screen-oriented, interactive software package that assists in budgetary
+planning and schedule estimation of a software development project. Through
+the flexibility of COCOMO, a software project manager (or team leader)
+can develop a model (or multiple models) of projects in order to identify
+potential problems in resources, personnel, budgets, and schedules both
+before and while the potential software package is being developed.</FONT></FONT>
+<P><FONT FACE="TIMES"><FONT SIZE=-1>The COCOMO software package is based
+upon the software cost and schedule estimation model: COnstructive COst
+MOdel version II (COCOMOII). This is the newly revised version of the original
+COnstructive COst MOdel (COCOMO) first published by Dr. Barry Boehm in
+his book <U>Software Engineering Economics</U>, Prentice-Hall (1981), and
+Ada COCOMO (1989) predecessors. The current model is described in [Boehm
+et al. 1995]</FONT></FONT>
+<P><FONT FACE="TIMES"><FONT SIZE=-1>The primary objectives of the COCOMOII.1998
+effort are:</FONT></FONT>
+<DIR>
+<DIR>
+<DIR>
+<LI>
+<FONT FACE="TIMES"><FONT SIZE=-1>To develop a software cost and schedule
+estimation model tuned to the life cycle practices of the 1990's and 2000's.</FONT></FONT></LI>
+
+<LI>
+<FONT FACE="TIMES"><FONT SIZE=-1>To develop software cost database and
+tool support capabilities for continuous model improvement.</FONT></FONT></LI>
+
+<LI>
+<FONT FACE="TIMES"><FONT SIZE=-1>To provide a quantitative analytic framework,
+and set of tools and techniques for evaluating the effects of software
+technology improvements on software life cycle costs and schedules.</FONT></FONT></LI>
+</DIR>
+</DIR>
+</DIR>
+<FONT FACE="TIMES"><FONT SIZE=-1>The full COCOMOII model includes three
+stages.&nbsp;<A NAME="stage1"></A>Stage 1 supports estimation of prototyping
+or applications composition efforts. Stage 2 supports estimation in the
+Early Design stage of a project, when less is known about the project’s
+cost drivers. Stage 3 supports estimation in the Post-Architecture stage
+of a project.</FONT></FONT>
+<P><FONT FACE="TIMES"><FONT SIZE=-1>This version of USC COCOMOII implements&nbsp;<A NAME="stage3"></A>stage
+3 formulas to estimate the effort, schedule, and cost required to develop
+a software product. It also provides the breakdown of effort and schedule
+into software life-cycle phases and activities from the original COCOMO
+manual. These are still reasonably valid for waterfall&nbsp;<A NAME="waterfallmodel"></A>model
+software projects, but need to be interpreted for non-waterfall projects.</FONT></FONT>
+<DIR>
+<DIR>
+<DIR>
+<DIR>&nbsp;</DIR>
+</DIR>
+</DIR>
+</DIR>
+<FONT FACE="Arial">1.1.1&nbsp;<A NAME="_Toc424805801"></A><A NAME="effortestimationeq"></A>Effort
+Estimation Equation</FONT>
+<P><FONT SIZE=-1>Estimate effort with:</FONT>
+<BR><FONT FACE="TIMES"><FONT SIZE=-1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(</FONT></FONT><B><FONT FACE="HELVETICA"><FONT SIZE=-2>EQ 1-1)</FONT></FONT></B>
+<DIR><IMG SRC="eq1-1.jpg" HEIGHT=213 WIDTH=522>
+<DIR>
+<DIR>&nbsp;</DIR>
+</DIR>
+</DIR>
+
+<CENTER><TABLE BORDER CELLPADDING=4 WIDTH="503" >
+<TR>
+<TD VALIGN=TOP WIDTH="16%"><B><FONT FACE="TIMES"><FONT SIZE=-1>Symbol</FONT></FONT></B></TD>
+
+<TD VALIGN=TOP WIDTH="84%"><B><FONT FACE="TIMES"><FONT SIZE=-1>Description</FONT></FONT></B></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="16%"><A NAME="A"></A><FONT FACE="TIMES"><FONT SIZE=-1>A</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="84%"><FONT FACE="TIMES"><FONT SIZE=-1>Constant, currently
+calibrated as 2.45</FONT></FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="16%"><A NAME="AA"></A><FONT FACE="TIMES"><FONT SIZE=-1>AA</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="84%"><FONT FACE="TIMES"><FONT SIZE=-1>Assessment
+and assimilation</FONT></FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="16%"><A NAME="ADAPT"></A><FONT FACE="TIMES"><FONT SIZE=-1>ADAPT</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="84%"><FONT FACE="TIMES"><FONT SIZE=-1>Percentage
+of components adapted (represents the effort required in understanding
+software)</FONT></FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="16%"><A NAME="AT"></A><FONT FACE="TIMES"><FONT SIZE=-1>AT</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="84%"><FONT FACE="TIMES"><FONT SIZE=-1>Percentage
+of components that are automatically translated</FONT></FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="16%"><A NAME="ATPROD"></A><FONT FACE="TIMES"><FONT SIZE=-1>ATPROD</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="84%"><FONT FACE="TIMES"><FONT SIZE=-1>Automatic translation
+productivity</FONT></FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="16%"><A NAME="BRAK"></A><FONT FACE="TIMES"><FONT SIZE=-1>BRAK</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="84%"><FONT FACE="TIMES"><FONT SIZE=-1>Breakage: Percentage
+of code thrown away due to requirements volatility</FONT></FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="16%"><A NAME="CM"></A><FONT FACE="TIMES"><FONT SIZE=-1>CM</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="84%"><FONT FACE="TIMES"><FONT SIZE=-1>Percentage
+of code modified</FONT></FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="16%"><A NAME="DM"></A><FONT FACE="TIMES"><FONT SIZE=-1>DM</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="84%"><FONT FACE="TIMES"><FONT SIZE=-1>Percentage
+of design modified</FONT></FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="16%"><A NAME="EM"></A><FONT FACE="TIMES"><FONT SIZE=-1>EM</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="84%"><FONT FACE="TIMES"><FONT SIZE=-1>Effort Multipliers:
+RELY, DATA, CPLX, RUSE, DOCU, TIME, STOR, PVOL, ACAP, PCAP, PCON, AEXP,
+PEXP, LTEX, TOOL, SITE</FONT></FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="16%"><A NAME="IM"></A><FONT FACE="TIMES"><FONT SIZE=-1>IM</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="84%"><FONT FACE="TIMES"><FONT SIZE=-1>Percentage
+of integration and test modified</FONT></FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="16%"><A NAME="KASLOC"></A><FONT FACE="TIMES"><FONT SIZE=-1>KASLOC</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="84%"><FONT FACE="TIMES"><FONT SIZE=-1>Size of the
+adapted component expressed in thousands of adapted source lines of code</FONT></FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="16%"><A NAME="KNSLOC"></A><FONT FACE="TIMES"><FONT SIZE=-1>KNSLOC</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="84%"><FONT FACE="TIMES"><FONT SIZE=-1>Size of component
+expressed in thousands of new source lines of code</FONT></FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="16%"><A NAME="PM"></A><FONT FACE="TIMES"><FONT SIZE=-1>PM</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="84%"><FONT FACE="TIMES"><FONT SIZE=-1>Person Months
+of estimated effort</FONT></FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="16%"><A NAME="SF"></A><FONT FACE="TIMES"><FONT SIZE=-1>SF</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="84%"><FONT FACE="TIMES"><FONT SIZE=-1>Scale Factors:
+PREC, FLEX, RESL, TEAM, PMAT</FONT></FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="16%"><A NAME="SU"></A><FONT FACE="TIMES"><FONT SIZE=-1>SU</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="84%"><FONT FACE="TIMES"><FONT SIZE=-1>Software understanding
+(zero if DM = 0 and CM = 0)</FONT></FONT></TD>
+</TR>
+</TABLE></CENTER>
+
+<BR>&nbsp;
+<P><A NAME="_Toc424805802"></A><FONT FACE="Arial">1.1.2&nbsp;<A NAME="scheduleEstEquation"></A>Schedule
+Estimation Equation</FONT>
+<P><FONT FACE="TIMES"><FONT SIZE=-1>Determine time to develop (TDEV) with
+an estimated effort, PM, that excludes the effect of the SCED effort multiplier:</FONT></FONT>
+<DIR><FONT FACE="TIMES"><FONT SIZE=-1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(</FONT></FONT><B><FONT FACE="HELVETICA"><FONT SIZE=-2>EQ 1-2)</FONT></FONT></B>
+<DIR>
+<DIR>
+<DIR>&nbsp;</DIR>
+</DIR>
+</DIR>
+<IMG SRC="eq1-2.jpg" HEIGHT=136 WIDTH=336></DIR>
+
+<CENTER><TABLE BORDER CELLPADDING=4 WIDTH="503" >
+<TR>
+<TD VALIGN=TOP WIDTH="16%"><B><FONT FACE="TIMES"><FONT SIZE=-1>Symbol</FONT></FONT></B></TD>
+
+<TD VALIGN=TOP WIDTH="84%"><B><FONT FACE="TIMES"><FONT SIZE=-1>Description</FONT></FONT></B></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="16%"><FONT FACE="TIMES"><FONT SIZE=-1>PM</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="84%"><FONT FACE="TIMES"><FONT SIZE=-1>Person Months
+of estimated effort from Early Design or Post-Architecture models (excluding
+the effect of the SCED effort multiplier).</FONT></FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="16%"><FONT FACE="TIMES"><FONT SIZE=-1>SF</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="84%"><FONT FACE="TIMES"><FONT SIZE=-1>Scale Factors:
+PREC, FLEX, RESL, TEAM, PMAT</FONT></FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="16%"><A NAME="TDEV"></A><FONT FACE="TIMES"><FONT SIZE=-1>TDEV</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="84%"><FONT FACE="TIMES"><FONT SIZE=-1>Time to develop</FONT></FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="16%"><A NAME="SCED"></A><FONT FACE="TIMES"><FONT SIZE=-1>SCED</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="84%"><FONT FACE="TIMES"><FONT SIZE=-1>Schedule</FONT></FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="16%"><FONT FACE="TIMES"><FONT SIZE=-1>SCED%</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="84%"><FONT FACE="TIMES"><FONT SIZE=-1>The compression
+/ expansion percentage in the SCED effort multiplier</FONT></FONT></TD>
+</TR>
+</TABLE></CENTER>
+
+<P><A NAME="_Toc424805803"></A><FONT FACE="Arial">1.1.3&nbsp;<A NAME="ScaleFactorsSection"></A>Scale
+Factors</FONT>
+<P><FONT FACE="TIMES"><FONT SIZE=-1>Equation 1-2 defines the exponent,
+B, used in Equation 1-1. Table 1.1 provides the rating levels for the COCOMOII
+scale drivers. The selection of scale drivers is based on the rationale
+that they are a significant source of exponential variation on a project’s
+effort or productivity variation. Each scale driver has a range of rating
+levels, from Very Low to Extra High. Each rating level has a weight, W,
+and the specific value of the weight is called a scale factor. A project's
+scale factors, W<SUB>i</SUB>, are summed across all of the factors, and
+used to determine a scale exponent, B, via the following formula:</FONT></FONT>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR><A NAME="B"></A><FONT FACE="TIMES"><FONT SIZE=-1>(</FONT></FONT><B><FONT FACE="HELVETICA"><FONT SIZE=-2>EQ
+1-3)</FONT></FONT></B></DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+
+<BLOCKQUOTE><IMG SRC="eq1-3.jpg" HEIGHT=90 WIDTH=183></BLOCKQUOTE>
+
+<P><BR><FONT SIZE=-1><FONT FACE="Times New Roman,Times">For example, if
+scale factors with an Extra High rating are each assigned a weight of (0),
+then a 100 KSLOC project with Extra High ratings for all factors will have
+<I>SF</I></FONT><SUB>j</SUB><FONT FACE="TIMES"> = <I>0</I>, <I>B</I> =
+<I>1.01</I>, and a relative effort <I>E</I> = <I>100<SUP>1.01</SUP>
+</I>=
+<I>105 PM</I>. If scale factors with Very Low rating are each assigned
+a weight of (5), then a project with Very Low (5) ratings for all factors
+will have <I>SF</I></FONT><SUB>j </SUB><FONT FACE="TIMES">= <I>5</I>, <I>B</I>
+= <I>1.26</I>, and a relative effort <I>E</I> = <I>331</I> <I>PM</I>. This
+represents a large variation, but the increase involved in a one-unit change
+in one of the factors is only about 4.7%.</FONT></FONT>
+<DIR>
+<DIR>
+<DIR>
+<DIR>&nbsp;</DIR>
+</DIR>
+</DIR>
+</DIR>
+
+<CENTER><TABLE BORDER CELLPADDING=4 WIDTH="616" >
+<TR>
+<TD VALIGN=TOP WIDTH="14%"><A NAME="ScaleFactors"></A><FONT SIZE=-1><B><FONT FACE="TIMES">Scale
+Factors (SF</FONT></B><I><SUB>j</SUB></I></FONT><I>)</I></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><B><FONT FACE="TIMES"><FONT SIZE=-1>Very Low</FONT></FONT></B></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><B><FONT FACE="TIMES"><FONT SIZE=-1>Low</FONT></FONT></B></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><B><FONT FACE="TIMES"><FONT SIZE=-1>Nominal</FONT></FONT></B></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><B><FONT FACE="TIMES"><FONT SIZE=-1>High</FONT></FONT></B></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><B><FONT FACE="TIMES"><FONT SIZE=-1>Very High</FONT></FONT></B></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><B><FONT FACE="TIMES"><FONT SIZE=-1>Extra High</FONT></FONT></B></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="14%"><A NAME="PREC"></A><FONT FACE="TIMES"><FONT SIZE=-1>PREC</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT FACE="TIMES"><FONT SIZE=-1>thoroughly
+unprecedented</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT FACE="TIMES"><FONT SIZE=-1>largely unprecedented</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT FACE="TIMES"><FONT SIZE=-1>Somewhat unprecedented</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT FACE="TIMES"><FONT SIZE=-1>generally familiar</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT FACE="TIMES"><FONT SIZE=-1>largely familiar</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-1>thoroughly familiar</FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="14%"><A NAME="FLEX"></A><FONT FACE="TIMES"><FONT SIZE=-1>FLEX</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT FACE="TIMES"><FONT SIZE=-1>rigorous</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT FACE="TIMES"><FONT SIZE=-1>occasional
+relaxation</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT FACE="TIMES"><FONT SIZE=-1>some&nbsp;</FONT></FONT>
+<P><FONT FACE="TIMES"><FONT SIZE=-1>relaxation</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT FACE="TIMES"><FONT SIZE=-1>general&nbsp;</FONT></FONT>
+<P><FONT FACE="TIMES"><FONT SIZE=-1>conformity</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT FACE="TIMES"><FONT SIZE=-1>some&nbsp;</FONT></FONT>
+<P><FONT FACE="TIMES"><FONT SIZE=-1>conformity</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-1>general goals</FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="14%"><A NAME="RESL"></A><FONT FACE="TIMES"><FONT SIZE=-1>RESL</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT FACE="TIMES"><FONT SIZE=-1>little (20%)</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT FACE="TIMES"><FONT SIZE=-1>some (40%)</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT FACE="TIMES"><FONT SIZE=-1>often (60%)</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT FACE="TIMES"><FONT SIZE=-1>Generally (75%)</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT FACE="TIMES"><FONT SIZE=-1>mostly (90%)</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-1>full (100%)</FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="14%"><A NAME="TEAM"></A><FONT FACE="TIMES"><FONT SIZE=-1>TEAM</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT FACE="TIMES"><FONT SIZE=-1>very difficult
+interactions</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT FACE="TIMES"><FONT SIZE=-1>some difficult
+interactions</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT FACE="TIMES"><FONT SIZE=-1>Basically cooperative
+interactions</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT FACE="TIMES"><FONT SIZE=-1>largely&nbsp;</FONT></FONT>
+<P><FONT FACE="TIMES"><FONT SIZE=-1>cooperative</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT FACE="TIMES"><FONT SIZE=-1>highly&nbsp;</FONT></FONT>
+<P><FONT FACE="TIMES"><FONT SIZE=-1>cooperative</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-1>seamless</FONT>
+<BR><FONT SIZE=-1>interactions</FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="14%"><A NAME="PMAT"></A><FONT FACE="TIMES"><FONT SIZE=-1>PMAT</FONT></FONT></TD>
+
+<TD VALIGN=TOP COLSPAN="6" WIDTH="86%"><FONT FACE="TIMES"><FONT SIZE=-1>Weighted
+average of "Yes" answers to CMM Maturity Questionnaire</FONT></FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP COLSPAN="7"><B><FONT FACE="TIMES"><FONT SIZE=-1>Table 1.1:
+Scale Factors for COCOMO.II Early Design and Post-Architecture Models</FONT></FONT></B></TD>
+</TR>
+</TABLE></CENTER>
+
+<P><A NAME="_Toc424805804"></A><FONT FACE="Arial">1.1.4&nbsp;<A NAME="SizingMethods"></A>Sizing
+Methods</FONT>
+<P><B><FONT FACE="HELVETICA"><FONT SIZE=-1>SLOC: Lines of Code Counting
+Rules</FONT></FONT></B>
+<P><FONT FACE="TIMES"><FONT SIZE=-1>In COCOMOII, the logical source statement
+has been chosen as the standard line of code. Defining a line of code is
+difficult due to conceptual differences involved in accounting for executable
+statements and data declarations in different languages. The goal is to
+measure the amount of intellectual work put into program development, but
+difficulties arise when trying to define consistent measures across different
+languages. Breakage due to change of requirements also complicates sizing.
+To minimize these problems, the&nbsp;<A NAME="SEI"></A>Software Engineering
+Institute (SEI) definition checklist for a logical source statement is
+used in defining the line of code measure. The Software Engineering Institute
+(SEI) has developed this checklist as part of a system of definition checklists,
+report forms and supplemental forms to support measurement definitions
+[Park 1992] [Goethert et al. 1992].</FONT></FONT>
+<P><FONT FACE="TIMES"><FONT SIZE=-1>Figure 1-1 shows a portion of the definition
+checklist as it is being applied to support the development of the COCOMOII
+model. Each checkmark in the "Includes" column identifies a particular
+statement type or attribute included in the definition, and vice-versa
+for the excludes. Other sections in the definition clarify statement attributes
+for usage, delivery, functionality, replications and development status.
+There are also clarifications for language specific statements for ADA,
+C, C++, CMS-2, COBOL, FORTRAN, JOVIAL and Pascal.</FONT></FONT>
+<DIR>
+<DIR>
+<DIR>&nbsp;</DIR>
+</DIR>
+</DIR>
+<FONT FACE="TIMES"><FONT SIZE=-1>Some changes were made to the&nbsp;<A NAME="lineofcode"></A>line-of-code
+definition that departs from the default definition provided in [Park 1992].
+These changes eliminate categories of software, which are generally small
+sources of project effort. Not included in the definition are&nbsp;<A NAME="COTS"></A>commercial-off-the-shelf
+software (COTS), government-furnished software (GFS), other products, language
+support libraries and operating systems, or other commercial libraries.
+Code generated with source code generators is not included though measurements
+will be taken with and without generated code to support analysis.</FONT></FONT>
+<P><FONT FACE="TIMES"><FONT SIZE=-1>The "COCOMOII line-of-code definition"
+can be calculated in several ways. One way is to use the software program,
+Amadeus[Amadeus 1994] [Selby et al. 1991]. Another software program is
+code count.</FONT></FONT>
+<DIR>
+<DIR>
+<DIR>
+<DIR>&nbsp;
+<DIR>
+<DIR>
+<DIR>&nbsp;
+<DIR>&nbsp;</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+<IMG SRC="fig1-1.jpg" HEIGHT=863 WIDTH=605>
+<DIR>
+<DIR>
+<DIR>&nbsp;
+<DIR><B><FONT FACE="HELVETICA"><FONT SIZE=-2>Figure 1-1&nbsp;<A NAME="checklist"></A>Definition
+Checklist for Source Statements Counts</FONT></FONT></B></DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+<A NAME="_Toc424805805"></A><FONT FACE="Arial">1.1.5 FP: Counting with
+Unadjusted&nbsp;<A NAME="functionpoints"></A>Function Points</FONT>
+<P><FONT FACE="TIMES"><FONT SIZE=-1>The function point cost estimation
+approach is based on the amount of functionality in a software project
+and a set of individual project factors [Behrens 1983][Kunkler 1985][IFPUG
+1994]. Function points are useful estimators since they are based on information
+that is available early in the project life cycle. A brief summary of function
+points and their calculation in COCOMOII is as follows.</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>COCOMO II 2000.3 provides two measure methods.
+One is  'Input Calculated Function Points', the other is 'Using Table'. And there two function points ratio 
+types provided by Capers Jones and David Consulting Group. Choose one of two ratio types.</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>The method 'Input Calculated Function Points' is to input 
+the number of function points directly into the field. Then COCOMO II estimates the SLOC with the langaue 
+you selected.</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>Function points measure a software
+project using table by quantifying the information processing functionality associated
+with major external data input, output, or file types. Five user function
+types should be identified as defined in the Table2.</FONT></FONT>
+<DIR>
+<DIR>
+<DIR>
+<DIR>&nbsp;</DIR>
+</DIR>
+</DIR>
+</DIR>
+
+<CENTER><TABLE BORDER CELLPADDING=4 WIDTH="499" >
+<TR>
+<TD VALIGN=TOP WIDTH="26%"><A NAME="externalinputs"></A><FONT FACE="TIMES"><FONT SIZE=-1>External
+Input (Inputs)</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="74%"><FONT FACE="TIMES"><FONT SIZE=-1>Count each
+unique user data or user control input type that (i) enters the external
+boundary of the software system being measured and (ii) adds or changes
+data in a logical internal file.</FONT></FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="26%"><A NAME="externaloutputs"></A><FONT FACE="TIMES"><FONT SIZE=-1>External
+Output (Outputs)</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="74%"><FONT FACE="TIMES"><FONT SIZE=-1>Count each
+unique user data or control output type that leaves the external boundary
+of the software system being measured.</FONT></FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="26%"><A NAME="logicalfiles"></A><FONT FACE="TIMES"><FONT SIZE=-1>Internal
+Logical File (Files)</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="74%"><FONT FACE="TIMES"><FONT SIZE=-1>Count each
+major logical group of user data or control information in the software
+system as a logical internal file type. Include each logical file (e.g.,
+each logical group of data) that is generated, used, or maintained by the
+software system.</FONT></FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="26%"><A NAME="externalinterfacefiles"></A><FONT FACE="TIMES"><FONT SIZE=-1>External
+Interface Files (Interfaces)</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="74%"><FONT FACE="TIMES"><FONT SIZE=-1>Files passed
+or shared between software systems should be counted as external interface
+file types within each system.</FONT></FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="26%"><A NAME="externalqueries"></A><FONT FACE="TIMES"><FONT SIZE=-1>External
+Inquiry (Queries)</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="74%"><FONT FACE="TIMES"><FONT SIZE=-1>Count each
+unique input-output combination, where an input causes and generates an
+immediate output, as an external inquiry type.</FONT></FONT></TD>
+</TR>
+</TABLE></CENTER>
+
+<CENTER><B><FONT FACE="TIMES"><FONT SIZE=-1>Table 2: User Function Types</FONT></FONT></B></CENTER>
+
+<P><BR>
+<P><FONT FACE="Times New Roman,Times"><FONT SIZE=-1>Each instance of these
+function types is then classified by complexity level. The&nbsp;<A NAME="complexitylevel"></A>complexity
+levels determine a set of weights, which are applied to their corresponding
+function counts to determine the Unadjusted Function Points quantity. This
+is the Function Point sizing metric used by COCOMII. The usual Function
+Point procedure involves assessing the degree of influence (DI) of fourteen
+application characteristics on the software project determined according
+to a rating scale of 0.0 to 0.05 for each characteristic. The 14 ratings
+are added together, and added to a base level of 0.65 to produce a general
+characteristics adjustment factor that ranges from 0.65 to 1.35.</FONT></FONT>
+<P><FONT FACE="Times New Roman,Times"><FONT SIZE=-1>Each of these fourteen
+characteristics, such as distributed functions, performance, and reusability,
+thus have a maximum of 5% contribution to estimated effort. This is inconsistent
+with COCOMO experience; thus COCOMO.II uses Unadjusted Function Points
+for sizing, and applies its reuse factors, cost driver effort multipliers,
+and exponent scale factors to this sizing quantity.</FONT></FONT>
+<P><A NAME="_Toc424805806"></A><FONT FACE="Arial">1.1.6&nbsp;<A NAME="AAF"></A>AAF:&nbsp;<A NAME="adaptationadjustment"></A>Adaptation
+Adjustment Factors</FONT>
+<P><B><FONT FACE="TIMES"><FONT SIZE=+0>Adaptation of Existing Code</FONT></FONT></B>
+<P><FONT FACE="TIMES"><FONT SIZE=-1>COCOMO is not only capable of estimating
+the cost and schedule for a development started from "scratch", but it
+is also able to estimate the cost and schedule for products that are built
+upon already existing code. Adaptation considerations have also been incorporated
+into COCOMO, where an estimate for KSLOC will be calculated. This value
+will be substituted in place of the SLOC found in the equations already
+discussed. This adaptation of code utilizes an additional set of equations
+that are used to calculate the final count on source instructions and related
+cost and schedule. These equations use the following values as components:</FONT></FONT>
+<DIR>
+<DIR>
+<DIR>
+<LI>
+<A NAME="ASLOC"></A><FONT FACE="TIMES"><FONT SIZE=-1>Adapted Source Lines
+of Code (ASLOC). The number of source lines of code adapted from existing
+software used in developing the new product.</FONT></FONT></LI>
+
+<LI>
+<FONT FACE="TIMES"><FONT SIZE=-1>Percent of Design Modification (DM). The
+percentage of the adapted software’s design that received modification
+to fulfill the objectives and environment of the new product.</FONT></FONT></LI>
+
+<LI>
+<FONT FACE="TIMES"><FONT SIZE=-1>Percent of Code Modification (CM). The
+percentage of the adapted software’s code that receives modification to
+fulfill the objectives and environment of the new product.</FONT></FONT></LI>
+
+<LI>
+<FONT FACE="TIMES"><FONT SIZE=-1>Percent of Integration Required for Modified
+Software (IM). The percentage of effort needed for integrating and testing
+of the adapted software in order to combine it into the new product.</FONT></FONT></LI>
+
+<LI>
+<FONT FACE="TIMES"><FONT SIZE=-1>Percentage of reuse effort due to Software
+Understanding (SU).</FONT></FONT></LI>
+
+<LI>
+<FONT FACE="TIMES"><FONT SIZE=-1>Percentage of reuse effort due to Assessment
+and Assimilation (AA).</FONT></FONT></LI>
+
+<LI>
+<FONT FACE="TIMES"><FONT SIZE=-1>Programmer&nbsp;<A NAME="UNFM"></A>Unfamiliarity
+with Software (UNFM)</FONT></FONT></LI>
+</DIR>
+</DIR>
+</DIR>
+<FONT FACE="TIMES"><FONT SIZE=-1>These components are brought together
+in Figure 1-6. The AAF is the adaptation adjustment factor. The AAF is
+the calculated degree to which the adapted software will affect overall
+development.</FONT></FONT>
+<P><A NAME="_Toc424805807"></A><FONT FACE="Arial">1.1.7&nbsp;<A NAME="effortmultipliers"></A>Effort
+Multipliers</FONT>
+<P><FONT FACE="TIMES"><FONT SIZE=-1>There are a number of contributing
+factors to a project’s delivery time and effort. Development productivity
+was found to be affected by additional factors that were found to fall
+under the headings: product attributes, platform attributes, personnel
+attributes, and project attributes.</FONT></FONT>
+<P><FONT FACE="TIMES"><FONT SIZE=-1><I>Product attributes<A NAME="productattributes"></A></I>refer
+to the constraints and requirements placed upon the project to be developed.
+These included</FONT></FONT>
+<DIR>
+<DIR>
+<DIR>
+<LI>
+<FONT FACE="TIMES"><FONT SIZE=-1>Required software&nbsp;<A NAME="RELY"></A>reliability
+(RELY)</FONT></FONT></LI>
+
+<LI>
+<FONT FACE="TIMES"><FONT SIZE=-1>Database&nbsp;<A NAME="DATA"></A>size
+(DATA)</FONT></FONT></LI>
+
+<LI>
+<A NAME="DOCU"></A><FONT FACE="TIMES"><FONT SIZE=-1>Documentation match
+to life-cycle needs (DOCU)</FONT></FONT></LI>
+
+<LI>
+<A NAME="CPLX"></A><FONT FACE="TIMES"><FONT SIZE=-1>Product complexity
+(CPLX)</FONT></FONT></LI>
+
+<LI>
+<A NAME="RUSE"></A><FONT FACE="TIMES"><FONT SIZE=-1>Required Reusability
+(RUSE)</FONT></FONT></LI>
+</DIR>
+</DIR>
+</DIR>
+<FONT FACE="TIMES"><FONT SIZE=-1><I>Platform attributes</I> refer to the
+limitations placed upon development effort by the hardware and operating
+system being used to run the project. These limitations are listed below.</FONT></FONT>
+<DIR>
+<DIR>
+<DIR>
+<LI>
+<A NAME="TIME"></A><FONT FACE="TIMES"><FONT SIZE=-1>Execution time constraint
+(TIME)</FONT></FONT></LI>
+
+<LI>
+<A NAME="STOR"></A><FONT FACE="TIMES"><FONT SIZE=-1>Main storage constraint
+(STOR)</FONT></FONT></LI>
+
+<LI>
+<A NAME="PVOL"></A><FONT FACE="TIMES"><FONT SIZE=-1>Platform volatility
+(PVOL)</FONT></FONT></LI>
+</DIR>
+</DIR>
+</DIR>
+<I><FONT FACE="TIMES"><FONT SIZE=-1>Personnel&nbsp;<A NAME="personnelattributes"></A>attributes</FONT></FONT></I><FONT FACE="TIMES"><FONT SIZE=-1>
+refer to the level of skills that are possessed by the personnel. The skills
+in question are general professional ability, programming ability, experience
+with the development environment and familiarity with the project’s domain.
+These skills are characterized below.</FONT></FONT>
+<DIR>
+<DIR>
+<DIR>
+<LI>
+<A NAME="ACAP"></A><FONT FACE="TIMES"><FONT SIZE=-1>Analyst capabilities
+(ACAP)</FONT></FONT></LI>
+
+<LI>
+<A NAME="AEXP"></A><FONT FACE="TIMES"><FONT SIZE=-1>Applications experience
+(AEXP)</FONT></FONT></LI>
+
+<LI>
+<A NAME="PCAP"></A><FONT FACE="TIMES"><FONT SIZE=-1>Programmer capabilities
+(PCAP)</FONT></FONT></LI>
+
+<LI>
+<A NAME="PEXP"></A><FONT FACE="TIMES"><FONT SIZE=-1>Platform experience
+(PEXP)</FONT></FONT></LI>
+
+<LI>
+<A NAME="LEXP"></A><FONT FACE="TIMES"><FONT SIZE=-1>Programming language
+experience (LEXP)</FONT></FONT></LI>
+
+<LI>
+<A NAME="PCON"></A><FONT FACE="TIMES"><FONT SIZE=-1>Personnel Continuity
+(PCON)</FONT></FONT></LI>
+</DIR>
+</DIR>
+</DIR>
+<FONT FACE="TIMES"><FONT SIZE=-1><I>Project attributes</I> refer to the
+constraints and conditions under which project development takes place.
+The issues that affect development are:</FONT></FONT>
+<DIR>
+<DIR>
+<DIR>
+<LI>
+<A NAME="TOOL"></A><FONT FACE="TIMES"><FONT SIZE=-1>Use of software tools
+(TOOL)</FONT></FONT></LI>
+
+<LI>
+<A NAME="SITE"></A><FONT FACE="TIMES"><FONT SIZE=-1>Multisite Development
+(SITE)</FONT></FONT></LI>
+</DIR>
+</DIR>
+</DIR>
+<FONT FACE="TIMES"><FONT SIZE=-1>These 16 factors are incorporated into
+calculating an estimated effort and schedule. Each of the factors has associated
+with it up to six ratings. These ratings are <I>very low</I>, <I>low</I>,
+<I>nominal</I>,
+<I>high, very high</I>, and <I>extra high</I>. Each rating has a corresponding
+real number based upon the factor and the degree to which the factor can
+influence productivity. A rating less than 1 denotes a factor that can
+decrease the schedule and effort. A rating greater than 1 denotes a factor
+that extends the schedule or effort. Lastly, a rating equal to 1 does not
+extend nor decrease the schedule and effort (this rating is called <I>nominal</I>).</FONT></FONT>
+<P><FONT FACE="TIMES"><FONT SIZE=-1>These 16 factors (or effort multipliers)
+are incorporated into the schedule and effort estimation formulas by multiplying
+them together (see Figure 1-7 for the COCOMO dialog box). The numerical
+value of the i<SUP>th </SUP>adjustment factor (there are 16 of them) is
+called EM<SUB>i </SUB>and their product is called the adjustment factor
+or EAF. The actual effort, PM<SUB>total</SUB> is the product of the nominal
+effort times the EAF.</FONT></FONT>
+<P><FONT FACE="TIMES"><FONT SIZE=-1>In addition to the 16 EAF factors there
+are two&nbsp;<A NAME="userdefined"></A>user defined factors named USR1
+and USR2. Their initial values are all set to 1. They may be redefined
+by using the Parameters-User Defined EAF menu item.</FONT></FONT>
+<P><FONT FACE="TIMES"><FONT SIZE=-1>A final effort multiplier, Required
+Development Schedule (SCED) is treated separately as it operates at the
+overall project level rather than potentially varying from module to module.</FONT></FONT>
+<DIR>
+<DIR>
+<DIR>
+<DIR>&nbsp;</DIR>
+</DIR>
+</DIR>
+<IMG SRC="Image5.jpg" HEIGHT=97 WIDTH=398>
+<DIR>
+<DIR>&nbsp;<B><FONT FACE="HELVETICA"><FONT SIZE=-2>FIGURE 1-2 Estimate
+Development Effort</FONT></FONT></B></DIR>
+</DIR>
+</DIR>
+<A NAME="_Toc424805808"></A><B><I><FONT FACE="Arial">1.2&nbsp;<A NAME="NavigatingCOCOMO"></A>Navigating
+COCOMO</FONT></I></B>
+<P><FONT FACE="TIMES"><FONT SIZE=-1>This software is a stand-alone software
+system intended for a single user. The software is user interactive in
+that it attempts to interface well with a user's needs, using extensive
+mouse interaction wherever possible.</FONT></FONT>
+<P><FONT FACE="TIMES"><FONT SIZE=-1>On the screen in Figure 1-3 is the
+CLEF (<A NAME="CLEF"></A>Component Level Estimation Form). This is where
+all of the entered information will be displayed. The top of the screen
+shows all of the subfunctions which the user may call. The choices appear
+in pop down menus according to the major headings of Project, Model, and
+Phase.</FONT></FONT>
+<P><FONT FACE="TIMES"><FONT SIZE=-1>In order to efficiently use COCOMO,
+you must become familiar with the Component Level Estimating Form (CLEF).
+The different sections that are to be discussed have been given a corresponding
+number. These sections are given a descriptive label as a point of reference
+as well as a summary of their contents and functions</FONT></FONT>
+<P><FONT FACE="TIMES"><FONT SIZE=-1>The sections found in Figure 1-3 and
+their descriptions are as follows:</FONT></FONT>
+<P><FONT FACE="TIMES"><FONT SIZE=-1>1. <B>Main Menu bar</B> - This area
+contains the menu selection of the main functions of COCOMO. These selections
+are<I> File, View, Edit, Parameters, Calibrate, Phase Distribution</I>
+and <I>Help</I>. File, View, Edit, Parameters, Calibrate, and Phase Distribution
+are discussed in chapters 2, 3, 4, 5, and 6 respectively. Help is the selection
+used to receive on-line assistance with the available functions.</FONT></FONT>
+<P><FONT FACE="TIMES"><FONT SIZE=-1>2. <B>Tool bar - </B>This area contains
+image buttons like other windows applications for New Project, Open Project,
+Save Project, Delete Module, Copy &amp; Paste, Insert clipboard content,
+Insert a module, and About functions.</FONT></FONT>
+<P><FONT FACE="TIMES"><FONT SIZE=-1>3. <B>Project Name</B> - This editable
+field displays the name of the currently displayed project. To edit the
+name click twice upon this field and proceed to edit name. Upon completion
+of editing press the "Return" key. The Default name of a new project is
+"&lt;sample>".</FONT></FONT>
+<DIR>
+<DIR>
+<DIR>
+<DIR>&nbsp;
+<DIR>
+<DIR>
+<DIR>
+<DIR>&nbsp;</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+<IMG SRC="fig1_3b.jpg" HEIGHT=480 WIDTH=744>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR><FONT FACE="TIMES"><FONT SIZE=-1>&nbsp;</FONT></FONT> <B><FONT FACE="HELVETICA"><FONT SIZE=-2>FIGURE
+1-3 COCOMO CLEF</FONT></FONT></B></DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+<FONT FACE="TIMES"><FONT SIZE=-1>4. <B>X </B>- This column is reserved
+for identifying a module. Pressing upon this field for a given module will
+mark the desired module. Marking is denoted by an x that appears in this
+column. Only one module can be marked at a time. Modules are marked in
+order to perform module deletion, cutting, copying or pasting.</FONT></FONT>
+<P><FONT FACE="TIMES"><FONT SIZE=-1>5. <B>Module Name Column</B> -&nbsp;<A NAME="modulename"></A>This
+column is used to house the name of each module located in the Module Area.
+The module name can be changed by clicking twice on the desired module
+name box and entering the changes into the module name field. Upon completion
+of editing press "Return".</FONT></FONT>
+<P><FONT FACE="TIMES"><FONT SIZE=-1>6. <B>Module Size (SLOC) Column</B>
+- This column is used to house the SLOC of each module located in the Module
+Area. The value for SLOC can be computed in one of three ways. One, the
+value can be entered directly in the SLOC field as shown in Figure 1-4.
+Two, by using the function point model as shown in Figure 1-5. Three, by
+using Adaptation Adjustment Factor as shown in Figure 1-6. Upon completion
+click on OK. There is a limit to the range of input. The inputted value
+for SLOC must be within the range 0 - 9,999,999.</FONT></FONT>
+<P><FONT FACE="TIMES"><FONT SIZE=-1>Note - COCOMO is not calibrated for
+Total SLOC &lt; 2000.</FONT></FONT>
+<DIR>&nbsp;
+<DIR>
+<DIR>
+<DIR>&nbsp;</DIR>
+</DIR>
+</DIR>
+<IMG SRC="Image7.jpg" HEIGHT=486 WIDTH=412>
+<DIR>
+<DIR><B><FONT FACE="HELVETICA"><FONT SIZE=-2>&nbsp;FIGURE 1-4 SLOC Dialog
+Box - Source Lines of Code (SLOC)</FONT></FONT></B></DIR>
+</DIR>
+</DIR>
+
+<DIR><IMG SRC="Image8.jpg" HEIGHT=486 WIDTH=412>
+<DIR>
+<DIR>
+<DIR>&nbsp;</DIR>
+<B><FONT FACE="HELVETICA"><FONT SIZE=-2>&nbsp;&nbsp; FIGURE 1-5 SLOC Dialog
+Box - Function Points (FP)</FONT></FONT></B>
+<DIR>&nbsp;</DIR>
+</DIR>
+</DIR>
+
+<DIR>
+<DIR>
+<DIR>&nbsp;</DIR>
+</DIR>
+</DIR>
+<IMG SRC="Image9.jpg" HEIGHT=486 WIDTH=412>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>&nbsp;</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+<B><FONT FACE="HELVETICA"><FONT SIZE=-2>&nbsp;FIGURE 1-6 SLOC Dialog Box
+- Adaptation Adjustment Factor (AAF)</FONT></FONT></B>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>&nbsp;</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+<FONT FACE="TIMES"><FONT SIZE=-1>7. <B>Labor Rate Column</B> -&nbsp;<A NAME="laborrate"></A>This
+column contains the amount of money at which a developer working on a particular
+module would be paid per month. The labor rate can be edited by clicking
+on the corresponding Labor Rate box and entering the new value via the
+edit area. The range on labor rate is between $0 and $99,999.</FONT></FONT>
+<P><FONT FACE="TIMES"><FONT SIZE=-1>8. <B>Effort Adjustment Factor (EAF)
+Column </B>- This column displays the product of the cost drivers for each
+specific module. By clicking on this field a dialog box appears (see Figure
+1-7). This box displays all of the cost drivers, inter cost drivers and
+their current ratings. The cost drivers are divided into the groupings:
+<I>Product,
+Platform, Personnel</I> and <I>Project</I>. The inter cost drivers are
+rated as 0%, 25%, 50%, and 75 %. The ratings for each multiplier can be
+changed by cycling through the available ratings until the desired rating
+is displayed. As the cost driver ratings are changed the total product
+of the cost drivers is displayed in the upper right hand corner of the
+dialog box along with the module name. The final rating of a cost driver
+is calculated using this formula for the interpolation.</FONT></FONT>
+<DIR>
+<DIR>
+<DIR>&nbsp;</DIR>
+</DIR>
+</DIR>
+<FONT FACE="TIMES"><FONT SIZE=-1>Final rating = (Next cost driver rating
+- Current cost driver rating) * Current inter cost driver / 100</FONT></FONT>
+<P><FONT FACE="TIMES"><FONT SIZE=-1>9. <B>Totals Area</B> - This area houses
+the calculated results of all of the modules combined. Within this area
+is the total SLOC count for the module, the total nominal effort (PM),
+the total nominal productivity (SLOC/PM), the total estimated effort (EST
+PM), the total estimated productivity (Prod), the total estimated project
+cost, the estimated cost per instruction, the total estimated FSWP and
+the total estimated schedule for project completion (see each individual
+column for more information). The latter six quantities have not only a
+most likely estimate but also an optimistic estimate (no less than this,
+90% of the time) and a pessimistic estimate (no greater than this, 90%
+of the time).</FONT></FONT>
+<P><FONT FACE="TIMES"><FONT SIZE=-1>10.<B> Status bar</B> - This window
+displays a short definition of the column headings clicked upon and also
+displays a short description of the result of the last function initiated
+by the user.</FONT></FONT>
+<P><FONT FACE="TIMES"><FONT SIZE=-1>11. <B>Schedule Button -</B> This button
+displays the Schedule Dialog Box as shown in Figure 1-8.</FONT></FONT>
+<P><FONT FACE="TIMES"><FONT SIZE=-1>12.<B> Scale Factor Button</B> - This
+button displays the Scale Factor Dialog Box as shown in Figure 1-9.</FONT></FONT>
+<P><FONT FACE="TIMES"><FONT SIZE=-1>13. <B>Risk Column</B> - This column
+contains the Total risk level for each specific module. By clicking on
+this field a dialog box appears (see Figure 1-10). This box displays all
+of the risk levels for the chosen module. The total risk of a module is
+computed as:</FONT></FONT>
+<P><FONT FACE="TIMES"><FONT SIZE=-1>&nbsp;&nbsp;&nbsp; total_risk=schedule_risk+product_risk+personnel_risk+process_risk+platform_risk+reuse_risk;</FONT></FONT>
+<BR><FONT FACE="TIMES"><FONT SIZE=-1>&nbsp;&nbsp;&nbsp; total risk of a
+module=total_risk/373.*100.;</FONT></FONT>
+<P><FONT FACE="TIMES"><FONT SIZE=-1>For the definitions of schedule risk,
+product risk, platform risk, personnel risk, process risk, and reuse risk,
+see [Madachy 1997].</FONT></FONT>
+<P><FONT FACE="TIMES"><FONT SIZE=-1>14.&nbsp;<A NAME="FSWP"></A><B>Full-time
+SoftWare Personnel (FSWP) Column</B> - This column houses the calculated
+most likely estimate for the number of full-time developers that would
+be needed to complete a module in the estimated development time.</FONT></FONT>
+<P><FONT FACE="TIMES"><FONT SIZE=-1>15. <B>Instruction Cost Column </B>-
+This column contains the calculated most likely cost per instruction. This
+number is calculated from Cost/SLOC in each module.</FONT></FONT>
+<BR>&nbsp;
+<DIR><IMG SRC="Image10.jpg" HEIGHT=413 WIDTH=362>
+<DIR>
+<DIR><FONT FACE="TIMES"><FONT SIZE=-1>&nbsp;</FONT></FONT><B><FONT FACE="HELVETICA"><FONT SIZE=-2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+FIGURE 1-7 EAF Dialog Box</FONT></FONT></B>
+<DIR>&nbsp;</DIR>
+</DIR>
+
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>&nbsp;</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+<IMG SRC="Image11.jpg" HEIGHT=111 WIDTH=228>
+<DIR><FONT FACE="TIMES"><FONT SIZE=-1>&nbsp;</FONT></FONT><B><FONT FACE="HELVETICA"><FONT SIZE=-2>FIGURE
+1-8 Schedule Dialog Box</FONT></FONT></B>
+<DIR>
+<DIR>&nbsp;</DIR>
+</DIR>
+</DIR>
+</DIR>
+<FONT FACE="TIMES"><FONT SIZE=-1>16.&nbsp;<A NAME="costcolumn"></A><B>Cost
+Column </B>- This column contains the calculated most likely estimate of
+the development cost for a particular module.</FONT></FONT>
+<P><FONT FACE="TIMES"><FONT SIZE=-1>17. <B>Productivity (PROD)&nbsp;<A NAME="productivity"></A>Column</B>
+- This column contains the calculated result of the module’s individual
+SLOC divided by the module’s most likely effort estimate.</FONT></FONT>
+<P><FONT FACE="TIMES"><FONT SIZE=-1>18.&nbsp;<A NAME="estimatedpersonmonth"></A><B>Estimated</B>
+<B>Person-Month
+(EST PM) Column </B>- This column holds the module’s most likely effort
+estimate obtained from multiplying Effort Adjustment Factor (EAF) by Nominal
+Person Month (NOM PM).</FONT></FONT>
+<P><FONT FACE="TIMES"><FONT SIZE=-1>19.&nbsp;<A NAME="nominalpersonmonth"></A><B>Nominal
+Person-Month (NOM PM) Column</B> - This column holds the module’s most
+likely effort estimate without incorporating the Effort Adjustment Factors
+(EAF).</FONT></FONT>
+<DIR>
+<DIR>
+<DIR>
+<DIR>&nbsp;</DIR>
+
+<DIR>&nbsp;</DIR>
+</DIR>
+</DIR>
+<IMG SRC="Image12.jpg" HEIGHT=233 WIDTH=331>
+<DIR>
+<DIR><B><FONT FACE="HELVETICA"><FONT SIZE=-2>FIGURE 1-9 Scale Factor Dialog
+Box</FONT></FONT></B>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>&nbsp;</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+
+<BLOCKQUOTE><IMG SRC="Image13.jpg" HEIGHT=267 WIDTH=238>
+<BR><B><FONT FACE="HELVETICA"><FONT SIZE=-2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+FIGURE 1-10 Risk Level Dialog Box</FONT></FONT></B><A NAME="_Toc424805809"></A></BLOCKQUOTE>
+<B><I><FONT FACE="Arial">1.3&nbsp;<A NAME="BeginUsingCOCOMO"></A>Begin
+Using COCOMO</FONT></I></B>
+<P><FONT FACE="TIMES"><FONT SIZE=-1>To begin entering a new module, either
+click on the "Add Module" button on the Tool bar or on the pulldown menu
+item(Edit|Add Module). At this point, a new module will appear in the CLEF
+with all values set to their respective defaults. Double click upon the
+module name field in order to give the new module a name. Upon typing the
+module name press "Return.". A value for SLOC and Labor rate may also be
+given by clicking on the respective field and editing appropriately (see
+Figure 1-11).</FONT></FONT>
+<DIR>
+<DIR>
+<DIR>
+<DIR>&nbsp;
+<BR>&nbsp;
+<DIR>
+<DIR>
+<DIR>
+<DIR>&nbsp;</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+<IMG SRC="Image14.jpg" HEIGHT=176 WIDTH=644>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<B><FONT FACE="HELVETICA"><FONT SIZE=-2>FIGURE 1-11 Create Sample Module
+and give values to SLOC and Labor Rate</FONT></FONT></B>
+<DIR>
+<DIR>
+<DIR>&nbsp;</DIR>
+</DIR>
+</DIR>
+</DIR>
+<FONT FACE="TIMES"><FONT SIZE=-1><I>NOTE</I> - In order to change any of
+the editable fields, just click on the desired field twice and begin editing
+the field. Upon completing editing, either hit the "Return" key, or click
+on OK. All of the final results can be found at the bottom of the CLEF
+in the Totals area (see Figure 1-12).</FONT></FONT>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>&nbsp;
+<DIR>
+<DIR>
+<DIR>&nbsp;</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+<IMG SRC="Image15.jpg" HEIGHT=113 WIDTH=644>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<B><FONT FACE="HELVETICA"><FONT SIZE=-2>FIGURE 1-12 Totals area after
+calculations have been completed</FONT></FONT></B></DIR>
+<A NAME="_Toc424805810"></A><B><I><FONT FACE="Arial">1.4&nbsp;<A NAME="sparccocomo"></A><A NAME="RunningCOCOMO"></A>Running
+COCOMO: Windows, Sparc or&nbsp;<A NAME="javacocomo"></A>Java</FONT></I></B>
+<P><FONT FACE="TIMES"><FONT SIZE=-1>Currently, there are three implementations
+of COCOMOII: a Windows 95/NT version, a Sun Microsystems Sparcstation version,
+and a Java version.</FONT></FONT>
+<P><FONT FACE="TIMES"><FONT SIZE=-1>To download any these versions, you
+should enter this in a web browser:</FONT></FONT>
+<P><FONT FACE="TIMES"><FONT SIZE=-1><A HREF="http://sunset.usc.edu/COCOMOII/cocomo.html">http://sunset.usc.edu/COCOMOII/cocomo.html</A></FONT></FONT>
+<P><FONT FACE="TIMES"><FONT SIZE=-1>and scroll down to the section labeled
+<B>COCOMOII
+Downloads(Software and Documentation)</B></FONT></FONT> <FONT FACE="TIMES"><FONT SIZE=-1>or</FONT></FONT>
+<P><FONT FACE="TIMES"><FONT SIZE=-1><A HREF="ftp://ftp.usc.edu/pub/soft_engineering/COCOMOII/">ftp://ftp.usc.edu/pub/soft_engineering/COCOMOII/</A>
+where you will see 7 files:</FONT></FONT>
+<P><FONT FACE="TIMES"><FONT SIZE=-1>c98sunos.tar.gz, c98windows.zip, c98java.tar.gz,
+usersman.ps, usersman.pdf, modelman.ps, modelman.pdf</FONT></FONT>
+<P><FONT FACE="TIMES"><FONT SIZE=-1>To run java cocomo(Netscape Navigator3.0
+or Microsoft Internet Explorer3.0 or higher), you should visit:</FONT></FONT>
+<P><FONT FACE="TIMES"><FONT SIZE=-1><A HREF="http://sunset.usc.edu/j_cocomo/cocomo.html">http://sunset.usc.edu/j_cocomo/cocomo.html</A></FONT></FONT>
+<DIR>
+<DIR>
+<DIR>&nbsp;
+<BR>&nbsp;
+<DIR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;</DIR>
+</DIR>
+</DIR>
+</DIR>
+
+</BODY>
+</HTML>

@@ -1,0 +1,667 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./Model0_files/filelist.xml">
+<link rel=Edit-Time-Data href="./Model0_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>COCOMO II MODEL DEFINITION</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Ellis Horowitz</o:Author>
+  <o:LastAuthor>Ellis Horowitz</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>469</o:TotalTime>
+  <o:Created>2000-03-19T14:00:00Z</o:Created>
+  <o:LastSaved>2000-03-19T14:00:00Z</o:LastSaved>
+  <o:Pages>2</o:Pages>
+  <o:Words>747</o:Words>
+  <o:Characters>4263</o:Characters>
+  <o:Company>USC</o:Company>
+  <o:Lines>35</o:Lines>
+  <o:Paragraphs>8</o:Paragraphs>
+  <o:CharactersWithSpaces>5235</o:CharactersWithSpaces>
+  <o:Version>9.2720</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:UseMarginsForDrawingGridOrigin/>
+  <w:Compatibility>
+   <w:FootnoteLayoutLikeWW8/>
+   <w:ShapeLayoutLikeWW8/>
+   <w:AlignTablesRowByRow/>
+   <w:ForgetLastTabAlignment/>
+   <w:LayoutRawTableWidth/>
+   <w:LayoutTableRowsApart/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:HELVETICA;
+	panose-1:2 11 6 4 2 2 2 2 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:31367 -2147483648 8 0 255 0;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+h1
+	{mso-style-next:Normal;
+	margin-top:.25in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	page-break-before:always;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	mso-list:l28 level1 lfo6;
+	tab-stops:list .25in;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Arial;
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:14.0pt;
+	mso-bidi-font-weight:normal;}
+h2
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.5in;
+	text-indent:-.5in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	mso-list:l28 level2 lfo6;
+	tab-stops:list .5in;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Arial;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-font-weight:normal;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+h3
+	{mso-style-next:Normal;
+	margin-top:.25in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-indent:-.5in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	mso-list:l28 level3 lfo6;
+	tab-stops:list .5in;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Arial;
+	mso-bidi-font-family:"Times New Roman";
+	font-weight:normal;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+h4
+	{mso-style-next:Normal;
+	margin-top:.25in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.75in;
+	text-indent:-.75in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:4;
+	mso-list:l28 level4 lfo6;
+	tab-stops:list .75in;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-bidi-font-weight:normal;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{mso-style-update:auto;
+	mso-style-parent:"";
+	mso-style-next:Normal;
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:.25in right dotted 6.5in;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	text-transform:uppercase;}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{mso-style-update:auto;
+	mso-style-parent:"";
+	mso-style-next:Normal;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:.25in .5in 1.0in right dotted 6.5in;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-indent:.5in;
+	mso-pagination:widow-orphan;
+	tab-stops:center 3.0in right 6.0in;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	text-align:center;
+	text-indent:.5in;
+	mso-pagination:widow-orphan;
+	mso-outline-level:1;
+	font-size:16.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-variant:small-caps;
+	mso-font-kerning:14.0pt;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+p.Bullet-3, li.Bullet-3, div.Bullet-3
+	{mso-style-name:Bullet-3;
+	mso-style-parent:"";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.75in;
+	margin-bottom:.0001pt;
+	text-indent:-.25in;
+	mso-pagination:widow-orphan;
+	mso-list:l272 level1 lfo15;
+	tab-stops:list .75in;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.Bullet-4, li.Bullet-4, div.Bullet-4
+	{mso-style-name:Bullet-4;
+	mso-style-parent:"";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.0in;
+	margin-bottom:.0001pt;
+	text-indent:-.25in;
+	mso-pagination:widow-orphan;
+	mso-list:l202 level1 lfo16;
+	tab-stops:list 1.0in;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.TableTextBullet, li.TableTextBullet, div.TableTextBullet
+	{mso-style-name:"Table Text Bullet";
+	mso-style-parent:"Table Text";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:9.0pt;
+	margin-bottom:.0001pt;
+	text-indent:-9.0pt;
+	mso-pagination:widow-orphan;
+	mso-list:l81 level1 lfo17;
+	tab-stops:list 9.0pt;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.TableText, li.TableText, div.TableText
+	{mso-style-name:"Table Text";
+	mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.TableCaption, li.TableCaption, div.TableCaption
+	{mso-style-name:"Table Caption";
+	mso-style-parent:"";
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	text-indent:0in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-list:l64 level1 lfo165;
+	tab-stops:list .75in;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.FigureCaption, li.FigureCaption, div.FigureCaption
+	{mso-style-name:"Figure Caption";
+	mso-style-parent:"";
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	text-indent:0in;
+	mso-pagination:widow-orphan;
+	mso-list:l315 level1 lfo166;
+	tab-stops:list .75in;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.Heading1, li.Heading1, div.Heading1
+	{mso-style-name:Heading1;
+	mso-style-update:auto;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.25in;
+	mso-pagination:widow-orphan;
+	mso-list:l366 level1 lfo1;
+	tab-stops:list .25in;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.Heading2, li.Heading2, div.Heading2
+	{mso-style-name:Heading2;
+	mso-style-update:auto;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.25in;
+	mso-pagination:widow-orphan;
+	mso-list:l297 level1 lfo2;
+	tab-stops:list .25in;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.bullet, li.bullet, div.bullet
+	{mso-style-name:bullet;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.25in;
+	line-height:200%;
+	mso-pagination:widow-orphan;
+	mso-list:l156 level1 lfo3;
+	tab-stops:list .25in;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.level1, li.level1, div.level1
+	{mso-style-name:level1;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	text-indent:-.5in;
+	mso-pagination:widow-orphan;
+	mso-list:l165 level1 lfo4;
+	tab-stops:list .5in;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.level2, li.level2, div.level2
+	{mso-style-name:level2;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.0in;
+	margin-bottom:.0001pt;
+	text-indent:-.5in;
+	mso-pagination:widow-orphan;
+	mso-list:l165 level2 lfo4;
+	tab-stops:list 1.0in;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.level3, li.level3, div.level3
+	{mso-style-name:level3;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.5in;
+	margin-bottom:.0001pt;
+	text-indent:-.5in;
+	mso-pagination:widow-orphan;
+	mso-list:l165 level3 lfo4;
+	tab-stops:list 1.5in;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+ /* Page Definitions */
+@page
+	{mso-facing-pages:yes;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 0in .75in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:-132;
+	mso-list-type:simple;
+	mso-list-template-ids:285008844;}
+
+@list l10:level1 lfo381
+	{mso-level-start-at:1;
+	mso-level-number-format:bullet;
+	mso-level-numbering:continue;
+	mso-level-text:?;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	mso-level-legacy:yes;
+	mso-level-legacy-indent:.15in;
+	mso-level-legacy-space:0in;
+	margin-left:1.05in;
+	text-indent:-.15in;
+	font-family:HELVETICA;
+	mso-bidi-font-family:"Times New Roman";}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple style='tab-interval:.5in'>
+
+<div >
+
+<p class=MsoTitle>COCOMO
+II Model Definition</p>
+
+<p class=MsoTitle style='margin-top:0in'>Version 2.0</p>
+
+<p class=MsoTitle><!--[if gte vml 1]>
+<![endif]--><![if !vml]><span style='mso-ignore:vglayout;position:
+absolute;z-index:0;left:0px;margin-left:-19px;margin-top:13px;width:663px;
+height:637px'><img width=663 height=637 src="./Model0_files/image001.gif"
+v:shapes="_x0000_s1026"></span><![endif]>Table
+of Contents<span
+style='font-size:12.0pt;mso-bidi-font-size:10.0pt;font-variant:normal;
+text-transform:uppercase'><o:p></o:p></span></p>
+
+
+<p class=MsoToc1>1.<span style='mso-tab-count:1'>     </span><a
+href="Model1.htm#Introduction">Introduction</a>
+
+<p class=MsoToc2>1.1<span style='mso-tab-count:1'>   </span><a
+href="Model1.htm#Overview">Overview</a>
+
+<p class=MsoToc2>1.2<span style='mso-tab-count:1'>   </span><a
+href="Model1.htm#NominalSchedule">Nominal-Schedule Estimation Equations</a>
+
+<p class=MsoToc1>2.<span style='mso-tab-count:1'>     </span><a
+href="Model2.htm#sizing">Sizing</a>
+
+<p class=MsoToc2>2.1<span style='mso-tab-count:1'>   </span><a
+href="Model2.htm#countingsource">Counting Source Lines of Code (SLOC)</a>
+
+<p class=MsoToc2>2.2<span style='mso-tab-count:1'>   </span><a
+href="Model2.htm#countingunadjusted">Counting Unadjusted Function Points
+(UFP)</a>
+
+<p class=MsoToc2>2.3<span style='mso-tab-count:1'>   </span><a
+href="Model2.htm#relatingufps">Relating UFPs to SLOC</a>
+
+<p class=MsoToc2>2.4<span style='mso-tab-count:1'>   </span><a
+href="Model2.htm#aggregatingnew">Aggregating New, Adapted, and Reused Code</a>
+
+<p class=MsoToc2>2.5<span style='mso-tab-count:1'>   </span><a
+href="Model2.htm#requirementsevolution">Requirements Evolution and
+Volatility (REVL)</a>
+
+<p class=MsoToc2>2.6<span style='mso-tab-count:1'>   </span><a
+href="Model2.htm#automaticallytranslated">Automatically Translated Code</a>
+
+<p class=MsoToc2>2.7<span style='mso-tab-count:1'>   </span><a
+href="Model2.htm#sizingsoftware">Sizing Software Maintenance</a>
+
+<p class=MsoToc1>3.<span style='mso-tab-count:1'>     </span><a
+href="Model3.htm#effortestimation">Effort Estimation</a>
+
+<p class=MsoToc2>3.1<span style='mso-tab-count:1'>   </span><a
+href="Model3.htm#scaledrivers">Scale Drivers</a>
+
+<p class=MsoToc2>3.2<span style='mso-tab-count:1'>   </span><a
+href="Model3.htm#effortmultipliers">Effort Multipliers</a>
+
+<p class=MsoToc2>3.3<span style='mso-tab-count:1'>   </span><a
+href="Model3.htm#multiplemodule">Multiple Module Effort Estimation</a>
+
+<p class=MsoToc1>4.<span style='mso-tab-count:1'>     </span><a
+href="Model4.htm#scheduleestimation">Schedule Estimation</a>
+
+<p class=MsoToc1>5.<span style='mso-tab-count:1'>     </span><a
+href="Model5.htm#softwaremaintenance">Software Maintenance</a>
+
+<p class=MsoToc1>6.<span style='mso-tab-count:1'>     </span><a
+href="Model6.htm#cocomoiiassumptions">COCOMO II: Assumptions and
+phase/activity distributions</a>
+
+<p class=MsoToc2>6.1<span style='mso-tab-count:1'>   </span><a
+href="Model6.htm#introduction61">Introduction</a>
+
+<p class=MsoToc2>6.2<span style='mso-tab-count:1'>   </span><a
+href="Model6.htm#waterfalland">Waterfall and MBASE/RUP Phase Definitions</a>
+
+<p class=MsoToc2>6.3<span style='mso-tab-count:1'>   </span><a
+href="Model6.htm#phasedistribution">Phase Distribution of Effort and
+Schedule</a>
+
+<p class=MsoToc2>6.4<span style='mso-tab-count:1'>   </span><a
+href="Model6.htm#waterfallandmbase">Waterfall and MBASE/RUP Activity
+Definitions</a>
+
+<p class=MsoToc2>6.5<span style='mso-tab-count:1'>   </span><a
+href="Model6.htm#distributionof">Distribution of Effort Across Activities</a>
+
+<p class=MsoToc2>6.6<span style='mso-tab-count:1'>   </span><a
+href="Model6.htm#definitionsand">Definitions and Assumptions</a>
+
+<p class=MsoToc1>7.<span style='mso-tab-count:1'>     </span><a
+href="Model7.htm#modelcalibration">Model Calibration to the Local
+Environment</a>
+
+<p class=MsoToc1>8.<span style='mso-tab-count:1'>     </span><a
+href="Model8.htm#summary">Summary</a>
+
+<p class=MsoToc2>8.1<span style='mso-tab-count:1'>   </span><a
+href="Model8.htm#models">Models</a>
+
+<p class=MsoToc2>8.2<span style='mso-tab-count:1'>   </span><a
+href="Model8.htm#driverrating">Driver Rating Scales</a>
+
+<p class=MsoToc2>8.3<span style='mso-tab-count:1'>   </span><a
+href="Model8.htm#cocomoiiversion">COCOMO II Version Parameter Values</a>
+
+<p class=MsoToc2>8.4<span style='mso-tab-count:1'>   </span><a
+href="Model8.htm#sourcecode">Source Code Counting Rules</a>
+
+<p class=MsoToc1><span style='mso-tab-count:1'>        </span><a
+href="Model9.htm#acronymsand">Acronyms and Abbreviations</a>
+
+<p class=MsoToc1><span style='mso-tab-count:1'>        </span><a
+href="Model9.htm#references">References</a>
+
+<h1 style='text-indent:0in;page-break-before:auto;mso-list:none;tab-stops:.5in'><!--[if supportFields]><span
+style='font-size:10.0pt;font-family:"Times New Roman";mso-font-kerning:0pt;
+font-weight:normal'><span style='mso-element:field-end'></span></span><![endif]--><br
+clear=all style='page-break-before:always'>
+<a name="_Toc476452274">Acknowledgements</a></h1>
+
+<p class=MsoNormal>This model manual is based on the contributions of many
+people since work began in June 1994.<span style="mso-spacerun: yes"> 
+</span>The model and its evolving extensions are maintained at the Center for
+Software Engineering at the University of Southern California.<span
+style="mso-spacerun: yes">  </span>The material presented here is derived from
+the book <i style='mso-bidi-font-style:normal'>Software Cost Estimation with
+COCOMO II</i> which is to be published by Prentice Hall in June 2000.<span
+style="mso-spacerun: yes">  </span>Future model enhancements will be published
+here until they can be incorporated into later versions of the book.<span
+style="mso-spacerun: yes">  </span>The following people have contributed to the
+model definition:</p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='border-collapse:collapse;
+ mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=319 valign=top style='width:239.4pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'>Barry Boehm</p>
+  <p class=MsoNormal align=center style='text-align:center'>Chris Abts</p>
+  <p class=MsoNormal align=center style='text-align:center'>Jongmoon Baik</p>
+  <p class=MsoNormal align=center style='text-align:center'>Winsor Brown</p>
+  <p class=MsoNormal align=center style='text-align:center'>Sunita Chulani</p>
+  </td>
+  <td width=319 valign=top style='width:239.4pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'>Brad Clark</p>
+  <p class=MsoNormal align=center style='text-align:center'>Ellis Horowitz</p>
+  <p class=MsoNormal align=center style='text-align:center'>Ray Madachy</p>
+  <p class=MsoNormal align=center style='text-align:center'>Donald Reifer</p>
+  <p class=MsoNormal align=center style='text-align:center'>Bert Steece</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span style='layout-grid-mode:line'>This work has been
+supported both financially and technically by the COCOMO 2.0 Program
+Affiliates: Aerospace, Air Force Cost Analysis Agency, AT&amp;T Bell Labs,
+Computer Science Corp., DISA, EDS, E-Systems/Raytheon, Hughes, IDA, IDE, JPL,
+Litton Data Systems, Lockheed/Martin, Loral, MCC, Motorola, Northrop-Grumman,
+Rational, Rockwell, SAIC, SEI, SPC, Sun, Telcordia, TI, TRW, USAF Rome Lab, US
+Army Research Lab, Xerox.<o:p></o:p></span></p>
+
+<p class=MsoNormal>The work on this model was supported with data and reviews
+by several individuals.<span style="mso-spacerun: yes">  </span>We wish to
+thank them for their valuable contributions:</p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='border-collapse:collapse;
+ mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=319 valign=top style='width:239.4pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'>Jairus Hihn, JPL</p>
+  <p class=MsoNormal align=center style='text-align:center'>Gary Thomas,
+  Rayethon Systems Company</p>
+  <p class=MsoNormal align=center style='text-align:center'>Dan Ligett,
+  Softstar Systems</p>
+  <p class=MsoNormal align=center style='text-align:center'>Jim Alsted, Hughes</p>
+  <p class=MsoNormal align=center style='text-align:center'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  </td>
+  <td width=319 valign=top style='width:239.4pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'>Iva Valdise, TRW</p>
+  <p class=MsoNormal align=center style='text-align:center'>Stuart Glickman,
+  Telcordia</p>
+  <p class=MsoNormal align=center style='text-align:center'>Sherry Stukes, MCR
+  Federal</p>
+  <p class=MsoNormal align=center style='text-align:center'>Dick Stutzke, SAIC</p>
+  <p class=MsoNormal align=center style='text-align:center'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoFooter style='tab-stops:.5in'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+</div>
+
+</body>
+
+</html>

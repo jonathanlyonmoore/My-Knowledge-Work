@@ -1,0 +1,77 @@
+Chapter 1: Introduction	1
+1.1	What is COCOMO?	1
+1.1.1	Effort Estimation Equation	2
+1.1.2	Schedule Estimation Equation	3
+1.1.3	Scale Factors	3
+1.1.4    Sizing Methods	5
+1.1.5    FP: Counting with Unadjusted Function Points	8
+1.1.6    AAF: Adaptation Adjustment Factors	9
+1.1.7	Effort Multipliers	9
+1.2	Navigating COCOMO	11
+1.3	Begin Using COCOMO	19
+1.4	Running COCOMO: Windows, Sparc or Java	20
+
+Chapter 2: File Menu	21
+2.1 	New	22
+2.2	Project Load	23
+2.3	Project Save	25
+2.4	Project Save As	26
+2.5	Model Load	27
+2.6	Model Save	28
+2.7	Model Save As	29
+2.8	Make Report	30
+2.9	Exit	31
+
+Chapter 3: Edit Menu	33
+3.1	Add Module	33
+3.2	Clear All Module	33
+3.3	Snapshot	34
+3.4	Undo	36
+3.5	Cut	37
+3.6	Copy	37
+3.7	Paste	37
+
+Chapter 4: Parameters Menu	39
+4.1	Product	39
+4.2	Platform	40
+4.3	Personnel	41
+4.4	Project	42
+4.5	User Defined EAF	43
+4.6	Scale Factors	44
+4.7	Equation	45
+4.8	Reset	46
+
+Chapter 5: Calibrate Menu	47
+5.1	File Load	48
+5.2	File Save	48
+5.3	File Save As	49
+5.4	Projects	50
+5.5	Compute	52
+5.5.1	Calibrating the Constant Term	52
+5.5.2	Calibrating the Software Development Mode	53
+
+Chapter 6: Phase Distribution	57
+6.1	Project Phase Distribution	58
+6.1.1    Overall Project Phase Distribution	59
+6.1.2    Plans and Requirements Project Phase Distribution	60
+6.1.3    Programming Project Phase	61
+6.1.4    Product Design Phase	62
+6.1.5    Integration and Test Project Phase	62
+6.2	Module Phase Distribution	64
+6.2.1	Overall Module Phase Distribution	65
+6.2.2	Plans and Requirements Module Phase Distribution	66
+6.2.3	Programming Module Phase	67
+6.2.4	Product Design Phase	68
+6.2.5    Integration and Test Module Phase	68
+
+Chapter 7: Maintenance	71
+7.1	Project Maintenance	73
+7.2	Module Maintenance	77
+
+References	83
+
+Appendix A: Accelerator Keys	85
+
+Appendix B: Java COCOMOII Protocol	87
+
+Index  101

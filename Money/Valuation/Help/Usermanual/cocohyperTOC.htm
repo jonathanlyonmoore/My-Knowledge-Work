@@ -1,0 +1,991 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 9">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./TOC_User_files/filelist.xml">
+<title>COCOMO II SOFTWARE REFERENCE MANUAL</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>jobaik</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>jobaik</o:LastAuthor>
+  <o:Revision>5</o:Revision>
+  <o:TotalTime>69</o:TotalTime>
+  <o:Created>2000-03-30T18:45:00Z</o:Created>
+  <o:LastSaved>2000-03-30T19:18:00Z</o:LastSaved>
+  <o:Pages>2</o:Pages>
+  <o:Words>340</o:Words>
+  <o:Characters>1942</o:Characters>
+  <o:Company>USC-CSE</o:Company>
+  <o:Lines>16</o:Lines>
+  <o:Paragraphs>3</o:Paragraphs>
+  <o:CharactersWithSpaces>2384</o:CharactersWithSpaces>
+  <o:Version>9.2720</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<style>
+<!--
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+h1
+	{mso-style-next:Normal;
+	margin-top:.25in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	page-break-before:always;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	mso-list:l0 level1 lfo2;
+	tab-stops:list .25in;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Arial;
+	mso-font-kerning:14.0pt;
+	mso-bidi-font-weight:normal;}
+h2
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:.5in;
+	text-indent:-.5in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	mso-list:l0 level2 lfo2;
+	tab-stops:list .5in;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Arial;
+	mso-bidi-font-weight:normal;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+h3
+	{mso-style-next:Normal;
+	margin-top:.25in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	text-indent:-.5in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	mso-list:l0 level3 lfo2;
+	tab-stops:list .5in;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Arial;
+	font-weight:normal;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+h4
+	{mso-style-next:Normal;
+	margin-top:.25in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.75in;
+	text-indent:-.75in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:4;
+	mso-list:l0 level4 lfo2;
+	tab-stops:list .75in;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-bidi-font-weight:normal;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{mso-style-update:auto;
+	mso-style-parent:"";
+	mso-style-next:Normal;
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:.25in right dotted 6.5in;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{mso-style-update:auto;
+	mso-style-parent:"";
+	mso-style-next:Normal;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:.65in right dotted 6.5in;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+p.Bullet-3, li.Bullet-3, div.Bullet-3
+	{mso-style-name:Bullet-3;
+	mso-style-parent:"";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.75in;
+	margin-bottom:.0001pt;
+	text-indent:-.25in;
+	mso-pagination:widow-orphan;
+	mso-list:l6 level1 lfo4;
+	tab-stops:list .75in;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.Bullet-4, li.Bullet-4, div.Bullet-4
+	{mso-style-name:Bullet-4;
+	mso-style-parent:"";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.0in;
+	margin-bottom:.0001pt;
+	text-indent:-.25in;
+	mso-pagination:widow-orphan;
+	mso-list:l5 level1 lfo6;
+	tab-stops:list 1.0in;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.TableText, li.TableText, div.TableText
+	{mso-style-name:"Table Text";
+	mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.TableCaption, li.TableCaption, div.TableCaption
+	{mso-style-name:"Table Caption";
+	mso-style-parent:"";
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	text-indent:-.25in;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-list:l1 level1 lfo8;
+	tab-stops:list .75in;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.FigureCaption, li.FigureCaption, div.FigureCaption
+	{mso-style-name:"Figure Caption";
+	mso-style-parent:"";
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	text-indent:0in;
+	mso-pagination:widow-orphan;
+	mso-list:l8 level1 lfo10;
+	tab-stops:list .75in 1.0in;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.Bullet-1, li.Bullet-1, div.Bullet-1
+	{mso-style-name:Bullet-1;
+	mso-style-parent:"";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-indent:-.25in;
+	mso-pagination:widow-orphan;
+	mso-list:l3 level1 lfo12;
+	tab-stops:list .25in;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.Heading1, li.Heading1, div.Heading1
+	{mso-style-name:Heading1;
+	mso-style-update:auto;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.25in;
+	mso-pagination:widow-orphan;
+	mso-list:l9 level1 lfo14;
+	tab-stops:list .25in;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.Heading2, li.Heading2, div.Heading2
+	{mso-style-name:Heading2;
+	mso-style-update:auto;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:-.25in;
+	mso-pagination:widow-orphan;
+	mso-list:l7 level1 lfo16;
+	tab-stops:list .25in;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.level1, li.level1, div.level1
+	{mso-style-name:level1;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	text-indent:-.5in;
+	mso-pagination:widow-orphan;
+	mso-list:l4 level1 lfo18;
+	tab-stops:list .5in;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.level2, li.level2, div.level2
+	{mso-style-name:level2;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.0in;
+	margin-bottom:.0001pt;
+	text-indent:-.5in;
+	mso-pagination:widow-orphan;
+	mso-list:l4 level2 lfo18;
+	tab-stops:list 1.0in;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.level3, li.level3, div.level3
+	{mso-style-name:level3;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.5in;
+	margin-bottom:.0001pt;
+	text-indent:-.5in;
+	mso-pagination:widow-orphan;
+	mso-list:l4 level3 lfo18;
+	tab-stops:list 1.5in;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.TableTextBullet, li.TableTextBullet, div.TableTextBullet
+	{mso-style-name:"Table Text Bullet";
+	mso-style-parent:"Table Text";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:9.0pt;
+	margin-bottom:.0001pt;
+	text-indent:-9.0pt;
+	mso-pagination:widow-orphan;
+	mso-list:l2 level1 lfo20;
+	tab-stops:list 9.0pt .25in;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:166796874;
+	mso-list-template-ids:1507873084;}
+@list l0:level1
+	{mso-level-style-link:"Heading 1";
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;}
+@list l0:level2
+	{mso-level-style-link:"Heading 2";
+	mso-level-text:"%1\.%2";
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	margin-left:.5in;
+	text-indent:-.5in;}
+@list l0:level3
+	{mso-level-style-link:"Heading 3";
+	mso-level-text:"%1\.%2\.%3";
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	margin-left:.5in;
+	text-indent:-.5in;}
+@list l0:level4
+	{mso-level-style-link:"Heading 4";
+	mso-level-text:"%1\.%2\.%3\.%4";
+	mso-level-tab-stop:.75in;
+	mso-level-number-position:left;
+	margin-left:.75in;
+	text-indent:-.75in;}
+@list l0:level5
+	{mso-level-text:"%1\.%2\.%3\.%4\.%5\.";
+	mso-level-tab-stop:1.75in;
+	mso-level-number-position:left;
+	margin-left:1.55in;
+	text-indent:-.55in;}
+@list l0:level6
+	{mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.";
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	margin-left:1.9in;
+	text-indent:-.65in;}
+@list l0:level7
+	{mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.%7\.";
+	mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	margin-left:2.25in;
+	text-indent:-.75in;}
+@list l0:level8
+	{mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.%7\.%8\.";
+	mso-level-tab-stop:2.75in;
+	mso-level-number-position:left;
+	margin-left:2.6in;
+	text-indent:-.85in;}
+@list l0:level9
+	{mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.%7\.%8\.%9\.";
+	mso-level-tab-stop:3.25in;
+	mso-level-number-position:left;
+	margin-left:3.0in;
+	text-indent:-1.0in;}
+@list l1
+	{mso-list-id:416362216;
+	mso-list-type:simple;
+	mso-list-template-ids:-272233854;}
+@list l1:level1
+	{mso-level-style-link:Heading1;
+	mso-level-text:"Table %1\.";
+	mso-level-tab-stop:.75in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;}
+@list l2
+	{mso-list-id:550850348;
+	mso-list-type:simple;
+	mso-list-template-ids:-459626924;}
+@list l2:level1
+	{mso-level-number-format:bullet;
+	mso-level-style-link:Bullet-1;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	mso-ansi-font-size:9.0pt;
+	font-family:Symbol;
+	color:windowtext;}
+@list l3
+	{mso-list-id:989476851;
+	mso-list-type:simple;
+	mso-list-template-ids:133076356;}
+@list l3:level1
+	{mso-level-number-format:bullet;
+	mso-level-style-link:level2;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l4
+	{mso-list-id:1025253844;
+	mso-list-template-ids:186125254;}
+@list l4:level1
+	{mso-level-style-link:Normal;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.5in;
+	mso-ansi-font-weight:bold;
+	mso-ansi-font-style:normal;}
+@list l4:level2
+	{mso-level-style-link:Normal;
+	mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2";
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.5in;}
+@list l4:level3
+	{mso-level-style-link:Normal;
+	mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3";
+	mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.5in;}
+@list l4:level4
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.%4";
+	mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.5in;}
+@list l4:level5
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.%4\.%5";
+	mso-level-tab-stop:2.75in;
+	mso-level-number-position:left;
+	margin-left:2.75in;
+	text-indent:-.75in;}
+@list l4:level6
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6";
+	mso-level-tab-stop:3.25in;
+	mso-level-number-position:left;
+	margin-left:3.25in;
+	text-indent:-.75in;}
+@list l4:level7
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.%7";
+	mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	margin-left:4.0in;
+	text-indent:-1.0in;}
+@list l4:level8
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.%7\.%8";
+	mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	margin-left:4.5in;
+	text-indent:-1.0in;}
+@list l4:level9
+	{mso-level-legal-format:yes;
+	mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.%7\.%8\.%9";
+	mso-level-tab-stop:5.25in;
+	mso-level-number-position:left;
+	margin-left:5.25in;
+	text-indent:-1.25in;}
+@list l5
+	{mso-list-id:1261988844;
+	mso-list-type:simple;
+	mso-list-template-ids:1720107196;}
+@list l5:level1
+	{mso-level-number-format:bullet;
+	mso-level-style-link:"Figure Caption";
+	mso-level-text:\25A1;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:"Times New Roman";}
+@list l6
+	{mso-list-id:1650473969;
+	mso-list-type:simple;
+	mso-list-template-ids:-1861421854;}
+@list l6:level1
+	{mso-level-number-format:bullet;
+	mso-level-style-link:"Table Caption";
+	mso-level-text:\25CB;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;
+	mso-ansi-font-size:10.0pt;
+	font-family:"Times New Roman";}
+@list l7
+	{mso-list-id:1764908846;
+	mso-list-template-ids:-1294815464;}
+@list l7:level1
+	{mso-level-style-link:Normal;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;}
+@list l7:level2
+	{mso-level-text:"%1\.%2\.";
+	mso-level-tab-stop:.55in;
+	mso-level-number-position:left;
+	margin-left:.55in;
+	text-indent:-.3in;}
+@list l7:level3
+	{mso-level-text:"%1\.%2\.%3\.";
+	mso-level-tab-stop:.85in;
+	mso-level-number-position:left;
+	margin-left:.85in;
+	text-indent:-.35in;}
+@list l7:level4
+	{mso-level-text:"%1\.%2\.%3\.%4\.";
+	mso-level-tab-stop:1.2in;
+	mso-level-number-position:left;
+	margin-left:1.2in;
+	text-indent:-.45in;}
+@list l7:level5
+	{mso-level-text:"%1\.%2\.%3\.%4\.%5\.";
+	mso-level-tab-stop:1.55in;
+	mso-level-number-position:left;
+	margin-left:1.55in;
+	text-indent:-.55in;}
+@list l7:level6
+	{mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.";
+	mso-level-tab-stop:1.9in;
+	mso-level-number-position:left;
+	margin-left:1.9in;
+	text-indent:-.65in;}
+@list l7:level7
+	{mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.%7\.";
+	mso-level-tab-stop:2.25in;
+	mso-level-number-position:left;
+	margin-left:2.25in;
+	text-indent:-.75in;}
+@list l7:level8
+	{mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.%7\.%8\.";
+	mso-level-tab-stop:2.6in;
+	mso-level-number-position:left;
+	margin-left:2.6in;
+	text-indent:-.85in;}
+@list l7:level9
+	{mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.%7\.%8\.%9\.";
+	mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	margin-left:3.0in;
+	text-indent:-1.0in;}
+@list l8
+	{mso-list-id:1872181187;
+	mso-list-type:simple;
+	mso-list-template-ids:-295813012;}
+@list l8:level1
+	{mso-level-style-link:Heading2;
+	mso-level-text:"Figure %1\.";
+	mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	margin-left:.1in;
+	text-indent:-.1in;}
+@list l9
+	{mso-list-id:2141874675;
+	mso-list-type:simple;
+	mso-list-template-ids:959381480;}
+@list l9:level1
+	{mso-level-style-link:Normal;
+	mso-level-tab-stop:.25in;
+	mso-level-number-position:left;
+	margin-left:.25in;
+	text-indent:-.25in;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+</head>
+
+<body lang=EN-US link=blue vlink=purple style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<h1 align=center style='margin-left:0in;text-align:center;text-indent:0in;
+mso-list:none;tab-stops:.5in'>COCOMO II SOFTWARE REFERENCE MANUAL</h1>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoToc1><!--[if supportFields]><b style='mso-bidi-font-weight:normal'><span
+style='mso-element:field-begin'></span><span style="mso-spacerun:
+yes"> </span>TOC \o &quot;1-2&quot; <span style='mso-element:field-separator'></span></b><![endif]--><b
+style='mso-bidi-font-weight:normal'><span style='mso-tab-count:1'>      </span></b><a
+href="cocohyperindex.html#Index">Index</a> </p>
+
+<p class=MsoToc1>1.<span style='mso-tab-count:1'>   </span><a
+href="coco01.html#Introduction" target = "top">Introduction</a></p>
+
+<p class=MsoToc2 style='tab-stops:.65in 1.0in right dotted 6.5in'>1.1<span
+style='mso-tab-count:1'>     </span><a href="coco01.html#whatiscocomo" target = "top">What is
+COCOMO?</a></p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>1.1.1<span
+style='mso-tab-count:1'>    </span><a href="coco01.html#effortestimationeq" target = "top">Effort
+Estimation Equation</a></p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>1.1.2<span
+style='mso-tab-count:1'>    </span><a href="coco01.html#scheduleEstEquation" target = "top">Schedule
+Estimation Equation</a></p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>1.1.3<span
+style='mso-tab-count:1'>    </span><a href="coco01.html#ScaleFactorsSection" target = "top">Scale
+Factors</a></p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>1.1.4<span
+style='mso-tab-count:1'>    </span><a href="coco01.html#SizingMethods" target = "top">Sizing
+Methods</a></p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>1.1.5<span
+style='mso-tab-count:1'>    </span><a href="coco01.html#functionpoints" target = "top">FP:
+Counting with Unadjusted Function Points</a></p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>1.1.6<span
+style='mso-tab-count:1'>    </span><a href="coco01.html#adaptationadjustment" target = "top">AAF:
+Adaptation Adjustment Factors</a></p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>1.1.7<span
+style='mso-tab-count:1'>    </span><a href="coco01.html#effortmultipliers" target = "top">Effort
+Multipliers</a></p>
+
+<p class=MsoToc2 style='tab-stops:.65in 1.0in right dotted 6.5in'>1.2<span
+style='mso-tab-count:1'>     </span><a href="coco01.html#NavigatingCOCOMO" target = "top">Navigating
+COCOMO</a></p>
+
+<p class=MsoNormal><span style="mso-spacerun: yes">      </span>1.3<span
+style='mso-tab-count:1'> </span><span style="mso-spacerun: yes">    </span><a
+href="coco01.html#BeginUsingCOCOMO" target = "top">Begin Using COCOMO</a></p>
+
+<p class=MsoNormal><span style="mso-spacerun: yes">      </span>1.4<span
+style="mso-spacerun: yes">     </span><a href="coco01.html#RunningCOCOMO" target = "top">Obtaining
+COCOMO</a></p>
+
+<p class=MsoToc1>2.<span style='mso-tab-count:1'>   </span><a
+href="coco02.html#FileMenu" target = "top">File Menu</a></p>
+
+<p class=MsoToc2 style='tab-stops:.65in 1.0in right dotted 6.5in'>2.1<span
+style='mso-tab-count:1'>     </span><a href="coco02.html#New" target = "top">New</a></p>
+
+<p class=MsoToc2 style='tab-stops:.65in 1.0in right dotted 6.5in'>2.2<span
+style='mso-tab-count:1'>     </span><a href="coco02.html#LoadProject" target = "top">Load
+Project</a></p>
+
+<p class=MsoToc2 style='tab-stops:.65in 1.0in right dotted 6.5in'>2.3<span
+style='mso-tab-count:1'>     </span><a href="coco02.html#SaveProject" target = "top">Save
+Project</a></p>
+
+<p class=MsoToc2 style='tab-stops:.65in 1.0in right dotted 6.5in'>2.4<span
+style='mso-tab-count:1'>     </span><a href="coco02.html#SaveAsProject" target = "top">Save As
+Project</a></p>
+
+<p class=MsoToc2 style='tab-stops:.65in 1.0in right dotted 6.5in'>2.5<span
+style='mso-tab-count:1'>     </span><a href="coco02.html#LoadModel" target = "top">Load Model</a></p>
+
+<p class=MsoToc2 style='tab-stops:.65in 1.0in right dotted 6.5in'>2.6<span
+style='mso-tab-count:1'>     </span><a href="coco02.html#SaveModel" target = "top">Save Model</a></p>
+
+<p class=MsoToc2 style='tab-stops:.65in 1.0in right dotted 6.5in'>2.7<span
+style='mso-tab-count:1'>     </span><a href="coco02.html#SaveAsModel" target = "top">Save As
+Model</a></p>
+
+<p class=MsoNormal><span style="mso-spacerun: yes">      </span>2.8<span
+style="mso-spacerun: yes">    </span><a href="coco02.html#MakeReport" target = "top">Make
+Report</a></p>
+
+<p class=MsoNormal><span style="mso-spacerun: yes">      </span>2.9<span
+style="mso-spacerun: yes">    </span><a href="coco02.html#Export" target = "top">Export</a></p>
+
+<p class=MsoNormal><span style="mso-spacerun: yes">      </span>2.10<span
+style="mso-spacerun: yes">  </span><a href="coco02.html#SaveScreens" target = "top">Save
+Screens</a></p>
+
+<p class=MsoNormal><span style="mso-spacerun: yes">      </span>2.11<span
+style="mso-spacerun: yes">  </span><a href="coco02.html#PrintScreen" target = "top">Print
+Screens</a></p>
+
+<p class=MsoNormal><span style="mso-spacerun: yes">      </span>2.12<span
+style="mso-spacerun: yes">  </span><a href="coco02.html#PrintPreview" target = "top">Print
+Preview</a></p>
+
+<p class=MsoNormal><span style="mso-spacerun: yes">      </span>2.13<span
+style="mso-spacerun: yes">  </span><a href="coco02.html#PrintSetup" target = "top">Print Setup</a></p>
+
+<p class=MsoNormal><span style="mso-spacerun: yes">      </span>2.14<span
+style="mso-spacerun: yes">  </span><a href="coco02.html#Exit" target = "top">Exit</a></p>
+
+<p class=MsoToc1>3.<span style='mso-tab-count:1'>   </span><a
+href="coco03.html#editmenu" target = "top">Edit Menu</a></p>
+
+<p class=MsoToc2 style='tab-stops:.65in 1.0in right dotted 6.5in'>3.1<span
+style='mso-tab-count:1'>     </span><a href="coco03.html#addmodule" target = "top">Add Module</a></p>
+
+<p class=MsoToc2 style='tab-stops:.65in 1.0in right dotted 6.5in'>3.2<span
+style='mso-tab-count:1'>     </span><a href="coco03.html#clearallmodules" target = "top">Clear
+All Modules</a></p>
+
+<p class=MsoToc2 style='tab-stops:.65in 1.0in right dotted 6.5in'>3.3<span
+style='mso-tab-count:1'>     </span><a href="coco03.html#snapshot" target = "top">Snapshot</a></p>
+
+<p class=MsoNormal><span style="mso-spacerun: yes">  </span><span
+style="mso-spacerun: yes">    </span>3.4<span style='mso-tab-count:1'> </span><span
+style="mso-spacerun: yes">   </span><a href="coco03.html#undo" target = "top"> Undo</a></p>
+
+<p class=MsoNormal><span style="mso-spacerun: yes">      </span>3.5<span
+style="mso-spacerun: yes">    </span><a href="coco03.html#cut" target = "top"> Cut</a></p>
+
+<p class=MsoNormal><span style="mso-spacerun: yes">      </span>3.6<span
+style="mso-spacerun: yes">    </span><a href="coco03.html#copy" target = "top"> Copy</a></p>
+
+<p class=MsoNormal><span style="mso-spacerun: yes">      </span>3.7<span
+style="mso-spacerun: yes">    </span><a href="coco03.html#paste" target = "top"> Paste</a></p>
+
+<p class=MsoToc1>4.<span style='mso-tab-count:1'>   </span><a
+href="coco04.html#ParametersMenu" target = "top">Parameters Menu</a></p>
+
+<p class=MsoToc2 style='tab-stops:.65in 1.0in right dotted 6.5in'>4.1<span
+style='mso-tab-count:1'>     </span><a href="coco04.html#Product" target = "top">Post
+Architecture Model</a></p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>4.1.1<span
+style='mso-tab-count:1'>    </span><a href="coco04.html#Product" target = "top">Product</a></p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>4.1.2<span
+style='mso-tab-count:1'>    </span><a href="coco04.html#Platform" target = "top">Platform</a></p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>4.1.3<span
+style='mso-tab-count:1'>    </span><a href="coco04.html#Personnel" target = "top">Personnel</a></p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>4.1.4<span
+style='mso-tab-count:1'>    </span><a href="coco04.html#Project" target = "top">Project</a></p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>4.1.5<span
+style='mso-tab-count:1'>    </span><a href="coco04.html#UserDefinedEAF" target = "top">User
+Defined EAF</a></p>
+
+<p class=MsoToc2 style='tab-stops:.65in 1.0in right dotted 6.5in'>4.2<span
+style='mso-tab-count:1'>     </span><a href="coco04.html#EarlyDesignModel" target = "top">Early
+Design Model</a></p>
+
+<p class=MsoToc2 style='tab-stops:.65in 1.0in right dotted 6.5in'>4.3<span
+style='mso-tab-count:1'>     </span><a href="coco04.html#ScaleFactors" target = "top">Scale
+Factors</a></p>
+
+<p class=MsoNormal><span style="mso-spacerun: yes">      </span>4.4<span
+style='mso-tab-count:1'> </span> <span style="mso-spacerun: yes">  </span><a
+href="coco04.html#Equation" target = "top">Equation</a></p>
+
+<p class=MsoNormal><span style="mso-spacerun: yes">      </span>4.5<span
+style="mso-spacerun: yes">    </span><a href="coco04.html#PersonMonth" target = "top">Person
+Month</a></p>
+
+<p class=MsoNormal><span style="mso-spacerun: yes">      </span>4.6<span
+style="mso-spacerun: yes">    </span><a href="coco04.html#FunctionPoint" target = "top">Function
+Point</a></p>
+
+<p class=MsoToc1>5.<span style='mso-tab-count:1'>   </span><a
+href="coco05.html#CalibrateMenu" target = "top">Calibrate Menu</a></p>
+
+<p class=MsoToc2 style='tab-stops:.65in 1.0in right dotted 6.5in'>5.1<span
+style='mso-tab-count:1'>     </span><a href="coco05.html#FileLoad" target = "top">File Load</a></p>
+
+<p class=MsoToc2 style='tab-stops:.65in 1.0in right dotted 6.5in'>5.2<span
+style='mso-tab-count:1'>     </span><a href="coco05.html#FileSave" target = "top">File Save</a></p>
+
+<p class=MsoToc2 style='tab-stops:.65in 1.0in right dotted 6.5in'>5.3<span
+style='mso-tab-count:1'>     </span><a href="coco05.html#FileSaveAs" target = "top">File Save
+As</a></p>
+
+<p class=MsoToc2 style='tab-stops:.65in 1.0in right dotted 6.5in'>5.4<span
+style='mso-tab-count:1'>     </span><a href="coco05.html#Project" target = "top">Project</a></p>
+
+<p class=MsoToc2 style='tab-stops:.65in 1.0in right dotted 6.5in'>5.5<span
+style='mso-tab-count:1'>     </span><a href="coco05.html#Compute" target = "top">Compute</a></p>
+
+<p class=MsoToc1>6.<span style='mso-tab-count:1'>   </span><a
+href="coco06.html#PhaseDistribution" target = "top">Phase Distribution</a></p>
+
+<p class=MsoToc2 style='tab-stops:.65in 1.0in right dotted 6.5in'>6.1<span
+style='mso-tab-count:1'>     </span><a
+href="coco06.html#ProjectPhaseDistribution" target = "top">Waterfall Model - Project Phase
+Distribution</a></p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>6.1.1<span
+style='mso-tab-count:1'>    </span><a href="coco06.html#OverallProjectPhase" target = "top">Waterfall
+Overall Project Phase</a></p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>6.1.2<span
+style='mso-tab-count:1'>    </span><a
+href="coco06.html#PlansRequirementsProjectPhaseDis" target = "top">Waterfall Plans and
+Requirements Project Phase</a></p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>6.1.3<span
+style='mso-tab-count:1'>    </span><a href="coco06.html#ProgrammingProjectPhase" target = "top">Waterfall
+Programming Project Phase</a></p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>6.1.4<span
+style='mso-tab-count:1'>    </span><a
+href="coco06.html#ProductDesignPhaseSection" target = "top">Waterfall Product Design Project
+Phase</a></p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>6.1.5<span
+style='mso-tab-count:1'>    </span><a
+href="coco06.html#IntegrationandTestProjectPhase" target = "top">Waterfall Integration and
+Test Project Phase</a></p>
+
+<p class=MsoToc2 style='tab-stops:.65in 1.0in right dotted 6.5in'>6.2<span
+style='mso-tab-count:1'>     </span><a
+href="coco06.html#ModulePhaseDistribution" target = "top">Waterfall Model - Module Phase
+Distribution</a></p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>6.2.1<span
+style='mso-tab-count:1'>    </span><a href="coco06.html#OverallModulePhase" target = "top">Waterfall
+Overall Module Phase</a></p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>6.2.2<span
+style='mso-tab-count:1'>    </span><a
+href="coco06.html#PlansandRequirementsModulePhase" target = "top">Waterfall Plans and
+Requirements Module Phase</a></p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>6.2.3<span
+style='mso-tab-count:1'>    </span><a href="coco06.html#ProgrammingModulePhase" target = "top">Waterfall
+Programming Module Phase</a></p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>6.2.4<span
+style='mso-tab-count:1'>    </span><a
+href="coco06.html#ProductDesignPhaseSection" target = "top">Waterfall Product Design Module
+Phase</a></p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>6.2.5<span
+style='mso-tab-count:1'>    </span><a
+href="coco06.html#IntegrationandTestModulePhase" target = "top">Waterfall Integration and Test
+Module Phase</a></p>
+
+<p class=MsoToc2 style='tab-stops:.65in 1.0in right dotted 6.5in'>6.3<span
+style='mso-tab-count:1'>     </span><a
+href="coco06.html#MbaseProjectOverallPhase" target = "top">MBASE Model - Project Phase
+Distribution</a></p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>6.3.1<span
+style='mso-tab-count:1'>    </span><a
+href="coco06.html#MbaseProjectOverallPhase" target = "top">MBASE Model Project Overall Phase</a></p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>6.3.2<span
+style='mso-tab-count:1'>    </span><a
+href="coco06.html#MbaseModelProjectInception" target = "top">MBASE Model Project Inception</a>
+</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>6.3.3<span
+style='mso-tab-count:1'>    </span><a
+href="coco06.html#MbaseModelProjectElaboration" target = "top">MBASE Model Project Elaboration</a>
+</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>6.3.4<span
+style='mso-tab-count:1'>    </span><a
+href="coco06.html#MbaseModelProjectConstruction" target = "top">MBASE Model Project
+Construction</a></p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>6.3.5<span
+style='mso-tab-count:1'>    </span><a
+href="coco06.html#MbaseModelProjectTransition" target = "top">MBASE Model Project Transition</a>
+</p>
+
+<p class=MsoToc2 style='tab-stops:.65in 1.0in right dotted 6.5in'>6.4<span
+style='mso-tab-count:1'>     </span><a
+href="coco06.html#MbaseModelModulePhaseDistribution" target = "top">MBASE Model - Module Phase
+Distribution</a></p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>6.4.1<span
+style='mso-tab-count:1'>    </span><a
+href="coco06.html#MbaseModelModuleOverallPhase" target = "top">MBASE Model Module Overall
+Phase</a></p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>6.4.2<span
+style='mso-tab-count:1'>    </span><a
+href="coco06.html#MbaseModelModuleInceptionPhase" target = "top">MBASE Model Module Inception</a>
+</p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>6.4.3<span
+style='mso-tab-count:1'>    </span><a
+href="coco06.html#MbaseModelModuleElaborationPhase" target = "top">MBASE Model Module
+Elaboration</a> </p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>6.4.4<span
+style='mso-tab-count:1'>    </span><a
+href="coco06.html#MbaseModelModuleConstructionPhase" target = "top">MBASE Model Module
+Construction</a></p>
+
+<p class=MsoNormal><span style='mso-tab-count:1'>            </span>6.4.5<span
+style='mso-tab-count:1'>    </span><a
+href="coco06.html#MbaseModelModuleTransitionPhase" target = "top">MBASE Model Module
+Transition</a> </p>
+
+<p class=MsoToc1>7.<span style='mso-tab-count:1'>   </span><a
+href="coco07.html#Maintenance" target = "top">Maintenance</a></p>
+
+<p class=MsoToc2 style='tab-stops:.65in 1.0in right dotted 6.5in'>7.1<span
+style='mso-tab-count:1'>     </span><a href="coco07.html#ProjectMaintenance" target = "top">Project
+Maintenance</a></p>
+
+<p class=MsoToc2 style='tab-stops:.65in 1.0in right dotted 6.5in'>7.2<span
+style='mso-tab-count:1'>     </span><a href="coco07.html#ModuleMaintenance" target = "top">Module
+Maintenance</a></p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoToc1><span style='mso-tab-count:1'>      </span><a
+href="coco08ref.html" target = "top">References</a></p>
+
+<p class=MsoToc1><span style='mso-tab-count:1'>      </span><a
+href="coco09appa.html" target = "top">Accelerator Keys</a></p>
+
+<p class=MsoToc1><span style='mso-tab-count:1'>      </span><a
+href="coco10appb.html" target = "top">Function Point Values</a></p>
+
+<p class=MsoNormal><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal><!--[if supportFields]><b style='mso-bidi-font-weight:normal'><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt'><span style='mso-element:
+field-end'></span></span></b><![endif]--><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+</div>
+
+</body>
+
+</html>

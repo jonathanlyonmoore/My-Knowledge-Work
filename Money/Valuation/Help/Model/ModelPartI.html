@@ -1,0 +1,1722 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="Generator" CONTENT="Microsoft Word 97">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.06 [en] (WinNT; I) [Netscape]">
+   <TITLE>Overall Model Definition</TITLE>
+</HEAD>
+<BODY>
+<A NAME="OverallModelDefinition"></A><B><FONT FACE="Arial"><FONT SIZE=+1>Overall
+Model Definition</FONT></FONT></B>
+<P><B><FONT SIZE=+4>T</FONT></B><FONT SIZE=-1>he four main elements of
+the&nbsp;<A NAME="COCOMOII"></A>COCOMO II strategy are:</FONT>
+<UL>
+<LI>
+<FONT SIZE=-1>Preserve the openness of the original COCOMO;</FONT></LI>
+
+<LI>
+<FONT SIZE=-1>Key the structure of COCOMO II to the future software marketplace
+sectors described earlier;</FONT></LI>
+
+<LI>
+<FONT SIZE=-1>Key the inputs and outputs of the COCOMO II submodels to
+the level of information available;</FONT></LI>
+
+<LI>
+<FONT SIZE=-1>Enable the COCOMO II submodels to be tailored to a project's
+particular process strategy.</FONT></LI>
+</UL>
+<FONT SIZE=-1>COCOMO II follows the openness principles used in the original
+COCOMO. Thus, all of its relationships and algorithms will be publicly
+available. Also, all of its interfaces are designed to be public, well-defined,
+and parametrized, so that complementary preprocessors (analogy, case-based,
+or other size estimation models), post-processors (project planning and
+control tools, project dynamics models, risk analyzers), and higher level
+packages (project management packages, product negotiation aids), can be
+combined straightforwardly with COCOMO II.</FONT>
+<P><FONT SIZE=-1>To support the software marketplace sectors above, COCOMO
+II provides a family of increasingly detailed software cost estimation
+models, each tuned to the sectors' needs and type of information available
+to support software cost estimation.</FONT>
+<P><A NAME="COCOMOIIModels"></A><B><I><FONT FACE="Arial">COCOMO II Models
+for the Software Marketplace Sectors</FONT></I></B>
+<P><FONT SIZE=-1>The COCOMO II capability for estimation of&nbsp;<A NAME="ApplicationGenerator"></A><U>Application
+Generator</U>,&nbsp;<A NAME="SystemIntegration"></A><U>System Integration</U>,
+or&nbsp;<A NAME="Infrastructure"></A><U>Infrastructure</U> developments
+is based on two increasingly detailed estimation models for subsequent
+portions of the life cycle, <I>Early Design</I> and <I>Post-Architecture</I>.</FONT>
+<P><A NAME="COCOMOIIModelRationale"></A><FONT FACE="Arial">COCOMO II Model
+Rationale and Elaboration</FONT>
+<P><FONT SIZE=-1>The rationale for providing this tailorable mix of models
+rests on three primary premises.</FONT>
+<P><FONT SIZE=-1><U>First</U>, unlike the initial COCOMO situation in the
+late 1970's, in which there was a single, preferred software life cycle
+model, current and future software projects will be tailoring their processes
+to their particular process drivers. These process drivers include&nbsp;<A NAME="COTS"></A>COTS
+or reusable software availability; degree of understanding of architectures
+and requirements; market window or other schedule constraints; size; and
+required reliability (see [Boehm 1989, pp. 436-37] for an example of such
+tailoring guidelines).</FONT>
+<P><FONT SIZE=-1><U>Second</U>, the granularity of the software cost estimation
+model used needs to be consistent with the granularity of the information
+available to support software cost estimation. In the early stages of a
+software project, very little may be known about the size of the product
+to be developed, the nature of the target platform, the nature of the personnel
+to be involved in the project, or the detailed specifics of the process
+to be used.</FONT>
+<P><IMG SRC="figI-1.jpg" HEIGHT=392 WIDTH=558>
+<P><FONT SIZE=-1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Figure I-1:&nbsp; Software Costing and Sizing Accuracy vs. Phase</FONT>
+<P><FONT SIZE=-1>Figure I-1, extended from [Boehm 1981, p. 311], indicates
+the effect of project uncertainties on the accuracy of software size and
+cost estimates. In the very early stages, one may not know the specific
+nature of the product to be developed to better than a factor of 4. As
+the life cycle proceeds, and product decisions are made, the nature of
+the products and its consequent size are better known, and the nature of
+the process and its consequent cost drivers are better known. The earlier
+"completed programs" size and effort data points in Figure I-1 are the
+actual sizes and efforts of seven software products built to an imprecisely-defined
+specification [Boehm et. al. 1984]. The later "USAF/ESD proposals" data
+points are from five proposals submitted to the U.S. Air Force Electronic
+Systems Division in response to a fairly thorough specification [Devenny
+1976].</FONT>
+<P><FONT SIZE=-1><U>Third</U>, given the situation in premises 1 and 2,
+COCOMO II enables projects to furnish coarse-grained cost driver information
+in the early project stages, and increasingly fine-grained information
+in later stages. Consequently, COCOMO II does not produce point estimates
+of software cost and effort, but rather range estimates tied to the degree
+of definition of the estimation inputs. The uncertainty ranges in Figure
+I-1 are used as starting points for these estimation ranges.</FONT>
+<P><FONT SIZE=-1>With respect to&nbsp;<A NAME="processstrategy"></A><U>process
+strategy</U>, Application Generator, System Integration, and Infrastructure
+software projects will involve a mix of three major process models, The
+appropriate models will depend on the project marketplace drivers and degree
+of product understanding.</FONT>
+<P><FONT SIZE=-1>The&nbsp;<A NAME="EarlyDesign"></A><U>Early Design</U>
+model involves exploration of alternative software/system architectures
+and concepts of operation. At this stage, not enough is generally known
+to support fine-grain cost estimation. The corresponding COCOMO II capability
+involves the use of function points and a course-grained set of 7 cost
+drivers (e.g. two cost drivers for Personnel Capability and Personnel Experience
+in place of the 6 COCOMO II Post-Architecture model cost drivers covering
+various aspects of personnel capability, continuity, and experience).</FONT>
+<P><FONT SIZE=-1>The&nbsp;<A NAME="PostArchitecture"></A><U>Post-Architecture</U>
+model involves the actual development and maintenance of a software product.
+This stage proceeds most cost-effectively if a software life-cycle architecture
+has been developed; validated with respect to the system's mission, concept
+of operation, and risk; and established as the framework for the product.
+The corresponding COCOMO II model has about the same granularity as the
+previous COCOMO and Ada COCOMO models. It uses source instructions and
+/ or function points for sizing, with modifiers for reuse and software
+breakage; a set of 17 multiplicative cost drivers; and a set of 5 factors
+determining the project's scaling exponent. These factors replace the development
+modes (Organic, Semidetached, or Embedded) in the original COCOMO model,
+and refine the four exponent-scaling factors in Ada COCOMO.</FONT>
+<P><FONT SIZE=-1>To summarize, COCOMO II provides the following three-stage
+series of models for estimation of Application Generator, System Integration,
+and Infrastructure software projects:</FONT>
+<OL>
+<LI>
+<FONT SIZE=-1>The earliest phases or spiral cycles will generally involve
+prototyping, using the&nbsp;<A NAME="ApplicationComposition"></A>Application
+Composition model capabilities. The COCOMO II Application Composition model
+supports these phases, and any other prototyping activities occurring later
+in the life cycle.</FONT></LI>
+
+<LI VALUE="2">
+<FONT SIZE=-1>The next phases or spiral cycles will generally involve exploration
+of architectural alternatives or incremental development strategies. To
+support these activities, COCOMO II provides an early estimation model
+called the Early Design model. This level of detail in this model is consistent
+with the general level of information available and the general level of
+estimation accuracy needed at this stage.</FONT></LI>
+
+<LI>
+<FONT SIZE=-1>Once the project is ready to develop and sustain a fielded
+system, it should have a life- cycle architecture, which provides more
+accurate information on cost driver inputs, and enables more accurate cost
+estimates. To support this stage, COCOMO II provides the Post-Architecture
+model.</FONT></LI>
+</OL>
+<FONT SIZE=-1>The above should be considered as current working hypotheses
+about the most effective forms for COCOMO II. They will be subject to revision
+based on subsequent data analysis. Data analysis should also enable the
+further calibration of the relationships between object points, function
+points, and source lines of code for various languages and composition
+systems, enabling flexibility in the choice of sizing parameters.</FONT>
+<P><A NAME="DevelopmentEffortEstimates"></A><B><I><FONT FACE="Arial">Development
+Effort Estimates</FONT></I></B>
+<P><FONT SIZE=-1>In COCOMO II effort is expressed as Person Months (PM).
+person month is the amount of time one person spends working on the software
+development project for one month. This number is exclusive of holidays
+and vacations but accounts for weekend time off. The number of person months
+is different from the time it will take the project to complete; this is
+called the development schedule. For example, a project may be estimated
+to require 50 PM of effort but have a schedule of 11 months.</FONT>
+<P><FONT SIZE=-1>Equation I-1 is the base model for the Early Design and
+Post-Architecture cost estimation models. The inputs are the <I>Size</I>
+of software development, a constant, <I>A</I>, and a scale factor, <I>B</I>.
+The size is in units of thousands of source lines of code (KSLOC). This
+is derived from estimating the size of software modules that will constitute
+the application program. It can also be estimated from&nbsp;<A NAME="unadjustedfunctionpoints"></A>unadjusted
+function points (UFP), converted to SLOC then divided by one thousand.
+Procedures for counting SLOC or UFP are explained in the chapters on the
+Post- Architecture and Early Design models respectively.</FONT>
+<P><FONT SIZE=-1>The scale (or exponential) factor, <I>B</I>, accounts
+for the relative economies or diseconomies of scale encountered for software
+projects of different sizes [Banker et al 1994a]. The constant, <I>A</I>,
+is used to capture the multiplicative effects on effort with projects of
+increasing size. The nominal effort for a given size project and expressed
+as person months (PM) is given by Equation I-1.</FONT>
+<BLOCKQUOTE>
+<BLOCKQUOTE>
+<BLOCKQUOTE>
+<BLOCKQUOTE>
+<BLOCKQUOTE><B><FONT FACE="Times New Roman,Times"><FONT SIZE=-2>(EQ I-1)</FONT></FONT></B></BLOCKQUOTE>
+</BLOCKQUOTE>
+</BLOCKQUOTE>
+</BLOCKQUOTE>
+</BLOCKQUOTE>
+<IMG SRC="Imag7.gif" HEIGHT=29 WIDTH=166>
+<P><A NAME="SoftwareEconomies"></A><B><I><FONT FACE="Arial">Software Economies
+and Diseconomies of Scale</FONT></I></B>
+<P><FONT SIZE=-1>Software cost estimation models often have an exponential
+factor to account for the relative economies or diseconomies of scale encountered
+in different size software projects. The exponent, <I>B</I>, in Equation
+I-1 is used to capture these effects.</FONT>
+<P><FONT SIZE=-1>If <I>B &lt; 1.0</I>, the project exhibits economies of
+scale. If the product's size is doubled, the project effort is less than
+doubled. The project's productivity increases as the product size is increased.
+Some project economies of scale can be achieved via project-specific tools
+(e.g., simulations, testbeds) but in general these are difficult to achieve.
+For small projects, fixed start-up costs such as tool tailoring and setup
+of standards and administrative reports are often a source of economies
+of scale.</FONT>
+<P><FONT SIZE=-1>If <I>B = 1.0</I>, the economies and diseconomies of scale
+are in balance. This linear model is often used for cost estimation of
+small projects. It is used for the COCOMO II <I>Applications Composition</I>
+model.</FONT>
+<P><FONT SIZE=-1>If <I>B > 1.0</I>, the project exhibits diseconomies of
+scale. This is generally due to two main factors: growth of interpersonal
+communications overhead and growth of large-system integration overhead.
+Larger projects will have more personnel, and thus more interpersonal communications
+paths consuming overhead. Integrating a small product as part of a larger
+product requires not only the effort to develop the small product, but
+also the additional overhead effort to design, maintain, integrate, and
+test its interfaces with the remainder of the product.</FONT>
+<P><FONT SIZE=-1>See [Banker et al 1994a] for a further discussion of software
+economies and diseconomies of scale.</FONT>
+<P><A NAME="PreviousApproaches"></A><FONT FACE="Arial">Previous Approaches</FONT>
+<P><FONT SIZE=-1>The data analysis on the original COCOMO indicated that
+its projects exhibited net diseconomies of scale. The projects factored
+into three classes or modes of software development (Organic, Semidetached,
+and Embedded), whose exponents <I>B</I> were 1.05, 1.12, and 1.20, respectively.
+The distinguishing factors of these modes were basically environmental:
+Embedded-mode projects were more unprecedented, requiring more communication
+overhead and complex integration; and less flexible, requiring more communications
+overhead and extra effort to resolve issues within tight schedule, budget,
+interface, and performance constraints.</FONT>
+<P><FONT SIZE=-1>The scaling model in&nbsp;<A NAME="AdaCOCOMO"></A>Ada
+COCOMO continued to exhibit diseconomies of scale, but recognized that
+a good deal of the diseconomy could be reduced via management controllables.
+Communications overhead and integration overhead could be reduced significantly
+by early risk and error elimination; by using thorough, validated architectural
+specifications; and by stabilizing requirements. These practices were combined
+into an Ada process model [Boehm and Royce 1989, Royce 1990]. The project's
+use of these practices, and an Ada process model experience or maturity
+factor, were used in Ada COCOMO to determine the scale factor <I>B</I>.</FONT>
+<P><FONT SIZE=-1>Ada COCOMO applied this approach to only one of the COCOMO
+development modes, the Embedded mode. Rather than a single exponent <I>B
+= 1.20</I> for this mode, Ada COCOMO enabled <I>B</I> to vary from 1.04
+to 1.24, depending on the project's progress in reducing diseconomies of
+scale via early risk elimination, solid architecture, stable requirements,
+and Ada process maturity.</FONT>
+<P><FONT SIZE=-1>COCOMO II combines the COCOMO and Ada COCOMO scaling approaches
+into a single rating-driven model. It is similar to that of Ada COCOMO
+in having additive factors applied to a base exponent <I>B</I>. It includes
+the Ada COCOMO factors, but combines the architecture and risk factors
+into a single factor, and replaces the Ada process maturity factor with
+a Software Engineering Institute (SEI) process maturity factor (The exact
+form of this factor is still being worked out with the SEI). The scaling
+model also adds two factors, precedentedness and flexibility, to account
+for the mode effects in original COCOMO, and adds a Team Cohesiveness factor
+to account for the diseconomy-of-scale effects on software projects whose
+developers, customers, and users have difficulty in synchronizing their
+efforts. It does not include the Ada COCOMO Requirements Volatility factor,
+which is now covered by increasing the effective product size via the Breakage
+factor.</FONT>
+<P><A NAME="ScalingDrivers"></A><FONT FACE="Arial">Scaling Drivers</FONT>
+<P><FONT SIZE=-1>Equation I-2 defines the exponent, <I>B</I>, used in Equation
+I-1. Table I-1 provides the rating levels for the COCOMO II scale drivers.
+The selection of scale drivers is based on the rationale that they are
+a significant source of exponential variation on a project’s effort or
+productivity variation. Each scale driver has a range of rating levels,
+from Very Low to Extra High. Each rating level has a weight, <I>W</I>,
+and the specific value of the weight is called a scale factor. A project's
+scale factors, <I>W</I><SUB>i</SUB>, are summed across all of the factors,
+and used to determine a scale exponent, <I>B,</I> via the following formula:</FONT>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<B><FONT FACE="Times New Roman,Times"><FONT SIZE=-2>(EQ I-2)</FONT></FONT></B>
+<BR><IMG SRC="eqI-2.jpg" HEIGHT=57 WIDTH=196>
+<BR>&nbsp;
+<P><FONT SIZE=-1>For example, if scale factors with an Extra High rating
+are each assigned a weight of (0), then a 100 KSLOC project with Extra
+High ratings for all factors will have<FONT FACE="Symbol">&aring;</FONT>
+<I>W</I><SUB>i</SUB>
+<I>=
+0, B = 1.01</I>, and a relative effort <I>E = 100<SUP>1.01</SUP>= 105 PM</I>.
+If scale factors with Very Low rating are each assigned a weight of (5),
+then a project with Very Low (5) ratings for all factors will have<FONT FACE="Symbol">&aring;</FONT>
+<I>W</I><SUB>i</SUB><I>=
+25, B = 1.26</I>, and a relative effort <I>E = 331 PM</I>. This represents
+a large variation, but the increase involved in a one-unit change in one
+of the factors is only about 4.7%.</FONT>
+<P><B><FONT FACE="Arial"><FONT SIZE=-1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Table&nbsp; I-1</FONT></FONT>: Scale Factors for COCOMO II Early Design
+and Post-Architecture Models</B>
+<CENTER><TABLE BORDER WIDTH="514" >
+<TR>
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Scale Factors (</FONT></FONT><I>W<SUB>i</SUB></I>)</B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Very Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Nominal</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>High</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Very High</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Extra High</FONT></FONT></B></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><A NAME="PREC"></A><FONT SIZE=-2>PREC</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>thoroughly unprecedented</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>largely unprecedented</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>somewhat unprecedented</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>generally familiar</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>largely familiar</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>throughly familiar</FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><A NAME="FLEX"></A><FONT SIZE=-2>FLEX</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>rigorous</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>occasional relaxation</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>some&nbsp;</FONT>
+<P><FONT SIZE=-2>relaxation</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>general&nbsp;</FONT>
+<P><FONT SIZE=-2>conformity</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>some&nbsp;</FONT>
+<P><FONT SIZE=-2>conformity</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>general goals</FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><A NAME="RESL"></A><FONT SIZE=-2>RESL</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>little (20%)</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>some (40%)</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>often (60%)</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>generally (75%)</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>mostly (90%)</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>full (100%)</FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><A NAME="TEAM"></A><FONT SIZE=-2>TEAM</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>very difficult interactions</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>some difficult interactions</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>basically cooperative interactions</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>largely&nbsp;</FONT>
+<P><FONT SIZE=-2>cooperative</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>highly&nbsp;</FONT>
+<P><FONT SIZE=-2>cooperative</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="14%"><FONT SIZE=-2>seamless</FONT>
+<BR><FONT SIZE=-2>interactions</FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="14%">
+<CENTER><A NAME="PMAT"></A><FONT SIZE=-2>PMAT</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP COLSPAN="6" WIDTH="86%"><FONT SIZE=-2>Weighted average of
+"Yes" answers to CMM Maturity Questionnaire</FONT></TD>
+</TR>
+</TABLE></CENTER>
+<A NAME="Precedentedness"></A><FONT FACE="Arial">Precedentedness (PREC)
+and Development Flexibility (FLEX)</FONT>
+<P><FONT SIZE=-1>These two scale factors largely capture the differences
+between the Organic, Semidetached and Embedded modes of the original COCOMO
+model [Boehm 1981]. Table I-2 reorganizes [Boehm 1981, Table 6.3] to map
+its project features onto the Precedentedness and Development Flexibility
+scales. This table can be used as a more in depth explanation for the PREC
+and FLEX rating scales given in Table I-1.</FONT>
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>
+<BR>
+<BR>
+<BR>
+<CENTER>
+<P><B><FONT FACE="Arial"><FONT SIZE=-1>Table&nbsp; I-2</FONT></FONT>: Scale
+Factors Related to COCOMO Development Modes</B></CENTER>
+
+<CENTER><TABLE BORDER WIDTH="509" >
+<TR>
+<TD VALIGN=TOP WIDTH="45%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Feature</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="18%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Very Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="18%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Nominal / High</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="18%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Extra High</FONT></FONT></B></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP COLSPAN="4">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Precedentedness</FONT></FONT></B></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="45%"><FONT SIZE=-2>Organizational understanding of
+product objectives</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="18%"><FONT SIZE=-2>General</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="18%"><FONT SIZE=-2>Considerable</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="18%"><FONT SIZE=-2>Thorough</FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="45%"><FONT SIZE=-2>Experience in working with related
+software systems</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="18%"><FONT SIZE=-2>Moderate</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="18%"><FONT SIZE=-2>Considerable</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="18%"><FONT SIZE=-2>Extensive</FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="45%"><FONT SIZE=-2>Concurrent development of associated
+new hardware and operational procedures</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="18%"><FONT SIZE=-2>Extensive</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="18%"><FONT SIZE=-2>Moderate</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="18%"><FONT SIZE=-2>Some</FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="45%"><FONT SIZE=-2>Need for innovative data processing
+architectures, algorithms</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="18%"><FONT SIZE=-2>Considerable</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="18%"><FONT SIZE=-2>Some</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="18%"><FONT SIZE=-2>Minimal</FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP COLSPAN="4">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Development Flexibility</FONT></FONT></B></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="45%"><FONT SIZE=-2>Need for software conformance
+with pre- established requirements</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="18%"><FONT SIZE=-2>Full</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="18%"><FONT SIZE=-2>Considerable</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="18%"><FONT SIZE=-2>Basic</FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="45%"><FONT SIZE=-2>Need for software conformance
+with external interface specifications</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="18%"><FONT SIZE=-2>Full</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="18%"><FONT SIZE=-2>Considerable</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="18%"><FONT SIZE=-2>Basic</FONT></TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="45%"><FONT SIZE=-2>Premium on early completion</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="18%"><FONT SIZE=-2>High</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="18%"><FONT SIZE=-2>Medium</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="18%"><FONT SIZE=-2>Low</FONT></TD>
+</TR>
+</TABLE></CENTER>
+
+<P><A NAME="Architecture"></A><FONT FACE="Arial">Architecture / Risk Resolution
+(RESL)</FONT>
+<P><FONT SIZE=-1>This factor combines two of the scale factors in&nbsp;<A NAME="Ada_COCOMO"></A>Ada
+COCOMO, "Design Thoroughness by Product Design Review (PDR)" and "Risk
+Elimination by PDR" [Boehm and Royce 1989; Figures 4 and 5]. Table I-3
+consolidates the Ada COCOMO ratings to form a more comprehensive definition
+for the COCOMO II RESL rating levels. The RESL rating is the subjective
+weighted average of the listed characteristics.</FONT>
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>
+<BR>
+<BR>
+<BR>
+<CENTER>
+<P><B><FONT FACE="Arial"><FONT SIZE=-1>Table&nbsp; I-3</FONT></FONT>:&nbsp;<A NAME="RESLRatingComponents"></A>RESL
+Rating Components</B></CENTER>
+
+<CENTER><TABLE BORDER WIDTH="514" >
+<TR>
+<TD VALIGN=TOP WIDTH="31%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Characteristic</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Very Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Nominal</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>High</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Very High</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Extra High</FONT></FONT></B></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="31%"><FONT SIZE=-2>Risk Management Plan identifies
+all critical risk items, establishes milestones for resolving them by PDR.</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><FONT SIZE=-2>None</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><FONT SIZE=-2>Little</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><FONT SIZE=-2>Some</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><FONT SIZE=-2>Generally</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><FONT SIZE=-2>Mostly</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><FONT SIZE=-2>Fully</FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="31%"><FONT SIZE=-2>Schedule, budget, and internal
+milestones through PDR compatible with Risk Management Plan</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><FONT SIZE=-2>None</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><FONT SIZE=-2>Little</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><FONT SIZE=-2>Some</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><FONT SIZE=-2>Generally</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><FONT SIZE=-2>Mostly</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><FONT SIZE=-2>Fully</FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="31%"><FONT SIZE=-2>Percent of development schedule
+devoted to establishing architecture, given general product objectives</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><FONT SIZE=-2>5</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><FONT SIZE=-2>10</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><FONT SIZE=-2>17</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><FONT SIZE=-2>25</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><FONT SIZE=-2>33</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><FONT SIZE=-2>40</FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="31%"><FONT SIZE=-2>Percent of required top software
+architects available to project</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><FONT SIZE=-2>20</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><FONT SIZE=-2>40</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><FONT SIZE=-2>60</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><FONT SIZE=-2>80</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><FONT SIZE=-2>100</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><FONT SIZE=-2>120</FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="31%"><FONT SIZE=-2>Tool support available for resolving
+risk items, developing and verifying architectural specs</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><FONT SIZE=-2>None</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><FONT SIZE=-2>Little</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><FONT SIZE=-2>Some</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><FONT SIZE=-2>Good</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><FONT SIZE=-2>Strong</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><FONT SIZE=-2>Full</FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="31%"><FONT SIZE=-2>Level of uncertainty in Key architecture
+drivers: mission, user interface, COTS, hardware, technology, performance.</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><FONT SIZE=-2>Extreme</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><FONT SIZE=-2>Significant</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><FONT SIZE=-2>Considerable</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><FONT SIZE=-2>Some</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><FONT SIZE=-2>Little</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><FONT SIZE=-2>Very Little</FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="31%"><FONT SIZE=-2>Number and criticality of risk
+items</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><FONT SIZE=-2>> 10</FONT>
+<BR><FONT SIZE=-2>Critical</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><FONT SIZE=-2>5-10</FONT>
+<BR><FONT SIZE=-2>Critical</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><FONT SIZE=-2>2-4</FONT>
+<BR><FONT SIZE=-2>Critical</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><FONT SIZE=-2>1</FONT>
+<BR><FONT SIZE=-2>Critical</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><FONT SIZE=-2>> 5Non- Critical</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><FONT SIZE=-2>&lt; 5 Non- Critical</FONT></CENTER>
+</TD>
+</TR>
+</TABLE></CENTER>
+<A NAME="TeamCohesion"></A><FONT FACE="Arial">Team Cohesion (TEAM)</FONT>
+<P><FONT SIZE=-1>The Team Cohesion scale factor accounts for the sources
+of project turbulence and entropy due to difficulties in synchronizing
+the project’s stakeholders: users, customers, developers, maintainers,
+interfacers, others. These difficulties may arise from differences in stakeholder
+objectives and cultures; difficulties in reconciling objectives; and stakeholder’s
+lack of experience and familiarity in operating as a team. Table I-4 provides
+a detailed definition for the overall TEAM rating levels. The final rating
+is the subjective weighted average of the listed characteristics.</FONT>
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>
+<BR>
+<BR>
+<CENTER>
+<P><B><FONT FACE="Arial"><FONT SIZE=-1>Table&nbsp; I-4 </FONT></FONT>:&nbsp;<A NAME="TEAMRatingComponents"></A>TEAM
+Rating Components</B></CENTER>
+
+<CENTER><TABLE BORDER WIDTH="521" >
+<TR>
+<TD VALIGN=TOP WIDTH="31%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Characteristic</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="11%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Very Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="11%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Low</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="11%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Nominal</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>High</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Very High</FONT></FONT></B></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><B><FONT FACE="Arial"><FONT SIZE=-2>Extra HIgh</FONT></FONT></B></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="31%"><FONT SIZE=-2>Consistency of stakeholder objectives
+and cultures</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="11%">
+<CENTER><FONT SIZE=-2>Little</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="11%">
+<CENTER><FONT SIZE=-2>Some</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="11%">
+<CENTER><FONT SIZE=-2>Basic</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><FONT SIZE=-2>Considerable</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><FONT SIZE=-2>Strong</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><FONT SIZE=-2>Full</FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="31%"><FONT SIZE=-2>Ability, willingness of stakeholders
+to accommodate other stakeholders’ objectives</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="11%">
+<CENTER><FONT SIZE=-2>Little</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="11%">
+<CENTER><FONT SIZE=-2>Some</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="11%">
+<CENTER><FONT SIZE=-2>Basic</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><FONT SIZE=-2>Considerable</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><FONT SIZE=-2>Strong</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><FONT SIZE=-2>Full</FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="31%"><FONT SIZE=-2>Experience of stakeholders in
+operating as a team</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="11%">
+<CENTER><FONT SIZE=-2>None</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="11%">
+<CENTER><FONT SIZE=-2>Little</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="11%">
+<CENTER><FONT SIZE=-2>Little</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><FONT SIZE=-2>Basic</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><FONT SIZE=-2>Considerable</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><FONT SIZE=-2>Extensive</FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="31%"><FONT SIZE=-2>Stakeholder teambuilding to achieve
+shared vision and commitments</FONT></TD>
+
+<TD VALIGN=TOP WIDTH="11%">
+<CENTER><FONT SIZE=-2>None</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="11%">
+<CENTER><FONT SIZE=-2>Little</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="11%">
+<CENTER><FONT SIZE=-2>Little</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><FONT SIZE=-2>Basic</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><FONT SIZE=-2>Considerable</FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="12%">
+<CENTER><FONT SIZE=-2>Extensive</FONT></CENTER>
+</TD>
+</TR>
+</TABLE></CENTER>
+<A NAME="ProcessMaturity"></A><FONT FACE="Arial">Process Maturity (PMAT)</FONT>
+<P><FONT SIZE=-1>The procedure for determining PMAT is organized around
+the Software Engineering Institute’s&nbsp;<A NAME="CapabilityMaturityModel"></A>Capability
+Maturity Model (CMM). The time period for rating Process Maturity is the
+time the project starts. There are two ways of rating Process Maturity.
+The first captures the result of an organized evaluation based on the CMM.</FONT>
+<P><A NAME="OverallMaturityLevel"></A><FONT FACE="Arial"><FONT SIZE=-1>Overall
+Maturity Level</FONT></FONT>
+<UL>
+<LI>
+<FONT SIZE=-1>&nbsp;CMM Level 1 (lower half)</FONT></LI>
+
+<LI>
+<FONT SIZE=-1>&nbsp;CMM Level 1 (upper half)</FONT></LI>
+
+<LI>
+<FONT SIZE=-1>&nbsp;CMM Level 2</FONT></LI>
+
+<LI>
+<FONT SIZE=-1>&nbsp;CMM Level 3</FONT></LI>
+
+<LI>
+<FONT SIZE=-1>&nbsp;CMM Level 4</FONT></LI>
+
+<LI>
+<FONT SIZE=-1>&nbsp;CMM Level 5</FONT></LI>
+</UL>
+
+<P><BR><A NAME="KeyProcessAreas"></A><FONT FACE="Arial"><FONT SIZE=-1>Key
+Process Areas</FONT></FONT>
+<P><FONT SIZE=-1>The second is organized around the 18 Key Process Areas
+(KPAs) in the SEI Capability Maturity Model [Paulk et al. 1993, 1993a].
+The procedure for determining PMAT is to decide the percentage of compliance
+for each of the KPAs. If the project has undergone a recent CMM Assessment
+then the percentage compliance for the overall KPA (based on KPA Key Practice
+compliance assessment data) is used. If an assessment has not been done
+then the levels of compliance to the KPA’s goals are used (with the Likert
+scale below) to set the level of compliance. The goal-based level of compliance
+is determined by a judgement-based averaging across the goals for each
+Key Process Area. If more information is needed on the KPA goals, they
+are listed in Appendix C of this document.</FONT>
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>
+<BR>
+<BR>
+<BR>
+<CENTER>
+<P><B><FONT FACE="Arial"><FONT SIZE=-1>Table&nbsp; I-5</FONT></FONT></B></CENTER>
+
+<CENTER><TABLE BORDER CELLPADDING=4 WIDTH="663" >
+<TR>
+<TD VALIGN=TOP WIDTH="34%">
+<CENTER><FONT FACE="Arial"><FONT SIZE=-2>Key Process Areas</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Arial"><FONT SIZE=-2>Almost Always (>90%)</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Arial"><FONT SIZE=-2>Often (60-90%)</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Arial"><FONT SIZE=-2>About Half</FONT></FONT>
+<BR><FONT FACE="Arial"><FONT SIZE=-2>(40-60%)</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Arial"><FONT SIZE=-2>Occasion-ally</FONT></FONT>
+<BR><FONT FACE="Arial"><FONT SIZE=-2>(10-40%)</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Arial"><FONT SIZE=-2>Rarely If Ever (&lt;10%)</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Arial"><FONT SIZE=-2>Does Not Apply</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Arial"><FONT SIZE=-2>Don’t Know</FONT></FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="34%"><FONT FACE="Arial"><FONT SIZE=-2>Requirements
+Management</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="34%"><FONT FACE="Arial"><FONT SIZE=-2>Software Project
+Planning</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="34%"><FONT FACE="Arial"><FONT SIZE=-2>Software Project
+Tracking and Oversight</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="34%"><FONT FACE="Arial"><FONT SIZE=-2>Software Subcontract
+Management</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="34%"><FONT FACE="Arial"><FONT SIZE=-2>Software Quality
+Assurance</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="34%"><FONT FACE="Arial"><FONT SIZE=-2>Software Configuration
+Management</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="34%"><FONT FACE="Arial"><FONT SIZE=-2>Organization
+Process Focus</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="34%"><FONT FACE="Arial"><FONT SIZE=-2>Organization
+Process Definition</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="34%"><FONT FACE="Arial"><FONT SIZE=-2>Training Program</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="34%"><FONT FACE="Arial"><FONT SIZE=-2>Integrated
+Software Management</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="34%"><FONT FACE="Arial"><FONT SIZE=-2>Software Product
+Engineering</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="34%"><FONT FACE="Arial"><FONT SIZE=-2>Intergroup
+Coordination</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="34%"><FONT FACE="Arial"><FONT SIZE=-2>Peer Reviews</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="34%"><FONT FACE="Arial"><FONT SIZE=-2>Quantitative
+Process Management</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="34%"><FONT FACE="Arial"><FONT SIZE=-2>Software Quality
+Management</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="34%"><FONT FACE="Arial"><FONT SIZE=-2>Defect Prevention</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="34%"><FONT FACE="Arial"><FONT SIZE=-2>Technology
+Change Management</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="34%"><FONT FACE="Arial"><FONT SIZE=-2>Process Change
+Management</FONT></FONT></TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+
+<TD VALIGN=TOP WIDTH="9%">
+<CENTER><FONT FACE="Wingdings"><FONT SIZE=-2>p</FONT></FONT></CENTER>
+</TD>
+</TR>
+</TABLE></CENTER>
+
+<UL>
+<LI>
+<FONT SIZE=-1>Check <U>Almost Always</U> when the goals are consistently
+achieved and are well established in standard operating procedures (over
+90% of the time).</FONT></LI>
+
+<LI>
+<FONT SIZE=-1>Check <U>Frequently</U> when the goals are achieved relatively
+often, but sometimes are omitted under difficult circumstances (about 60
+to 90% of the time).</FONT></LI>
+
+<LI>
+<FONT SIZE=-1>Check <U>About Half</U> when the goals are achieved about
+half of the time (about 40 to 60% of the time).</FONT></LI>
+
+<LI>
+<FONT SIZE=-1>Check <U>Occasionally</U> when the goals are sometimes achieved,
+but less often (about 10 to 40% of the time).</FONT></LI>
+
+<LI>
+<FONT SIZE=-1>Check <U>Rarely If Ever</U> when the goals are rarely if
+ever achieved (less than 10% of the time).</FONT></LI>
+
+<LI>
+<FONT SIZE=-1>Check <U>Does Not Apply</U> when you have the required knowledge
+about your project or organization and the KPA, but you feel the KPA does
+not apply to your circumstances.</FONT></LI>
+
+<LI>
+<FONT SIZE=-1>Check <U>Don’t Know</U> when you are uncertain about how
+to respond for the KPA.</FONT></LI>
+</UL>
+<FONT SIZE=-1>After the level of KPA compliance is determined each compliance
+level is weighted and a PMAT factor is calculated, as in Equation I-3.
+Initially, all KPAs will be equally weighted.</FONT>
+<P><FONT SIZE=-1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</FONT><B><FONT FACE="Times New Roman,Times"><FONT SIZE=-2>(EQ I-3)</FONT></FONT></B>
+<BR><IMG SRC="Imag9.jpg" HEIGHT=118 WIDTH=224>
+<P><A NAME="AdjustingNominalEffort"></A><B><I><FONT FACE="Arial">Adjusting
+Nominal Effort</FONT></I></B>
+<P><FONT SIZE=-1>Cost drivers are used to capture characteristics of the
+software development that affect the effort to complete the project. Cost
+drivers that have a multiplicative effect on predicting effort are called&nbsp;<A NAME="EffortMultipliers"></A>Effort
+Multipliers (EM). Each EM has a rating level that expresses the impact
+of the multiplier on development effort, PM. These rating can range from
+Extra Low to Extra High. For the purposes of quantitative analysis, each
+rating level of each EM has a weight associated with it. The nominal or
+average weight for an EM is 1.0. If a rating level causes more software
+development effort, then its corresponding EM weight is above 1.0. Conversely,
+if the rating level reduces the effort then the corresponding EM weight
+is less than 1.0. The selection of effort-multipliers is based on a strong
+rationale that they would independently explain a significant source of
+project effort or productivity variation.</FONT>
+<P><A NAME="EarlyDesignModel"></A><FONT FACE="Arial">Early Design Model</FONT>
+<P><FONT SIZE=-1>This Early Design model is used in the early stages of
+a software project when very little may be known about the size of the
+product to be developed, the nature of the target platform, the nature
+of the personnel to be involved in the project, or the detailed specifics
+of the process to be used. This model could be employed in either Application
+Generator, System Integration, or Infrastructure development sectors.</FONT>
+<P><FONT SIZE=-1>The Early Design model adjusts the nominal effort using
+7 EMs, Equation I-4. Each multiplier has 7 possible weights. The cost drivers
+for this model are explained in the later.</FONT>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<B><FONT FACE="Times New Roman,Times"><FONT SIZE=-2>(EQ I-4)</FONT></FONT></B>
+<BR><IMG SRC="Imag16.jpg" HEIGHT=114 WIDTH=346>
+<P><A NAME="PostArchitectureModel"></A><FONT FACE="Arial">Post-Architecture
+Model</FONT>
+<P><FONT SIZE=-1>The Post-Architecture model is the most detailed estimation
+model and it is intended to be used when a software life-cycle architecture
+has been developed. This model is used in the development and maintenance
+of software products in the Application Generators, System Integration,
+or Infrastructure sectors.</FONT>
+<P><FONT SIZE=-1>The Post-Architecture model adjusts nominal effort using
+17 effort multipliers. The larger number of multipliers takes advantage
+of the greater knowledge available later in the development stage. The
+Post-Architecture effort multipliers are explained later.</FONT>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<B><FONT FACE="Times New Roman,Times"><FONT SIZE=-2>(EQ I-5)</FONT></FONT></B>
+<P><IMG SRC="Imag17.jpg" HEIGHT=110 WIDTH=330>
+<P><A NAME="DevelopmentScheduleEstimation"></A><B><I><FONT FACE="Arial">Development
+Schedule Estimation</FONT></I></B>
+<P><FONT SIZE=-1>COCOMO II provides a simple schedule estimation capability
+similar to those in COCOMO and Ada COCOMO. The initial baseline schedule
+equation for all three COCOMO II stages is:</FONT>
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<B><FONT FACE="Times New Roman,Times"><FONT SIZE=-2>(EQ I-6)</FONT></FONT></B>
+<BR><IMG SRC="eqI-6.jpg" HEIGHT=50 WIDTH=432>
+<P><FONT SIZE=-1>where&nbsp;<A NAME="TDEV"></A><I>TDEV</I> is the calendar
+time in months from the determination of a product’s requirements baseline
+to the completion of an acceptance activity certifying that the product
+satisfies its requirements. <I>PM</I> is the estimated person-months <U>excluding</U>
+the SCED effort multiplier, <I>B</I> is the sum of project scale factors
+(discussed in the next chapter) and SCED% is the compression / expansion
+percentage in the SCED effort multiplier in Table I-1.</FONT>
+<P><FONT SIZE=-1>As COCOMO II evolves, it will have a more extensive schedule
+estimation model, reflecting the different classes of process model a project
+can use; the effects of reusable and COTS software; and the effects of
+applications composition capabilities.</FONT>
+</BODY>
+</HTML>

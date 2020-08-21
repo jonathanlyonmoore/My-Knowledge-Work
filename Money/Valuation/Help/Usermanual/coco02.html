@@ -1,0 +1,671 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="Generator" CONTENT="Microsoft Word 97">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.05 [en] (WinNT; I) [Netscape]">
+   <TITLE>Chapter 2: File Menu</TITLE>
+</HEAD>
+<BODY>
+<B><FONT FACE="Arial"><FONT SIZE=+1>Chapter 2:&nbsp;<A NAME="FileMenu"></A>File
+Menu</FONT></FONT></B>
+
+<P><B>&nbsp;</B>
+<BR><FONT FACE="TIMES"><FONT SIZE=-1>The COCOMO file types include: project
+file,&nbsp;<A NAME="modelfile"></A>model file,&nbsp;<A NAME="reportfile"></A>report
+file,&nbsp;<A NAME="calibrationfile"></A>calibration file, and&nbsp;<A NAME="csvfile"></A>csv
+file. The first three are discussed here. The others are discussed in later
+chapters.</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>The project file in COCOMO stores a
+project’s data, which include project name, project scale factors, project
+schedule constraint, module name,&nbsp;<A NAME="SLOC"></A>SLOC,&nbsp;<A NAME="laborrate"></A>labor
+rate, effort adjustment factors (<A NAME="EAF"></A>EAF), and COCOMO related
+calculation results. The COCOMO system gives all project files an ".est"
+extension.</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>Regarding the model file, as we mentioned
+in chapter one, COCOMO incorporates 17&nbsp;<A NAME="predictorfactors"></A>predictor
+factors, or cost driver attributes, which are grouped into four categories:
+software&nbsp;<A NAME="productattributes"></A>product attributes,&nbsp;<A NAME="platformattributes"></A>platform
+attributes,&nbsp;<A NAME="personnelattributes"></A>personnel attributes,
+and&nbsp;<A NAME="projectattributes"></A>project attributes. Each of these
+cost drivers attributes determines a multiplying factor, which estimates
+the effect of the attribute in software development effort. There are also
+two user defined&nbsp;<A NAME="EAFfactors"></A>EAF factors plus the project-level
+required development schedule EAF factor. Besides these cost drivers, COCOMO
+also has scale factors. These multiplying factors and effort estimating
+equations constitute the model of a project. As we said previously, COCOMO
+has assigned default values and equations for the annually calibrated default
+model. Each time a COCOMO project is created, its effort estimate is based
+on the default model. COCOMO provides flexibility in changing the values
+of multiplying factors and effort estimating equation, or schedule estimating
+equation. An adjusted model can no longer be considered default values,
+and therefore it will be lost if COCOMO is exited without saving it in
+a model file. Upon saving this model file, these altered values can be
+applied to another project by loading the saved model file. The COCOMO
+system gives all model files a ".mod" extension.</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>The&nbsp;<A NAME="reportfiledescription"></A>report
+file is a summary report of the COCOMO project. This report contains all
+entered and calculated values of a project. These files are given a ".rpt"
+extension.</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>The File menu option will enable you
+to create, retrieve, save, or print COCOMO files.</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>To select the File menu and its options,
+click on File with the mouse. The File menu will appear as Figure 2-1.</FONT></FONT>
+<DIR>
+<DIR>
+<DIR>
+<DIR><FONT FACE="TIMES"><FONT SIZE=-1>&nbsp;</FONT></FONT></DIR>
+</DIR>
+</DIR>
+<IMG SRC="Image16.jpg" HEIGHT=480 WIDTH=744>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>&nbsp;
+<BR><B><FONT FACE="HELVETICA"><FONT SIZE=-2>FIGURE 2-1 File Menu</FONT></FONT></B>
+<BR><B><I><FONT FACE="Arial">&nbsp;</FONT></I></B></DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+<B><I><FONT FACE="Arial">2.1&nbsp;<A NAME="New"></A>New</FONT></I></B>
+<BR><FONT SIZE=-1>&nbsp;</FONT>
+<BR><FONT FACE="TIMES"><FONT SIZE=-1>The New option creates a new project
+file in the COCOMO working window, replacing any previous project file
+in the working window.</FONT></FONT>
+
+<P><B><U><FONT FACE="TIMES"><FONT SIZE=-1>To Create a New Working File</FONT></FONT></U></B>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>1. Choose New from the File menu with
+mouse.</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>The working window will now be clear;
+the previous project file in the working window has been removed.</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1><B>Note: </B>New can be selected anytime;
+however, if the previous project file or model file has been modified,
+a warning dialog box will appear and requests confirmation. (as seen in
+Figure 2-2)</FONT></FONT>
+<DIR><FONT FACE="TIMES"><FONT SIZE=-1>&nbsp;</FONT></FONT>
+<BR><IMG SRC="Image17.jpg" HEIGHT=120 WIDTH=258>
+<DIR>
+<DIR>
+<DIR>
+<DIR>&nbsp;</DIR>
+</DIR>
+</DIR>
+</DIR>
+<B><FONT FACE="HELVETICA"><FONT SIZE=-2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+FIGURE 2-2 Warning Dialog Box</FONT></FONT></B>
+<DIR>
+<DIR>
+<DIR>
+<DIR><FONT FACE="TIMES"><FONT SIZE=-1>&nbsp;</FONT></FONT></DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+<FONT FACE="TIMES"><FONT SIZE=-1>2. If the modifications on the previous
+file are not to be saved, choose Yes, otherwise choose No. If the No is
+selected, a Save File dialog will appear. (See Save Project and Save Model
+respectively)</FONT></FONT>
+
+<P><B><I>2.2&nbsp;<A NAME="LoadProject"></A><FONT FACE="Arial">Load Project</FONT></I></B>
+<BR><FONT SIZE=-1>&nbsp;</FONT>
+<BR><FONT FACE="TIMES"><FONT SIZE=-1>The Load Project option is used to
+retrieve a project file as well as loading it on the working window.</FONT></FONT>
+
+<P><B><U><FONT FACE="TIMES"><FONT SIZE=-1>To Retrieve or Load a Project
+File</FONT></FONT></U></B>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>1. Choose Load Project from the File
+menu with the mouse.</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>2. If a previous project file has been
+modified in the working window, the dialog box as in Figure 2-3 will appear.</FONT></FONT>
+<DIR>&nbsp;
+<BR><IMG SRC="Image17.jpg" HEIGHT=120 WIDTH=258>
+<DIR>
+<DIR>
+<DIR>
+<DIR><B><FONT FACE="HELVETICA"><FONT SIZE=-2>&nbsp;</FONT></FONT></B></DIR>
+</DIR>
+</DIR>
+</DIR>
+<B><FONT FACE="HELVETICA"><FONT SIZE=-2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+FIGURE 2-3 Warning Dialog Box</FONT></FONT></B>
+<DIR>
+<DIR>
+<DIR>
+<DIR><FONT FACE="TIMES"><FONT SIZE=-1>&nbsp;</FONT></FONT></DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+<FONT FACE="TIMES"><FONT SIZE=-1>3. If the previous project file is to
+be saved, choose Yes, then a Save File dialog box will appear. (See Save
+Project). If the modified file is not to be saved, choose No.</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>4. The Load Project dialog box will
+appear as seen in Figure 2-4.</FONT></FONT>
+<DIR><IMG SRC="Image18.jpg" HEIGHT=265 WIDTH=427>
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<B><FONT FACE="HELVETICA"><FONT SIZE=-2>FIGURE 2-4 Load Project Dialog
+Box</FONT></FONT></B>
+<DIR>
+<DIR>
+<DIR>
+<DIR><FONT FACE="TIMES"><FONT SIZE=-1>&nbsp;</FONT></FONT></DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+<FONT FACE="TIMES"><FONT SIZE=-1>The file name of a COCOMO project has
+a default format with ".est" as an extension. With this window, the desired
+project file can be selected from the Files scroll list for loading. If
+the desired project file does not exist in the scroll list, it is necessary
+to choose an appropriate directory.</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>5. Choose desired directory for file
+loading</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>6. When the desired file is shown on
+the Files list, click it, and click the "OK" button to initiate project
+loading.</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>7. After a project file is loaded,
+its file name will be displayed on the PROJECT FILE field at upper left
+corner on the working window, and all modules and related items will be
+displayed in the CLEF area. If the number of modules is beyond the window
+scope, the scroll bar can be used to look at all items.</FONT></FONT>
+
+<P><B><I><FONT FACE="Arial">2.3&nbsp;<A NAME="SaveProject"></A>Save Project</FONT></I></B>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>The Save Project option is used to
+store the results of the current COCOMO project as a file with ".est" extension.</FONT></FONT>
+
+<P><B><U><FONT FACE="TIMES"><FONT SIZE=-1>To Store the Results of Current
+Project</FONT></FONT></U></B>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>1. Choose Save Project from the File
+menu with the mouse. If the current project is loaded from a previously
+stored project file, the Save Project will overwrite the same project file
+with the current project.</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>2. If the current project is a new
+one, i.e., being created by the New command, the Project Save dialog box
+will appear, as seen in Figure 2-5.</FONT></FONT>
+<BR>&nbsp;
+<DIR><IMG SRC="Image19.jpg" HEIGHT=265 WIDTH=427>
+<DIR>
+<DIR>
+<DIR>
+<DIR>&nbsp;</DIR>
+</DIR>
+</DIR>
+</DIR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<B><FONT FACE="HELVETICA"><FONT SIZE=-2>FIGURE 2-5 Save Project Dialog
+Box</FONT></FONT></B>
+<DIR>
+<DIR>
+<DIR>
+<DIR><FONT FACE="TIMES"><FONT SIZE=-1>&nbsp;</FONT></FONT></DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+<FONT FACE="TIMES"><FONT SIZE=-1>3. Look at the Files scroll window. If
+the file saving is to update (overwrite) a existing project file, the desired
+filename should be found in the Files scroll list. If the filename can
+not be found from current list, change the directory from the Directories
+scroll list until the desired filename is being shown. When the desired
+filename is on the list, click it.</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>4. If the file saving is to store a
+new project file, choose the desired directory, then type in a new filename.</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>5. After the desired filename is selected
+or inputted, click the OK button to initiate project saving.</FONT></FONT>
+
+<P><B><I><FONT FACE="Arial">2.4&nbsp;<A NAME="SaveAsProject"></A>Save As
+Project</FONT></I></B>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>The Save As Project option is to store
+the current project as a COCOMO project file, which has a file name different
+from current file.</FONT></FONT>
+
+<P><B><U><FONT FACE="TIMES"><FONT SIZE=-1>To Store Current Project With
+different File Name</FONT></FONT></U></B>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>1. Choose Save As Project from the
+File menu with the mouse.</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>2. The Save Project dialog box will
+appear, as seen in Figure 2-6.</FONT></FONT>
+<DIR><FONT FACE="TIMES"><FONT SIZE=-1>&nbsp;</FONT></FONT>
+<BR><IMG SRC="Image19.jpg" HEIGHT=265 WIDTH=427>
+<DIR>
+<DIR>
+<DIR>
+<DIR><B><FONT FACE="HELVETICA"><FONT SIZE=-2>&nbsp;</FONT></FONT></B></DIR>
+</DIR>
+</DIR>
+</DIR>
+<B><FONT FACE="HELVETICA"><FONT SIZE=-2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+FIGURE 2-6 Save Project Dialog Box</FONT></FONT></B>
+<DIR>
+<DIR>
+<DIR>
+<DIR>&nbsp;
+<BR>&nbsp;</DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+<FONT FACE="TIMES"><FONT SIZE=-1>3. Look at the Files scroll window. If
+the file saving is to update (overwrite) a existing project file, the desired
+filename should be found in the Files scroll list. If the filename can
+not be found from current list, change the directory from the Directories
+scroll list until the desired filename is being shown. When the desired
+filename is on the list, click it.</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>4. If the file saving is to store a
+new project file, choose the desired directory, then type in a new filename
+in the SELECTION box.</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>5. After the desired filename is selected
+or inputted, click the OK button to initiate project saving. After a project
+file is saved, the project file name will be displayed on the PROJECT FILE
+field at the upper left corner of the working window.</FONT></FONT>
+
+<P><B><I><FONT FACE="Arial">2.5&nbsp;<A NAME="LoadModel"></A>Load Model</FONT></I></B>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>The Load Model command is used when
+a specific model, in which the values of multiplying factors and scale
+factors are different from the COCOMO default model, is to be applied to
+the current project.</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>The Load Model option is used to retrieve
+a model file as well as loading it for the current project.</FONT></FONT>
+
+<P><B><U><FONT FACE="TIMES"><FONT SIZE=-1>To Retrieve or Load a Model File</FONT></FONT></U></B>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>1. Choose Load Model from the File
+menu.</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>2. If a previous model has been modified
+in the current project, the following dialog box will appear.</FONT></FONT>
+<DIR>&nbsp;
+<BR><IMG SRC="Image17.jpg" HEIGHT=120 WIDTH=258>
+<DIR>
+<DIR>
+<DIR>
+<DIR><B><FONT FACE="HELVETICA"><FONT SIZE=-2>&nbsp;</FONT></FONT></B></DIR>
+</DIR>
+</DIR>
+<B><FONT FACE="HELVETICA"><FONT SIZE=-2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+FIGURE 2-7 Warning Dialog Box</FONT></FONT></B>
+<DIR>
+<DIR>
+<DIR><FONT FACE="TIMES"><FONT SIZE=-1>&nbsp;</FONT></FONT></DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+<FONT FACE="TIMES"><FONT SIZE=-1>3. If the previous model file is to be
+saved, choose Yes, then a Save Model dialog box will appear. (See Save
+Model). If the modified model is not to be saved, choose No.</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>4. The Load Model dialog box will appear
+as seen in Figure 2-8.</FONT></FONT>
+<DIR><FONT FACE="TIMES"><FONT SIZE=-1>&nbsp;</FONT></FONT>
+<BR><IMG SRC="Image20.jpg" HEIGHT=265 WIDTH=427>
+<DIR>
+<DIR>
+<DIR>
+<DIR>&nbsp;</DIR>
+</DIR>
+</DIR>
+</DIR>
+<B><FONT FACE="HELVETICA"><FONT SIZE=-2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+FIGURE 2-8 Load Model Dialog Box</FONT></FONT></B>
+<DIR>
+<DIR>
+<DIR>
+<DIR><FONT FACE="TIMES"><FONT SIZE=-1>&nbsp;</FONT></FONT></DIR>
+</DIR>
+</DIR>
+</DIR>
+</DIR>
+<FONT FACE="TIMES"><FONT SIZE=-1>The file name of a COCOMO model has a
+default format with ".mod" as an extension. With this window, the desired
+model file can be selected from the Files scroll list for loading. If the
+desired model file does not exist in the scroll list, look for it in the
+other directories.</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>5. Choose desired directory for file
+loading</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>6. When the desired file is shown on
+the Files list, click it, and click the "OK" button to initiate model loading.</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>7. After a model file is loaded, its
+file name will be displayed on the MODEL FILE field at upper left corner
+on the working window, and the related costs of current project will be
+recalculated and shown on the working window.</FONT></FONT>
+
+<P><B><I><FONT FACE="Arial">2.6&nbsp;<A NAME="SaveModel"></A>Save Model</FONT></I></B>
+<BR><FONT FACE="TIMES"><FONT SIZE=-1>&nbsp;</FONT></FONT>
+<BR><FONT FACE="TIMES"><FONT SIZE=-1>The Save Model option is used to store
+the results of the current COCOMO model as a file with ".mod" extension.</FONT></FONT>
+
+<P><B><U><FONT FACE="TIMES"><FONT SIZE=-1>To Store the Results of Current
+Model</FONT></FONT></U></B>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>1. Choose Save Model from the File
+menu. If the current model is loaded from a previously stored model file,
+the Save Model will overwrite the same model file with the current model.</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>2. If the current model is a new one,
+the Save Model dialog box will appear, as seen in Figure 2-9.</FONT></FONT>
+<DIR>
+<DIR>
+<DIR>
+<DIR>
+<DIR>&nbsp;</DIR>
+</DIR>
+</DIR>
+</DIR>
+<IMG SRC="Image21.jpg" HEIGHT=265 WIDTH=427></DIR>
+<FONT FACE="TIMES"><FONT SIZE=-1>&nbsp;</FONT></FONT>
+<BR><B><FONT FACE="HELVETICA"><FONT SIZE=-2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+FIGURE 2-9 Save Model Dialog Box</FONT></FONT></B>
+<BR>&nbsp;
+<BR>&nbsp;<FONT FACE="TIMES"><FONT SIZE=-1>3. Look at the Files scroll
+window. If the file saving is to update (overwrite) a existing model file,
+the desired filename should be found in the Files scroll list. If the filename
+can not be found from current list, change the directory from the Directories
+scroll list until the desired filename is being shown. When the desired
+filename is on the list, click it.</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>4. If the file saving is to store a
+new model file, choose the desired directory, then type in the filename.</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>5. After the desired filename is selected
+or inputted, click the OK button to initiate model saving.</FONT></FONT>
+
+<P><B><I><FONT FACE="Arial">2.7&nbsp;<A NAME="SaveAsModel"></A>Save As
+Model</FONT></I></B>
+<BR><FONT FACE="TIMES"><FONT SIZE=-1>&nbsp;</FONT></FONT>
+<BR><FONT FACE="TIMES"><FONT SIZE=-1>The Save As Model option is to store
+the current model as a COCOMO model file, which has a file name different
+from current model.</FONT></FONT>
+
+<P><B><U><FONT FACE="TIMES"><FONT SIZE=-1>To Store Current Model With different
+File Name</FONT></FONT></U></B>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>1. Choose Save As Model from the File
+menu.</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>2. The Save Model dialog box will appear,
+as seen in Figure 2-10.</FONT></FONT>
+<DIR><FONT FACE="TIMES"><FONT SIZE=-1>&nbsp;</FONT></FONT>
+<BR><IMG SRC="Image21.jpg" HEIGHT=265 WIDTH=427>
+<BR>&nbsp;
+<BR><B><FONT FACE="HELVETICA"><FONT SIZE=-2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+FIGURE 2-10 Save As Model Dialog Box</FONT></FONT></B>
+<BR><FONT FACE="TIMES"><FONT SIZE=-1>&nbsp;</FONT></FONT>
+<BR>&nbsp;</DIR>
+<FONT FACE="TIMES"><FONT SIZE=-1>3. Look at the Files scroll window. If
+the file saving is to update (overwrite) a existing model file, the desired
+filename should be found in the Files scroll list. If the filename can
+not be found from current list, change the directory from the Directories
+scroll list until the desired filename is being shown. When the desired
+filename is on the list, click it.</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>4. If the file saving is to store a
+new model file, choose the desired directory, then type in the filename
+in the SELECTION box.</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>5. After the desired filename is selected
+or inputted, click the OK button to initiate model saving. After a model
+file is saved, the project file name will be displayed on the MODEL FILE
+field at the upper left corner of the working window.</FONT></FONT>
+
+<P><B><I><FONT FACE="Arial">2.8&nbsp;<A NAME="MakeReport"></A>Make Report</FONT></I></B>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>The Make Report option creates a COCOMO
+report in the form of a text file for printing.</FONT></FONT>
+
+<P><B><U><FONT FACE="TIMES"><FONT SIZE=-1>To Create Project Report</FONT></FONT></U></B>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>1. Choose Make Report from the File
+menu.</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>2. The Make Report dialog box will
+appear, as seen in Figure 2-11.</FONT></FONT>
+<DIR><FONT FACE="TIMES"><FONT SIZE=-1>&nbsp;</FONT></FONT>
+<BR><IMG SRC="Image22.jpg" HEIGHT=265 WIDTH=427>
+<BR><FONT FACE="TIMES"><FONT SIZE=-1>&nbsp;</FONT></FONT>
+<BR><FONT FACE="TIMES"><FONT SIZE=-1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</FONT></FONT><B><FONT FACE="HELVETICA"><FONT SIZE=-2>FIGURE 2-11 Make
+Report Dialog Box</FONT></FONT></B>
+<BR>&nbsp;</DIR>
+<FONT FACE="TIMES"><FONT SIZE=-1>3. Look at the Files scroll window. If
+the file saving is to update (overwrite) a existing report file, the desired
+filename should be found in the Files scroll list. If the filename can
+not be found from current list, change the directory from the Directories
+scroll list until the desired filename is shown. When the desired filename
+is on the list, click it.</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>4. If the file saving is to store a
+new report file, choose the desired directory, then type in the filename.</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>5. Choose desired directory for file
+saving: Look at the filter input box. The path found in this box represents
+the directory where the report file is going to be saved. This path will
+be changed after each directory change. To change the directory, click
+the appropriate directory choice from the Directories scroll list, then
+click the "Filter" button.</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>6. After the desired filename is selected
+or inputted, click the OK button to initiate report file saving.</FONT></FONT>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>7. To print a COCOMO project report,
+execute the local commands for your system in order to send the file for
+printing.</FONT></FONT>
+<DIR>&nbsp;</DIR>
+<B><I>2.9</I></B>&nbsp;<A NAME="Export"></A><B><I><FONT FACE="Arial">Export</FONT></I></B>
+
+<P><FONT SIZE=-1>The Export option lets you select a directory to write
+files that can be imported into Excel.</FONT>
+
+<P><B><U><FONT FACE="TIMES"><FONT SIZE=-1>To Export</FONT></FONT></U></B>
+
+<P><FONT FACE="Times New Roman,Times"><FONT SIZE=-1>1. Choose Export from
+the File menu.</FONT></FONT>
+<BR><FONT SIZE=-1>&nbsp;</FONT>
+<BR><FONT SIZE=-1>2. The Export dialog box will appear, as seen in Figure
+2-12.</FONT>
+
+<P><FONT SIZE=-1>&nbsp;</FONT>
+<DIR><IMG SRC="Image23.jpg" HEIGHT=219 WIDTH=339>
+<DIR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<B><FONT FACE="HELVETICA"><FONT SIZE=-2>Figure 2-12 File Export Dialog
+Box</FONT></FONT></B>
+<BR><FONT SIZE=-1>&nbsp;</FONT></DIR>
+</DIR>
+<FONT SIZE=-1>3. When you click on OK, a dialog box appears if Main.csv
+and Phases.csv already exist, as shown in Figure 2-13.</FONT>
+<DIR><FONT SIZE=-1>&nbsp;</FONT>
+<BR><IMG SRC="Image24.jpg" HEIGHT=120 WIDTH=259>
+
+<P><FONT SIZE=-1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </FONT><B><FONT FACE="HELVETICA"><FONT SIZE=-2>Figure
+2-13 Subsequent File Export Dialog Box</FONT></FONT></B>
+<BR>&nbsp;
+<BR>&nbsp;</DIR>
+<FONT SIZE=-1>4. If Yes is selected, COCOMO saves two files(main.csv and
+phase.csv) in the chosen directory.</FONT>
+
+<P><FONT SIZE=-1>If No is selected, these files will not be replaced.</FONT>
+
+<P><B><I><FONT FACE="Arial">2.10&nbsp;<A NAME="SaveScreens"></A>Save Screens</FONT></I></B>
+
+<P><FONT SIZE=-1>The Save Screens option allows the user to save the image
+of any Cocomo window.</FONT>
+
+<P><B><U><FONT FACE="TIMES"><FONT SIZE=-1>To Save Screens</FONT></FONT></U></B>
+
+<P><FONT FACE="Times New Roman,Times"><FONT SIZE=-1>1. Choose Save Screens
+from the File menu.</FONT></FONT>
+
+<P><FONT SIZE=-1>2. The Save Screens dialog box will appear, as seen in
+Figure 2-14.</FONT>
+<BR><FONT SIZE=-1>&nbsp;</FONT>
+<DIR><IMG SRC="Image25.jpg" HEIGHT=218 WIDTH=301>
+<DIR><B><FONT FACE="HELVETICA"><FONT SIZE=-2>Figure 2-14 Save Screens Dialog
+Box</FONT></FONT></B>
+
+<P><FONT SIZE=-1>&nbsp;</FONT></DIR>
+<FONT SIZE=-1>3. Follow the directions on the dialog box.</FONT></DIR>
+<B><I><FONT FACE="Arial">2.11&nbsp;<A NAME="PrintScreen"></A>Print Screen</FONT></I></B>
+
+<P><FONT SIZE=-1>The Print Screen option prints the screen of the main
+Cocomo window.</FONT>
+
+<P><FONT SIZE=-1>&nbsp;<B><U><FONT FACE="TIMES">To Print Screen</FONT></U></B></FONT>
+
+<P><FONT FACE="Times New Roman,Times"><FONT SIZE=-1>1. Choose Print Screen
+from the File menu.</FONT></FONT>
+
+<P><FONT SIZE=-1>2. The Print Screen dialog box will appear, as seen in
+Figure 2-15.</FONT>
+<DIR>
+<DIR><FONT SIZE=-1>&nbsp;</FONT></DIR>
+<IMG SRC="Image26.gif" HEIGHT=327 WIDTH=438></DIR>
+&nbsp;
+<DIR>
+<DIR><FONT SIZE=-1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</FONT><B><FONT FACE="HELVETICA"><FONT SIZE=-2>Figure 2-15 Print Screen
+Dialog</FONT></FONT></B>
+<BR>&nbsp;</DIR>
+</DIR>
+<FONT SIZE=-1>3. The Name of the printer can be selected from the dropdown
+list. Alternatively, you can print to a file by clicking on the Print to
+file checkbox.</FONT>
+<BR><FONT SIZE=-1>&nbsp;</FONT>
+<BR><FONT SIZE=-1>4.&nbsp; Properties of the printer can be set by clicking
+on the Properties button.</FONT>
+
+<P><FONT SIZE=-1>5. The Print range can be All or Pages (e.g. from 1 to
+3).</FONT>
+
+<P><FONT SIZE=-1>6. The Number of copies can be selected by clicking the
+up and down arrows, or by typing a number directly.</FONT>
+
+<P><FONT SIZE=-1>7. Select OK when finished to print or select Cancel to
+not print.</FONT>
+
+<P><B><I><FONT FACE="Arial">2.12&nbsp;<A NAME="PrintPreview"></A>Print
+Preview</FONT></I></B>
+
+<P><FONT SIZE=-1>The Print Preview option displays that which will appear
+when printed, if Print Screen is selected from the File menu.</FONT>
+
+<P><B><U><FONT FACE="TIMES"><FONT SIZE=-1>To Preview what is to be printed</FONT></FONT></U></B>
+
+<P><FONT FACE="Times New Roman,Times"><FONT SIZE=-1>1. Choose Print Preview
+from the File menu.</FONT></FONT>
+
+<P><FONT SIZE=-1>2. The Print Preview dialog box will appear, as seen in
+Figure 2-16.</FONT>
+<BR><FONT SIZE=-1>&nbsp;</FONT>
+<BR>&nbsp;
+<DIR>&nbsp;</DIR>
+&nbsp;
+<DIR><IMG SRC="Image27.jpg" HEIGHT=441 WIDTH=645>
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<B><FONT FACE="HELVETICA"><FONT SIZE=-2>Figure 2-16 Print Preview Dialog</FONT></FONT></B>
+<BR>&nbsp;</DIR>
+<FONT SIZE=-1>3. Select the Print button to print.</FONT>
+
+<P><FONT SIZE=-1>4. The Next Page button to advance to the next Page.</FONT>
+
+<P><FONT SIZE=-1>5. The Zoom In button zooms in, and the Zoom Out button
+becomes enabled so that the user can zoom out.</FONT>
+
+<P><FONT SIZE=-1>6. The Close button closes the Print Preview dialog.</FONT>
+
+<P><B><I><FONT FACE="Arial">2.13&nbsp;<A NAME="PrintSetup"></A>Print Setup</FONT></I></B>
+
+<P><FONT SIZE=-1>The Print Setup option allows the user to set up printing.</FONT>
+
+<P><B><U><FONT FACE="TIMES"><FONT SIZE=-1>To set up Printing</FONT></FONT></U></B>
+
+<P><FONT FACE="Times New Roman,Times"><FONT SIZE=-1>1. Choose Print Setup
+from the File menu.</FONT></FONT>
+
+<P><FONT SIZE=-1>2. The Print Setup dialog box will appear, as seen in
+Figure 2-17.</FONT>
+<DIR><IMG SRC="Image28.jpg" HEIGHT=315 WIDTH=439>
+
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<B><FONT FACE="HELVETICA"><FONT SIZE=-2>Figure 2-17 Print Setup Dialog
+Box</FONT></FONT></B></DIR>
+<B><I><FONT FACE="Arial">&nbsp;</FONT></I></B>
+<BR><FONT SIZE=-1>3. The Name of the printer can be selected from the dropdown
+list.</FONT>
+
+<P><FONT SIZE=-1>4. Properties of the printer can be set by clicking on
+the Properties button.</FONT>
+
+<P><FONT SIZE=-1>5. The Size and Source of the paper can be selected from
+the dropdown lists.</FONT>
+
+<P><FONT SIZE=-1>6. The Network button can be selected to connect to a
+printer on a network.</FONT>
+
+<P><FONT SIZE=-1>7. Select OK when finished to print or select Cancel to
+not print.</FONT>
+
+<P><B><I><FONT FACE="Arial">2.14&nbsp;<A NAME="Exit"></A>Exit</FONT></I></B>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>The Exit option leaves the COCOMO system.</FONT></FONT>
+
+<P><B><U><FONT FACE="TIMES"><FONT SIZE=-1>To Exit COCOMO</FONT></FONT></U></B>
+
+<P><FONT FACE="TIMES"><FONT SIZE=-1>1. Choose Exit from the File menu with
+the mouse.</FONT></FONT>
+
+<P><FONT SIZE=-1>2. This causes your system to terminate the cocomo program.</FONT>
+<DIR>
+<DIR><FONT SIZE=-1>&nbsp;</FONT>
+
+<P><FONT SIZE=-1>&nbsp;</FONT>
+
+<P><FONT SIZE=-1>&nbsp;</FONT>
+
+<P><FONT SIZE=-1>&nbsp;</FONT>
+
+<P><FONT SIZE=-1>&nbsp;</FONT>
+
+<P><FONT SIZE=-1>&nbsp;</FONT>
+
+<P><FONT SIZE=-1>&nbsp;</FONT></DIR>
+</DIR>
+
+</BODY>
+</HTML>

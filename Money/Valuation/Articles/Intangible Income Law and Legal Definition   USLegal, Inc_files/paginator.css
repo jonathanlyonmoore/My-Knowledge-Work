@@ -1,0 +1,200 @@
+/* VBC PAGINATION START */
+.vbc-pagination-table { width: 100%; margin:5px 0px; line-height:22px; }
+.vbc-pagination-table td { text-align:center; font-size:16px; vertical-align:middle; padding:2px 6px; }
+.vbc-pagination-select { margin: 0 1px 3px 3px; height:26px; font-size:16px; padding: 0; }
+.vbc-pagination-div { margin: 0; }
+.vbc-pagination-div ul { display: inline-block; font-size:0px; margin:0px; line-height:32px; }
+.vbc-pagination-div ul > li { display: inline-block;  margin:0px 3px 0px 0px; line-height:24px; padding: 5px 2px; font-size:16px; border: 1px solid #dddddd; -webkit-border-radius: 4px; border-radius: 4px; -moz-border-radius: 4px; vertical-align: middle; }
+.vbc-pagination-div ul > li > a, .vbc-pagination-div ul > li > span { padding: 0px; line-height:23px; text-decoration: none; background-color: #ffffff; margin:0px; }
+.vbc-pagination-div ul > li > a.two_digit, .vbc-pagination-div ul > li > span.two_digit { display:inline-block; width:18px; }
+.vbc-pagination-div ul > li > a:hover, .vbc-pagination-div ul > li > a:focus, .vbc-pagination-div ul > .active, .vbc-pagination-div ul > .active, .vbc-pagination-div ul > .active > a, .vbc-pagination-div ul > .active > span { background-color: #b0ffff; }
+.vbc-pagination-div ul > .active > a, .vbc-pagination-div ul > .active > span { color: #999999; cursor: default; }
+.vbc-pagination-div ul > .disabled > span, .vbc-pagination-div ul > .disabled > a, .vbc-pagination-div ul > .disabled > a:hover, .vbc-pagination-div ul > .disabled > a:focus { background-color: transparent; color: #999999; cursor: default; }
+.vbc-pagination-div > span { vertical-align: middle; }
+.vbc-pagination-div input[type="text"] { margin-bottom: 3px !important; }
+/* VBC PAGINATION END */
+
+/*////////////////////////////////////////////////////*/
+
+/* YUNDLE PAGINATION START */
+.yundle-pagination-table {
+	width: 100%;
+	margin: 5px 0;
+	line-height: 24px;
+	font-size: 16px;
+	text-align: center;
+}
+.yundle-pagination-table td {
+	text-align: center;
+	font-size: 16px;
+	vertical-align: middle;
+	padding: 1px 0;
+}
+.visible-xs-block .yundle-pagination-table td {
+	font-size: 14px;
+}
+.yundle-pagination-table ul {
+	display: inline-block;
+	font-size: 0;
+	margin: 0; 
+	line-height: 32px;
+}
+
+.yundle-pagination-table ul > li {
+	display: inline;
+}
+.yundle-pagination-table ul > li > a,
+.yundle-pagination-table ul > li > span {
+	background-color: #fff;
+	display: inline-block;
+	margin: 1px 3px 1px 0;
+	line-height:24px;
+	padding: 5px 2px;
+	font-size:16px;
+	border: 1px solid #ddd;
+	vertical-align: middle;
+	text-align: center;
+	min-width: 24px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+.yundle-pagination-table .disabled span {
+	background-color: #fff;
+	color: #999;
+	cursor: default;
+}
+.yundle-pagination-table .active span {
+	background-color: #319ED4;
+	color: #fff;
+	border-color: #999;
+	cursor: default;
+}
+.yundle-pagination-table ul > li > a:focus {
+	background-color: #62B4DC;
+	color: #fff;
+}
+.yundle-pagination-table ul > li:hover a {
+	background-color: #319ED4;
+	color: #fff;
+	border-color: #999;
+}
+.yundle-pagination-table select {
+	margin: 0 1px 3px 3px;
+	height: 26px;
+	font-size: 16px;
+	padding: 0;
+	width: 64px;
+}
+.yundle-pagination-table input[type="text"] {
+	width: 40px;
+	padding: 2px 0;
+	margin: 0 0 3px;
+	text-align: center;
+	font-size: 16px;
+	height: 25px;
+	line-height: 25px;
+	border-radius: 3px;
+}
+.visible-xs-block .yundle-pagination-table input[type="text"] {
+	width: 25px;
+	font-size: 14px;
+	margin: 0 0 2px;
+	display: inline-block;
+}
+.yundle-pagination-table .nowrap {
+	white-space: nowrap;
+}
+.yundle-pagination-table td:first-child {
+	white-space: nowrap;
+	text-align: center;
+	padding-right: 6px;
+}
+.yundle-pagination-table .pagination-td-two {
+	width: 90%;
+}
+.yundle-pagination-table td:nth-last-child(1) {
+	padding-left: 6px;
+	/* text-align: right; */
+}
+.yundle-pagination-table td:nth-last-child(1) li:nth-last-child(1) a,
+.yundle-pagination-table td:nth-last-child(1) li:nth-last-child(1) span {
+	margin-right: 0;
+}
+.yundle-pagination-table tr .pagination-td-no {
+	text-align: center;
+	width: 100%;
+}
+.yundle-pagination-table .one-line {
+	line-height: 36px;
+	white-space: nowrap;
+}
+.yundle-pagination-table .left15 {
+	margin-left: 15px;
+}
+.visible-xs-block .yundle-pagination-table .left15 {
+	margin-left: 5px;
+}
+
+/* for iphone 4/5 viewport */
+@media only screen and (max-width: 360px) {
+
+	.visible-xs-block .yundle-pagination-table td:first-child li:first-child,
+	.visible-xs-block .yundle-pagination-table td:nth-last-child(1) li:nth-last-child(1) {
+		display: none;
+	}
+	.visible-xs-block .yundle-pagination-table td:nth-last-child(1) li:first-child a,
+	.visible-xs-block .yundle-pagination-table td:nth-last-child(1) li:first-child span {
+		margin-right: 0;
+	}
+	.visible-xs-block .yundle-pagination-table td {
+		font-size: 13px;
+	}
+	.visible-xs-block .yundle-pagination-table input[type="text"] {
+		width: 20px;
+		font-size: 13px;
+	}
+}
+
+/* for admin pagination bar */
+.admin-paginator {
+	background-color: #f6f6f6;
+	border-bottom: 1px solid #ddd;
+	border-top: 1px solid #ddd;
+}
+.admin-paginator.top { 
+	margin: 15px 0 5px; 
+}
+.admin-paginator .yundle-pagination-table td:first-child {
+	padding-left: 6px;
+}
+.admin-paginator .yundle-pagination-table td:nth-last-child(1) {
+	padding-right: 6px;
+}
+
+/* for frontend pagination bar */
+.front-paginator {
+	background-color: #f9f9f9;
+	border-bottom: 2px solid #eee;
+	border-top: 2px solid #eee;
+	margin: 15px 0;
+}
+.front-paginator.top { 
+	margin: 15px 0 5px; 
+}
+.front-paginator .yundle-pagination-table {
+	background-color: #eee;
+}
+.front-paginator .yundle-pagination-table td:first-child {
+	padding-left: 6px;
+	padding-top: 3px;
+}
+.front-paginator .yundle-pagination-table td:nth-last-child(1) {
+	padding-right: 6px;
+}
+
+
+
+/* YUNDLE PAGINATION END */
+
+/*////////////////////////////////////////////////////*/
