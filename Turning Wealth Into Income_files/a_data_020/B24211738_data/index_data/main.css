@@ -1,0 +1,85 @@
+body { margin: 0; padding: 0; }
+
+.container { width: 300px; height: 600px; overflow: hidden; position: relative; background-image: url('bg.jpg'); border: 1px solid #c9c9cb; box-sizing: border-box; margin:-2px; cursor: pointer; }
+
+.text1, .text2, .text3, .text4, .cta, .line1, .line2 { display: block; opacity: 0; position: absolute;}
+
+/* Timing */
+
+.line1 {
+    -webkit-animation: line1 .8s ease-in-out .2s forwards;
+    -moz-animation: line1 .8s ease-in-out .2s forwards;
+    -ms-animation: line1 .8s ease-in-out .2s forwards;
+    -o-animation: line1 .8s ease-in-out .2s forwards;
+    animation: line1 .8s ease-in-out .2s forwards;
+}
+.text1 {
+    -webkit-animation: fade .5s linear .7s forwards;
+    -moz-animation: fade .5s linear .7s forwards;
+    -ms-animation: fade .5s linear .7s forwards;
+    -o-animation: fade .5s linear .7s forwards;
+    animation: fade .5s linear .7s forwards;
+}
+.text2 {
+    -webkit-animation: fade .5s linear 1.7s forwards;
+    -moz-animation: fade .5s linear 1.7s forwards;
+    -ms-animation: fade .5s linear 1.7s forwards;
+    -o-animation: fade .5s linear 1.7s forwards;
+    animation: fade .5s linear 1.7s forwards;
+}
+.line2 {
+    -webkit-animation: line2 .6s ease-in-out 2.7s forwards;
+    -moz-animation: line2 .6s ease-in-out 2.7s forwards;
+    -ms-animation: line2 .6s ease-in-out 2.7s forwards;
+    -o-animation: line2 .6s ease-in-out 2.7s forwards;
+    animation: line2 .6s ease-in-out 2.7s forwards;
+}
+.text3 {
+    -webkit-animation: fade .5s linear 2.9s forwards;
+    -moz-animation: fade .5s linear 2.9s forwards;
+    -ms-animation: fade .5s linear 2.9s forwards;
+    -o-animation: fade .5s linear 2.9s forwards;
+    animation: fade .5s linear 2.9s forwards;
+}
+
+.text4 {
+    -webkit-animation: fade .5s linear 3s forwards;
+    -moz-animation: fade .5s linear 3s forwards;
+    -ms-animation: fade .5s linear 3s forwards;
+    -o-animation: fade .5s linear 3s forwards;
+    animation: fade .5s linear 3s forwards;
+}
+
+.cta {
+    -webkit-animation: slideright .5s ease-in-out 4.2s forwards;
+    -moz-animation: slideright .5s ease-in-out 4.2s forwards;
+    -ms-animation: slideright .5s ease-in-out 4.2s forwards;
+    -o-animation: slideright .5s ease-in-out 4.2s forwards;
+    animation: slideright .5s ease-in-out 4.2s forwards;
+}
+
+/* Animation */
+
+@keyframes slideright { from { left: -30px; opacity: 0; } to { left: 0px; opacity: 1; } }
+@-moz-keyframes slideright { from { left: -30px; opacity: 0; } to { left: 0px; opacity: 1; } }
+@-webkit-keyframes slideright { from { left: -30px; opacity: 0; } to { left: 0px; opacity: 1; } }
+@-ms-keyframes slideright { from { left: -30px; opacity: 0; } to { left: 0px; opacity: 1; } }
+@-o-keyframes slideright { from { left: -30px; opacity: 0; } to { left: 0px; opacity: 1; } }
+
+@keyframes line1 { from { top: -20px; opacity: 0; } to { top: 0px; opacity: 1; } }
+@-moz-keyframes line1 { from { top: -20px; opacity: 0; } to { top: 0px; opacity: 1; } }
+@-webkit-keyframes line1 { from { top: -20px; opacity: 0; } to { top: 0px; opacity: 1; } }
+@-ms-keyframes line1 { from { top: -20px; opacity: 0; } to { top: 0px; opacity: 1; } }
+@-o-keyframes line1 { from { top: -20px; opacity: 0; } to { top: 0px; opacity: 1; } }
+
+@keyframes line2 { from { top: 50px; opacity: 0; } to { top: 0px; opacity: 1; } }
+@-moz-keyframes line2 { from { top: 50px; opacity: 0; } to { top: 0px; opacity: 1; } }
+@-webkit-keyframes line2 { from { top: 50px; opacity: 0; } to { top: 0px; opacity: 1; } }
+@-ms-keyframes line2 { from { top: 50px; opacity: 0; } to { top: 0px; opacity: 1; } }
+@-o-keyframes line2 { from { top: 50px; opacity: 0; } to { top: 0px; opacity: 1; } }
+
+@keyframes fade { from { opacity: 0 } to {opacity: 1 } }
+@-moz-keyframes fade { from { opacity: 0 } to {opacity: 1 } }
+@-webkit-keyframes fade { from { opacity: 0 } to {opacity: 1 } }
+@-ms-keyframes fade { from { opacity: 0 } to {opacity: 1 } }
+@-o-keyframes fade { from { opacity: 0 } to {opacity: 1 } }

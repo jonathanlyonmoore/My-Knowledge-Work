@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>New York Life Investments</title>
+    <meta name="ad.size" content="width=970,height=250">
+    <link rel="stylesheet" href="index_data/main.css" type="text/css">
+  <script type="text/javascript">
+    
+      (function() {
+        var relegateNavigation = '';
+        var handleClickTagMessage = function(e) {
+          try {
+            var eventData = JSON.parse(e.data);
+          } catch (err) {
+            return;
+          }
+          if (eventData.isInitClickTag) {
+            if (eventData.clickTags) {
+              for (var i = 0; i < eventData.clickTags.length; i++) {
+                var clkTag = eventData.clickTags[i];
+                window[clkTag.name] = clkTag.url;
+              }
+            } else if (eventData.clickTag) {
+              window.clickTag = eventData.clickTag;
+            }
+            relegateNavigation = eventData.relegateNavigation;
+          }
+        };
+
+        if (open.call) {
+          window.open = function(open) {
+            return function(url, name, features) {
+              if (relegateNavigation === 'parent') {
+                var message = {'clickTag': url, 'isPostClickTag': true};
+                parent.postMessage(JSON.stringify(message), '*');
+              } else {
+                var args = [url, name];
+                if (features) {
+                  args.push(features);
+                }
+                open.apply(window, args);
+              }
+            };
+          }(window.open);
+        }
+
+        if (window.addEventListener) {
+          window.addEventListener(
+              'message', handleClickTagMessage, false);
+        } else {
+          window.attachEvent('onmessage', handleClickTagMessage);
+        }
+      })();
+    
+  </script></head>
+  <body onload="init();">
+    <div class="close-contain">
+    	<div class="container" onclick="window.open(clickTag,'_blank');">
+        <div class="text1">
+          <img src="index_data/text1.png">
+        </div>
+        <div class="text2">
+          <img src="index_data/text2.png">
+        </div>
+        <div class="text3">
+          <img src="index_data/text3.png">
+        </div>
+        <div class="cta">
+          <img src="index_data/cta.png">
+        </div>
+        <div class="line1">
+          <img src="index_data/line1.png">
+        </div>
+        <div class="line2">
+          <img src="index_data/line2.png">
+        </div>
+    		<script>
+      		var clickTag = "http://www.google.com";
+      		window.addEventListener("load", init);
+        </script>
+    	</div>
+    </div>
+  
+</body></html>
